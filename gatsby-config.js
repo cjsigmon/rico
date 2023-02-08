@@ -27,8 +27,10 @@ module.exports = {
       options: {
         // the only required plugin option for WordPress is the GraphQL url.
         url:
-          process.env.WPGRAPHQL_URL ||
-          `https://wpgatsbydemo.wpengine.com/graphql`,
+          `https://mejo584-2023.brookesnook.us/graphql`,
+        develop: {
+          hardCacheMediaFiles: true,
+        }
       },
     },
 
