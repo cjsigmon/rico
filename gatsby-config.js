@@ -8,9 +8,9 @@
 
 module.exports = {
   
-  // siteMetadata: {
-  //   title: "MEJO in Puerto Rico",
-  // },
+  siteMetadata: {
+    title: "MEJO in Puerto Rico",
+  },
   /**
    * Adding plugins to this array adds them to your Gatsby site.
    *
