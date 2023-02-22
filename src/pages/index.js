@@ -3,7 +3,7 @@ import { useStaticQuery, graphql, Link as GatsbyLink } from "gatsby";
 
 const HomePage = () =>  {
 
-    const data = useStaticQuery(`
+    const data = useStaticQuery(graphql`
     query MyQuery {
         allWpPost {
           edges {
