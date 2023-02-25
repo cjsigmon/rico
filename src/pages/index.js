@@ -1,27 +1,29 @@
 import * as React from "react";
 import { useStaticQuery, graphql, Link as GatsbyLink } from "gatsby";
+import Layout from "../components/layout";
+import '../styles.css';
 
 const HomePage = () =>  {
-
-    const data = useStaticQuery(graphql`
-    query MyQuery {
-        allWpPost {
-          edges {
-            node {
-              id
-              content
-              uri
-            }
-          }
-        }
-      }`)
+  const data = useStaticQuery(graphql`
+  {
+    allWpPost {
+      nodes {
+        id
+        excerpt
+        title
+        uri
+      }
+    }
+  }
+  `)
 
       const { allWpPost } = data;
 
       return (
         <main>
-          <h1>Welcome to my Gatsby site!</h1>
-          <p>I'm making this by following the Gatsby Tutorial.</p>
+          <div class="bg"></div>
+
+          <p>This example creates a full page background image. Try to resize the browser window to see how it always will cover the full screen (when scrolled to top), and that it scales nicely on all screen sizes.</p>
         </main>
       )
     }
