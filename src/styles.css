@@ -3,6 +3,10 @@ body, html {
     margin: 0;
 }
 
+h1 {
+    margin: 0;
+}
+
 .bg {
     /* display: flex;
     justify-content: center; */
@@ -14,12 +18,22 @@ body, html {
     height: 100vh;
     position: relative;
 }
-/* .box {
-    background-color: lavender;
+
+.box {
     display: flex;
+    min-width: 100%;
     justify-content: center;
+    position: relative;
+    top: 30%;
     width: 45%;
-    border: 1% solid green;
     padding: 2%;
-    margin: 2%;
-} */
+    margin: 0%;
+}
+
+.nav {
+    background-color: lavender;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

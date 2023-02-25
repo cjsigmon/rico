@@ -21,9 +21,18 @@ const HomePage = () =>  {
 
       return (
         <main>
-          <div class="bg"></div>
+          <div class="bg">
+            <div class="nav">
+              <h1>NAVBAR COMPONENT</h1>
+            </div>
+            
+            <div class="box">
+            <h1>TITLE ASSET</h1>
+            </div>
+            
+          </div>
 
-          <p>This example creates a full page background image. Try to resize the browser window to see how it always will cover the full screen (when scrolled to top), and that it scales nicely on all screen sizes.</p>
+          <p>This is where links to stories could go.</p>
         </main>
       )
     }
