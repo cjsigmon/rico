@@ -35,11 +35,7 @@ const Layout = ({ isHomePage, children }) => {
       <main>{children}</main>
 
       <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
-        {` `}
-        And <a href="https://wordpress.org/">WordPress</a>
+        © {new Date().getFullYear()}, UNC MEJO 584
       </footer>
     </div>
   )

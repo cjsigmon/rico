@@ -32,14 +32,18 @@ const HomePage = () =>  {
             
           </div>
 
+          { allWpPost.nodes.map( post => (
+            <div key={post.title} class="storybox" id={post.title}>
+              <a href={ post.uri }>
+              <h2>
+                { post.title }
+              </h2>
+              </a>
+              
+            </div>
+          ))}
+
           
-          <div id="storybox-container">
-            <div class="storybox" id="stry1"><h2>story 1</h2></div>
-            <div class="storybox" id="stry2"><h2>story 2</h2></div>
-            <div class="storybox" id="stry3"><h2>story 3</h2></div>
-            <div class="storybox" id="stry4"><h2>story 4</h2></div>
-            <div class="storybox" id="stry5"><h2>story 5</h2></div>
-          </div>
           <div class="nav">
               <h1>FOOTER COMPONENT</h1>
             </div>
