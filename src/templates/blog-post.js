@@ -33,7 +33,9 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
         <header>
           <h1 itemProp="headline">{parse(post.title)}</h1>
 
-          <p>{post.date}</p>
+          {/* I don't think we'll want the post date, but I'll leave
+          it commented out here */}
+          {/* <p>{post.date}</p> */}
 
           {/* if we have a featured image for this post let's display it */}
           {featuredImage?.data && (

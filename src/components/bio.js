@@ -27,24 +27,26 @@ const Bio = () => {
 
   return (
     <div className="bio">
-      {avatarUrl && (
+      {/* {avatarUrl && (
         <img
           alt={author?.firstName || ``}
           className="bio-avatar"
           src={avatarUrl}
         />
-      )}
+      )} */}
       {author?.firstName && (
         <p>
           Written by <strong>{author.firstName}</strong>
           {` `}
-          {author?.description || null}
+          {/* Don't think we'll need an author description, but 
+          will leave commented out here */}
+          {/* {author?.description || null} */}
           {` `}
-          {author?.twitter && (
+          {/* {author?.twitter && (
             <a href={`https://twitter.com/${author?.twitter || ``}`}>
               You should follow them on Twitter
             </a>
-          )}
+          )} */}
         </p>
       )}
     </div>
