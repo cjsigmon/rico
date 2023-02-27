@@ -33,7 +33,7 @@ const HomePage = () =>  {
           </div>
 
           { allWpPost.nodes.map( post => (
-            <div key={post.title} class="storybox" id={post.title}>
+            <div key={post.title} class="bg" id={post.title}>
               <a href={ post.uri }>
               <h2>
                 { post.title }
