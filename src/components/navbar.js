@@ -1,21 +1,44 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import '../styles.css';
 
-const hideNav = () => {
-    var prevScrollpos = window.pageYOffset;
-    window.onscroll = function() {
-    var currentScrollPos = window.pageYOffset;
-  if (prevScrollpos > currentScrollPos) {
-    document.getElementById("navbar").style.top = "0";
-  } else {
-    document.getElementById("navbar").style.top = "-50px";
-  }
-  prevScrollpos = currentScrollPos;
-}
-};
+
 
 const Navbar = () => {
+
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  const navbarStyles = {
+    position: 'fixed',
+    height: '60px',
+    width: '100%',
+    backgroundColor: 'grey',
+    textAlign: 'center',
+    transition: 'top 0.6s'
+  }
+
+  // new function:
+  const handleScroll = () => {
+    // find current scroll position
+    const currentScrollPos = window.pageYOffset;
+
+    // set state based on location info (explained in more detail below)
+    setVisible((prevScrollPos > currentScrollPos) || currentScrollPos < 10);
+
+    // set state to new scroll position
+    setPrevScrollPos(currentScrollPos);
+  };
+
+  // new useEffect:
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+
+  }, [prevScrollPos, visible, handleScroll]);
+
+
 
   const data = useStaticQuery(graphql`
   {
@@ -31,23 +54,23 @@ const Navbar = () => {
       const { allWpPost } = data;
 
     return (
-        <main>
-          
-            <div onScroll={hideNav} class="navbar">
-              <a href="/"><img src="https://picsum.photos/100/80"></img></a>
-              { allWpPost.nodes.map( post => (
-                <a key={post.title} href={post.uri}><h4>{post.title}</h4></a>
-            ))}
-              {/* <a href="#env"><h4>Environment</h4></a>
-              <a href="#env"><h4>Community</h4></a>
-              <a href="#env"><h4>Governance</h4></a>
-              <a href="#env"><h4>Power</h4></a>
-              <a href="#env"><h4>Healthcare</h4></a>
-              <a href="#env"><h4>ABOUT</h4></a> */}
+      <div id="navy" style={{ ...navbarStyles, top: visible ? '0' : '-60px' }}>
+      Some Company Inc.
+    </div>
+        // <main> 
+        //     <div style={{ ...navbarStyles, top: visible ? '0' : '-60px' }} class="navbar">
+        //       <a id="nav-logo" href="/"><img src="https://picsum.photos/80/50"></img></a>
+        //       { allWpPost.nodes.map( post => (
+        //         <a key={post.title} href={post.uri}><h4>{post.title}</h4></a>
+        //     ))}
 
-            </div>
-        </main>
+        //     </div>
+        // </main>
     )
+
+  
 }
+
+
 
 export default Navbar

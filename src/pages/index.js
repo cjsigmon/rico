@@ -60,3 +60,5 @@ const HomePage = () =>  {
     
     // Step 3: Export your component
     export default HomePage;
+
+   
