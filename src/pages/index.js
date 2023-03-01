@@ -21,10 +21,17 @@ const HomePage = () =>  {
 
       return (
         <main>
-          <div class="bg">
-            <div class="nav">
-              <h1>NAVBAR COMPONENT</h1>
+          <div class="nav">
+              <a href="/"><img src="https://picsum.photos/100/70"></img></a>
+              <h4>Environment</h4>
+              <h4>Community</h4>
+              <h4>Governance</h4>
+              <h4>Power</h4>
+              <h4>Healthcare</h4>
+              <h4>ABOUT</h4>
+
             </div>
+          <div class="bg">
             
             <div class="box">
             <h1>TITLE ASSET</h1>
@@ -44,7 +51,7 @@ const HomePage = () =>  {
           ))}
 
           
-          <div class="nav">
+          <div class="nothing">
               <h1>FOOTER COMPONENT</h1>
             </div>
         </main>
