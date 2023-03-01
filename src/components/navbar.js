@@ -1,6 +1,8 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
+
+
 const Navbar = () => {
 
     return (
@@ -18,3 +20,5 @@ const Navbar = () => {
         </main>
     )
 }
+
+export default Navbar
