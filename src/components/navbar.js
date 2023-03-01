@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import '../styles.css';
+// help from https://www.rolandwrites.com/blog/sticky-navbar-hides-scroll
 
 
 
