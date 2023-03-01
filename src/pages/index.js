@@ -26,7 +26,12 @@ const HomePage = () =>  {
           <div class="bg">
             
             <div class="box">
-            <h1>TITLE ASSET</h1>
+
+                <div id="main-title-contain">
+                  <h1 id="main-title">Isla de Fuerza</h1>
+                  <h1>Site Tagline</h1>
+                </div>
+                
             </div>
             
           </div>

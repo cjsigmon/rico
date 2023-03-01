@@ -33,7 +33,11 @@ h1, h2 {
     margin: 0%;
 }
 
-.nav {
+#main-title {
+    font-size: 4em;
+}
+
+.navbar {
     /* 
     margin: 0;
     display: flex;
@@ -49,6 +53,7 @@ h1, h2 {
     top: 0;
     width: 100%;
     display: flex;
+    align-items: center;
     justify-content: space-around;
     transition: top 0.3s;
 }

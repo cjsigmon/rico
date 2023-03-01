@@ -1,13 +1,25 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import '../styles.css';
 
-
+function hideNav() {
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("navbar").style.top = "0";
+  } else {
+    document.getElementById("navbar").style.top = "-50px";
+  }
+  prevScrollpos = currentScrollPos;
+}
+}
 
 const Navbar = () => {
 
     return (
         <main>
-            <div class="nav">
+            <div onScroll="hideNav()" class="navbar">
               <a href="/"><img src="https://picsum.photos/100/70"></img></a>
               <h4>Environment</h4>
               <h4>Community</h4>
