@@ -10,11 +10,9 @@ const Navbar = () => {
   const [visible, setVisible] = useState(true);
 
   const navbarStyles = {
-    position: 'fixed',
-    height: '60px',
-    width: '100%',
-    backgroundColor: 'grey',
-    textAlign: 'center',
+    // position: 'fixed',
+    // height: '60px',
+    // width: '100%',
     transition: 'top 0.6s'
   }
 
@@ -54,15 +52,18 @@ const Navbar = () => {
       const { allWpPost } = data;
 
     return (
-      <div id="navy" style={{ ...navbarStyles, top: visible ? '0' : '-60px' }}>
-      Some Company Inc.
+      <div class="navbar" style={{ ...navbarStyles, top: visible ? '0' : '-60px' }}>
+            <a id="nav-logo" href="/"><img src="https://picsum.photos/80/50"></img></a>
+              { allWpPost.nodes.map( post => (
+                <a key={post.title} href={post.uri}><h4>{post.title}</h4></a>
+            ))}
     </div>
         // <main> 
         //     <div style={{ ...navbarStyles, top: visible ? '0' : '-60px' }} class="navbar">
-        //       <a id="nav-logo" href="/"><img src="https://picsum.photos/80/50"></img></a>
-        //       { allWpPost.nodes.map( post => (
-        //         <a key={post.title} href={post.uri}><h4>{post.title}</h4></a>
-        //     ))}
+            //   <a id="nav-logo" href="/"><img src="https://picsum.photos/80/50"></img></a>
+            //   { allWpPost.nodes.map( post => (
+            //     <a key={post.title} href={post.uri}><h4>{post.title}</h4></a>
+            // ))}
 
         //     </div>
         // </main>
