@@ -1,6 +1,7 @@
 import * as React from "react";
 import { useStaticQuery, graphql, Link as GatsbyLink } from "gatsby";
 import Layout from "../components/layout";
+import Navbar from "../components/navbar";
 import '../styles.css';
 
 const HomePage = () =>  {
@@ -21,16 +22,7 @@ const HomePage = () =>  {
 
       return (
         <main>
-          <div class="nav">
-              <a href="/"><img src="https://picsum.photos/100/70"></img></a>
-              <h4>Environment</h4>
-              <h4>Community</h4>
-              <h4>Governance</h4>
-              <h4>Power</h4>
-              <h4>Healthcare</h4>
-              <h4>ABOUT</h4>
-
-            </div>
+          <Navbar />
           <div class="bg">
             
             <div class="box">
