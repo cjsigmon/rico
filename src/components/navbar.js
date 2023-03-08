@@ -41,7 +41,7 @@ const Navbar = () => {
 
   const data = useStaticQuery(graphql`
   {
-    allWpPost {
+    allWpPost(sort: {date: ASC}) {
       nodes {
         title
         uri
@@ -53,7 +53,7 @@ const Navbar = () => {
       const { allWpPost } = data;
 
     return (
-      <div class="navbar" style={{ ...navbarStyles, top: visible ? '0' : '-60px' }}>
+      <div class="navbar" style={{ top: visible ? '0' : '-60px' }}>
             <a id="nav-logo" href="/"><img src="https://picsum.photos/80/50"></img></a>
               { allWpPost.nodes.map( post => (
                 <a key={post.title} href={post.uri}><h4>{post.title}</h4></a>
@@ -75,4 +75,4 @@ const Navbar = () => {
 
 
 
-export default Navbar
+export default Navbar;

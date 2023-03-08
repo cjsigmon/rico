@@ -3,11 +3,12 @@ import { useStaticQuery, graphql, Link as GatsbyLink } from "gatsby";
 import Layout from "../components/layout";
 import Navbar from "../components/navbar";
 import '../styles.css';
+import HeaderImg from "../components/header";
 
 const HomePage = () =>  {
   const data = useStaticQuery(graphql`
   {
-    allWpPost {
+    allWpPost(filter: {id: {ne: "cG9zdDo0NQ=="}}, sort: {date: ASC}) {
       nodes {
         id
         excerpt
@@ -23,18 +24,7 @@ const HomePage = () =>  {
       return (
         <main>
           <Navbar />
-          <div class="bg">
-            
-            <div class="box">
-
-                <div id="main-title-contain">
-                  <h1 id="main-title">Isla de Fuerza</h1>
-                  <h1>Site Tagline</h1>
-                </div>
-                
-            </div>
-            
-          </div>
+          <HeaderImg title={"Isla de Fuerza"} tagline={"Never Stop Not Stopping"} />
 
           { allWpPost.nodes.map( post => (
             <div key={post.title} class="bg" id={post.title}>

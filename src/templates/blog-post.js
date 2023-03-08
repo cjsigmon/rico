@@ -8,57 +8,36 @@ import parse from "html-react-parser"
 // version used by the Gatsby and @wordpress packages that causes build
 // failures.
 // @todo update this once @wordpress upgrades their postcss version
-import "../css/@wordpress/block-library/build-style/style.css"
-import "../css/@wordpress/block-library/build-style/theme.css"
+// import "../css/@wordpress/block-library/build-style/style.css"
+// import "../css/@wordpress/block-library/build-style/theme.css"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import Navbar from "../components/navbar"
+import HeaderImg from "../components/header"
+import Tagline from "../components/tagline"
 
 const BlogPostTemplate = ({ data: { previous, next, post } }) => {
-  const featuredImage = {
-    data: post.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData,
-    alt: post.featuredImage?.node?.alt || ``,
-  }
 
   return (
-    <Layout>
-      <Seo title={post.title} description={post.excerpt} />
+    <>
+    <Seo title={post.title} description={post.excerpt} />
+    <Navbar />
+    <HeaderImg title={post.title} tagline={post.tagline} />
+    <Tagline reporter={"Joe Schmoe"} video={"Nancy Pelosi"} photo={"Obamna"} graphic={"soda"} pr={post.pageQuery} />
+    <div className="center-content">
+      <div>
+      {parse(post.content)}
+      </div>
+    </div>
+    </>
+    
 
-      <article
-        className="blog-post"
-        itemScope
-        itemType="http://schema.org/Article"
-      >
-        <header>
-          <h1 itemProp="headline">{parse(post.title)}</h1>
-
-          {/* I don't think we'll want the post date, but I'll leave
-          it commented out here */}
-          {/* <p>{post.date}</p> */}
-
-          {/* if we have a featured image for this post let's display it */}
-          {featuredImage?.data && (
-            <GatsbyImage
-              image={featuredImage.data}
-              alt={featuredImage.alt}
-              style={{ marginBottom: 50 }}
-            />
-          )}
-        </header>
-
-        {!!post.content && (
-          <section itemProp="articleBody">{parse(post.content)}</section>
-        )}
-
-        <hr />
-
-        <footer>
-          <Bio />
-        </footer>
-      </article>
-
-      <nav className="blog-post-nav">
+      // 
+      // <h1 >{parse(post.title)}</h1>
+     
+      /* <nav className="blog-post-nav">
         <ul
           style={{
             display: `flex`,
@@ -84,8 +63,7 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
             )}
           </li>
         </ul>
-      </nav>
-    </Layout>
+      </nav> */
   )
 }
 

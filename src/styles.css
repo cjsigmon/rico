@@ -41,17 +41,8 @@ h1, h2, h3, h4, img {
 }
 
 .navbar {
-    /* 
-    margin: 0;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    position: fixed;
-    width: 100vw;
-    transition: top 0.3s; */
-
     z-index: 1;
-    background-color: rgba(230, 230, 250, 0.602);
+    background-image: linear-gradient(whitesmoke, rgb(203, 212, 213));
     position: fixed;
     width: 100%;
     display: flex;
@@ -64,19 +55,11 @@ h1, h2, h3, h4, img {
     display: flex;
 }
 
-#navbar a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    text-decoration: none;
+.navbar a > h4 {
+    color: rgb(4, 10, 16);
+}
 
-  }
-  
-  #navbar a:hover {
-    background-color: #ddd;
-    color: black;
-  }
+#navbar
 
 #storybox-container {
     display: flex;
@@ -103,3 +86,14 @@ background-color: lightblue;}
 #Environment {
     background-image: none;
 background-color: lightgray;}
+
+
+.center-content {
+    margin: 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.byline {
+    background-color: aliceblue;
+}

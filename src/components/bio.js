@@ -36,7 +36,11 @@ const Bio = () => {
       )} */}
       {author?.firstName && (
         <p>
-          Written by <strong>{author.firstName}</strong>
+          Written by <strong>SNAP</strong><br></br>
+          Video by <strong>CRACKLE</strong><br></br>
+          Photo by <strong>POP</strong><br></br>
+          PR <strong>RICE</strong><br></br>
+          Graphic <strong>KRISPIES</strong><br></br>
           {` `}
           {/* Don't think we'll need an author description, but 
           will leave commented out here */}
