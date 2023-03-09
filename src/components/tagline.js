@@ -4,8 +4,8 @@ import '../styles.css';
 export default function Tagline({ reporter, video, video2, photo, grpahic, pr }) {
     
     return (
-        <div class="byline">
-            <div class="box">
+        <div className="byline">
+            <div className="box">
                 <div id="main-title-contain">
                   <p>Reporter {reporter}</p>
                   <p>Video {video}</p>

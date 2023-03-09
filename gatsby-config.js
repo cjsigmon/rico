@@ -9,7 +9,7 @@
 module.exports = {
   
   siteMetadata: {
-    title: "MEJO in Puerto Rico",
+    title: "Isla de Fuerza",
   },
   /**
    * Adding plugins to this array adds them to your Gatsby site.
@@ -32,7 +32,7 @@ module.exports = {
         // the only required plugin option for WordPress is the GraphQL url.
         url:
           process.env.WPGRAPHQL_URL ||
-          `https://mejo584-2023.brookesnook.us/graphql`,
+          `http://isladefuerza.unc.edu/wp/graphql`,
         develop: {
           hardCacheMediaFiles: true,
         },

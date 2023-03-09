@@ -18,17 +18,20 @@ import Navbar from "../components/navbar"
 import HeaderImg from "../components/header"
 import Tagline from "../components/tagline"
 
-const BlogPostTemplate = ({ data: { previous, next, post } }) => {
+function BlogPostTemplate ({ data: { previous, next, post } }) {
+  const htmlString = post.content;
 
   return (
     <>
     <Seo title={post.title} description={post.excerpt} />
     <Navbar />
-    <HeaderImg title={post.title} tagline={post.tagline} />
+    <HeaderImg title={post.title} tagline={parse(post.excerpt)} />
     <Tagline reporter={"Joe Schmoe"} video={"Nancy Pelosi"} photo={"Obamna"} graphic={"soda"} pr={post.pageQuery} />
+    {/* <CustomImage /> */}
     <div className="center-content">
-      <div>
-      {parse(post.content)}
+      <div dangerouslySetInnerHTML={replaceImgWithCustomImage(htmlString)} >
+        {/* {console.log(post.content)}
+      {parse(post.content)} */}
       </div>
     </div>
     </>
@@ -66,6 +69,16 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
       </nav> */
   )
 }
+
+
+
+function replaceImgWithCustomImage(htmlString) {
+  const customImageRegex = /<figure[^>]+class="wp-block-image size-large"[^>]*>([\s\S]*?)<\/figure>/g;
+  const replacedHtmlString = htmlString.replace(customImageRegex, '<img src="https://picsum.photos/id/237/200/300" />'); // Replace <img> tags with <CustomImage> component
+
+  return { __html: replacedHtmlString }; // Set the dangerouslySetInnerHTML attribute with the new HTML string
+}
+
 
 export default BlogPostTemplate
 

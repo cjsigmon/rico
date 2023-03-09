@@ -27,7 +27,7 @@ const HomePage = () =>  {
           <HeaderImg title={"Isla de Fuerza"} tagline={"Never Stop Not Stopping"} />
 
           { allWpPost.nodes.map( post => (
-            <div key={post.title} class="bg" id={post.title}>
+            <div key={post.title} className="bg" id={post.title}>
               <a href={ post.uri }>
               <h2>
                 { post.title }
@@ -38,7 +38,7 @@ const HomePage = () =>  {
           ))}
 
           
-          <div class="nothing">
+          <div className="nothing">
               <h1>FOOTER COMPONENT</h1>
             </div>
         </main>
