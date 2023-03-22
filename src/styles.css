@@ -1,9 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Roboto:wght@300&display=swap');
+
 body, html {
     margin: 0;
 }
 
 h1, h2, h3, h4, img {
     margin: 0;
+    font-family: 'Domine', serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+p {
+    font-family: 'Domine', serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .bg {
@@ -19,6 +28,20 @@ h1, h2, h3, h4, img {
     position: relative;
 }
 
+.split-bg {
+    display: flex;
+}
+
+.halfground {
+    background-color: rgb(0, 81, 151);
+    width: 50vw;
+    min-height: 100vh;
+}
+
+.halfground-text {
+    padding: 1vw;
+}
+
 
 
 .box {
@@ -32,8 +55,17 @@ h1, h2, h3, h4, img {
     margin: 0%;
 }
 
+#main-title-contain {
+    text-align: center;
+}
+
+
 #main-title {
     font-size: 7em;
+}
+
+#main-tagline {
+    font-size: 4em;
 }
 
 #navy {
@@ -42,24 +74,30 @@ h1, h2, h3, h4, img {
 
 .navbar {
     z-index: 1;
-    background-image: linear-gradient(whitesmoke, rgb(203, 212, 213));
+    background-color: #6ea6bf;
     position: fixed;
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     transition: top 0.3s;
+    padding-left: 0.5%;
+    padding-right: 0.5%;
 }
 
 #nav-logo {
     display: flex;
 }
 
-.navbar a > h4 {
+.nav-elem-a {
+    text-decoration: none;
+}
+
+.nav-elem {
     color: rgb(4, 10, 16);
 }
 
-#navbar
+
 
 #storybox-container {
     display: flex;
@@ -69,6 +107,10 @@ h1, h2, h3, h4, img {
 .storybox {
     min-width: 20%;
     border: 1px solid blue;
+}
+
+.cntr-txt {
+    text-align: center;
 }
 
 #Healthcare {

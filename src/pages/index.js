@@ -24,15 +24,24 @@ const HomePage = () =>  {
       return (
         <main>
           <Navbar />
-          <HeaderImg title={"Isla de Fuerza"} tagline={"Never Stop Not Stopping"} />
+          <HeaderImg title={"Isla de Fuerza"} tagline={"Site Tagline"} />
+
+          <div class="cntr-txt">
+            <p>This text is going to explain how this project is related to the 2018 Aftermath</p>
+            <p>project.</p>
+          </div>
 
           { allWpPost.nodes.map( post => (
-            <div key={post.title} className="bg" id={post.title}>
+            <div key={post.title} className="split-bg" id={post.title}>
+              <div className="halfground"></div>
+              <div className="halfground-text">
               <a href={ post.uri }>
               <h2>
                 { post.title }
               </h2>
               </a>
+              </div>
+              
               
             </div>
           ))}

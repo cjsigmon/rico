@@ -56,7 +56,7 @@ const Navbar = () => {
       <div class="navbar" style={{ top: visible ? '0' : '-60px' }}>
             <a id="nav-logo" href="/"><img src="https://picsum.photos/80/50"></img></a>
               { allWpPost.nodes.map( post => (
-                <a key={post.title} href={post.uri}><h4>{post.title}</h4></a>
+                <a class="nav-elem-a" key={post.title} href={post.uri}><h4 class="nav-elem">{post.title}</h4></a>
             ))}
     </div>
         // <main> 
