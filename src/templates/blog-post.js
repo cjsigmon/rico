@@ -26,7 +26,6 @@ function BlogPostTemplate ({ data: { previous, next, post } }) {
   const htmlString = post.content;
 
   const replacePhotoComponent = <CustomImage />;
-  const replaceVidComponent = <VideoComp />;
 
   const options = {
     replace: (node) => {
@@ -34,7 +33,14 @@ function BlogPostTemplate ({ data: { previous, next, post } }) {
         return replacePhotoComponent;
       }
       else if (node.attribs && node.attribs.class === "replace-video") {
-        return replaceVidComponent;
+        switch(node.attribs.id) {
+          case "health-vid":
+            return <VideoComp link={"https://player.vimeo.com/video/17644530?h=4142d8aba0"} />;
+            break;
+          case "power-vid":
+            return <VideoComp link={"https://player.vimeo.com/video/291295858?h=fee30cc906"} />;
+            break;
+        }
       }
     },
   };
