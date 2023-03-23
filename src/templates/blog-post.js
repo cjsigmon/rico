@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import parse from "html-react-parser"
 
+
 // We're using Gutenberg so we need the block styles
 // these are copied into this project due to a conflict in the postCSS
 // version used by the Gatsby and @wordpress packages that causes build
@@ -17,9 +18,29 @@ import Seo from "../components/seo"
 import Navbar from "../components/navbar"
 import HeaderImg from "../components/header"
 import Tagline from "../components/tagline"
+import CustomImage from "../components/customImage";
+import Parser from "html-react-parser";
+import VideoComp from "../components/videoComp"
 
 function BlogPostTemplate ({ data: { previous, next, post } }) {
   const htmlString = post.content;
+
+  const replacePhotoComponent = <CustomImage />;
+  const replaceVidComponent = <VideoComp />;
+
+  const options = {
+    replace: (node) => {
+      if (node.attribs && node.attribs.class === "replace-photo") {
+        return replacePhotoComponent;
+      }
+      else if (node.attribs && node.attribs.class === "replace-video") {
+        return replaceVidComponent;
+      }
+    },
+  };
+  
+
+  const componentTree = Parser(htmlString, options);
 
   return (
     <>
@@ -28,11 +49,11 @@ function BlogPostTemplate ({ data: { previous, next, post } }) {
     <HeaderImg title={post.title} tagline={parse(post.excerpt)} />
     <Tagline reporter={"Joe Schmoe"} video={"Nancy Pelosi"} photo={"Obamna"} graphic={"soda"} pr={post.pageQuery} />
     {/* <CustomImage /> */}
-    <div className="center-content">
-      <div dangerouslySetInnerHTML={replaceImgWithCustomImage(htmlString)} >
-        {/* {console.log(post.content)}
-      {parse(post.content)} */}
-      </div>
+    {/* <div className="center-content">
+      {componentTree}
+    </div> */}
+    <div className="post-content">
+      {componentTree}
     </div>
     </>
     

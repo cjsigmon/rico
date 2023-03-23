@@ -1,9 +1,11 @@
 import * as React from "react";
+import { useState } from "react";
 import { useStaticQuery, graphql, Link as GatsbyLink } from "gatsby";
 import Layout from "../components/layout";
 import Navbar from "../components/navbar";
 import '../styles.css';
 import HeaderImg from "../components/header";
+import CustomImage from "../components/customImage";
 
 const HomePage = () =>  {
   const data = useStaticQuery(graphql`
@@ -19,6 +21,8 @@ const HomePage = () =>  {
   }
   `)
 
+  const [lefty, setLefty] = useState(false);
+
       const { allWpPost } = data;
 
       return (
@@ -31,8 +35,8 @@ const HomePage = () =>  {
             <p>project.</p>
           </div>
 
-          { allWpPost.nodes.map( post => (
-            <div key={post.title} className="split-bg" id={post.title}>
+          { allWpPost.nodes.map((post, index) => (
+            <div key={post.title} className={"split-bg-" + (index + 1)} id={post.title}>
               <div className="halfground"></div>
               <div className="halfground-text">
               <a href={ post.uri }>
@@ -41,12 +45,13 @@ const HomePage = () =>  {
               </h2>
               </a>
               </div>
+        
               
               
             </div>
           ))}
 
-          
+<CustomImage/>
           <div className="nothing">
               <h1>FOOTER COMPONENT</h1>
             </div>
