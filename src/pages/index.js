@@ -25,25 +25,38 @@ const HomePage = () =>  {
 
       const { allWpPost } = data;
 
+
       return (
         <main>
           <Navbar />
           <HeaderImg title={"Isla de Fuerza"} tagline={"Site Tagline"} />
 
-          <div class="cntr-txt">
+          {/* <div class="cntr-txt">
             <p>This text is going to explain how this project is related to the 2018 Aftermath</p>
             <p>project.</p>
           </div>
 
-          { allWpPost.nodes.map((post, index) => (
-            <div key={post.title} className={"split-bg-" + (index + 1)} id={post.title}>
+          <div className="split-bg" id="Environment">
               <div className="halfground"></div>
+             
               <div className="halfground-text">
-              <a href={ post.uri }>
-              <h2>
-                { post.title }
-              </h2>
-              </a>
+              <a href="/">
+                <h2>Environment</h2>
+                </a>
+              </div>
+        
+              
+              
+            </div> */}
+
+          { allWpPost.nodes.map((post, index) => (
+            <div key={post.title} className="split-bg" id={post.title}>
+              <div className={index % 2 == 0 ? "halfground-text" : "halfground"}>
+              {index % 2 == 0 ? <a href={ post.uri }><h2>{ post.title }</h2></a> : <></>}
+              </div>
+             
+              <div className={index % 2 == 0 ? "halfground" : "halfground-text"}>
+              {index % 2 == 0 ? <></> : <a href={ post.uri }><h2>{ post.title }</h2></a>}
               </div>
         
               
