@@ -9,7 +9,7 @@ export default function Tagline({ reporter, photo, video1, video2, inter, inter2
             <div className="box">
                 <div id="main-title-contain">
                   <p>Reporter {reporter}</p>
-                  <p>Photo {photo}</p>
+                  {photo ? <p>Photo {photo}</p> : <></>}
                   <p>Video {video1}</p>
                   <p>Video {video2}</p>
                   <p>Interactive {inter}</p>

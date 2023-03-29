@@ -76,20 +76,20 @@ function BlogPostTemplate ({ data: { previous, next, post } }) {
       storyTeam.upr = 'Amanda Jiménez Berríos';
       break;
     case 'Power':
-      storyTeam.reporter = 'Liv';
-      storyTeam.photo = 'Anna';
-      storyTeam.video1 = 'Cynthia';
-      storyTeam.video2 = 'Fallon';
-      storyTeam.inter = 'Nina';
-      storyTeam.upr = 'Carlos';
+      storyTeam.reporter = 'Preston Fore';
+      storyTeam.video1 = 'Gerard Millman';
+      storyTeam.video2 = 'Lauren Cmiel';
+      storyTeam.inter = 'Clara Mello';
+      storyTeam.inter2 = 'Jacob Turner';
+      storyTeam.upr = 'Yondy Agosto García';
       break;
     case 'Healthcare':
-      storyTeam.reporter = 'Liv';
-      storyTeam.photo = 'Anna';
-      storyTeam.video1 = 'Cynthia';
-      storyTeam.video2 = 'Fallon';
-      storyTeam.inter = 'Nina';
-      storyTeam.upr = 'Carlos';
+      storyTeam.reporter = 'Lucas Thomae';
+      storyTeam.photo = 'Heather Diehl';
+      storyTeam.video1 = 'Angelina Katsanis';
+      storyTeam.video2 = 'Jennifer Tran';
+      storyTeam.inter = 'Caleb Sigmon';
+      storyTeam.adpr = 'Bella Cankurtaran';
       break;
   }
 
@@ -98,7 +98,7 @@ function BlogPostTemplate ({ data: { previous, next, post } }) {
     <Seo title={post.title} description={post.excerpt} />
     <Navbar />
     <HeaderImg title={post.title} tagline={parse(post.excerpt)} />
-    <Tagline reporter={storyTeam.reporter} photo={storyTeam.photo} video1={storyTeam.video1} video2={storyTeam.video2} inter={storyTeam.inter} adpr={storyTeam.adpr} upr={storyTeam.upr} />
+    <Tagline reporter={storyTeam.reporter} photo={storyTeam.photo} video1={storyTeam.video1} video2={storyTeam.video2} inter={storyTeam.inter} inter2={storyTeam.inter2} adpr={storyTeam.adpr} upr={storyTeam.upr} />
     {/* <CustomImage /> */}
     {/* <div className="center-content">
       {componentTree}

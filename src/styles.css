@@ -168,11 +168,9 @@ background-color: lightgray;}
 
 .post-text {
     min-width: 60%;
+    margin: auto 20vw;
 }
 
-.post-text > p {
-    margin-left: 10%;
-}
 
 .video-container {
 position: relative;
