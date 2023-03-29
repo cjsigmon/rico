@@ -6,7 +6,7 @@ body, html {
     margin: 0;
 }
 
-h1, p, h2, h3, h4, h5 {
+h1, p, h2, h3, h4, h5, .wp-element-caption {
     font-family: "americane", sans-serif;
     font-style: normal;
   }
@@ -162,19 +162,23 @@ background-color: lightgray;}
 
 .post-content {
     margin-top: 5%;
+    display: flex;
+    justify-content: center;
 }
 
+.post-text {
+    min-width: 60%;
+}
 
-.post-content > p {
-    text-align: center;
+.post-text > p {
+    margin-left: 10%;
 }
 
 .video-container {
 position: relative;
   overflow: hidden;
-  width: 80%;
   margin: 5% auto;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+  padding-top: 56.25%;
 }
 
 .responsive-iframe {

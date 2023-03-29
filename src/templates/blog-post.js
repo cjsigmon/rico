@@ -48,18 +48,65 @@ function BlogPostTemplate ({ data: { previous, next, post } }) {
 
   const componentTree = Parser(htmlString, options);
 
+  var storyTeam = {};
+  switch(post.title) {
+    case 'Environment':
+      storyTeam.reporter = 'Thomas Moody-Jones';
+      storyTeam.photo = 'Dylan Thiessen';
+      storyTeam.video1 = 'Ann Licharew';
+      storyTeam.video2 = 'Taylor Holbrooks';
+      storyTeam.inter = 'Gina Flow';
+      storyTeam.adpr = 'Florencia Loncán';
+      storyTeam.upr = 'Karina';
+      break;
+    case 'Community':
+      storyTeam.reporter = 'Liv Reilly';
+      storyTeam.photo = 'Anna Connors';
+      storyTeam.video1 = 'Cynthia Liu';
+      storyTeam.video2 = 'Fallon Maher';
+      storyTeam.inter = 'Nina Scott';
+      storyTeam.upr = 'Carlos Ramírez Brito';
+      break;
+    case 'Governance':
+      storyTeam.reporter = 'Emily Gajda';
+      storyTeam.photo = 'Samantha Lewis';
+      storyTeam.video1 = 'Allyson Rabon';
+      storyTeam.video2 = 'Quincy Marks';
+      storyTeam.inter = 'Giuli Hoffmann';
+      storyTeam.upr = 'Amanda Jiménez Berríos';
+      break;
+    case 'Power':
+      storyTeam.reporter = 'Liv';
+      storyTeam.photo = 'Anna';
+      storyTeam.video1 = 'Cynthia';
+      storyTeam.video2 = 'Fallon';
+      storyTeam.inter = 'Nina';
+      storyTeam.upr = 'Carlos';
+      break;
+    case 'Healthcare':
+      storyTeam.reporter = 'Liv';
+      storyTeam.photo = 'Anna';
+      storyTeam.video1 = 'Cynthia';
+      storyTeam.video2 = 'Fallon';
+      storyTeam.inter = 'Nina';
+      storyTeam.upr = 'Carlos';
+      break;
+  }
+
   return (
     <>
     <Seo title={post.title} description={post.excerpt} />
     <Navbar />
     <HeaderImg title={post.title} tagline={parse(post.excerpt)} />
-    <Tagline reporter={"Joe Schmoe"} video={"Nancy Pelosi"} photo={"Obamna"} graphic={"soda"} pr={post.pageQuery} />
+    <Tagline reporter={storyTeam.reporter} photo={storyTeam.photo} video1={storyTeam.video1} video2={storyTeam.video2} inter={storyTeam.inter} adpr={storyTeam.adpr} upr={storyTeam.upr} />
     {/* <CustomImage /> */}
     {/* <div className="center-content">
       {componentTree}
     </div> */}
     <div className="post-content">
+      <div className="post-text">
       {componentTree}
+      </div>
     </div>
     </>
     
