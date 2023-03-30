@@ -57,7 +57,7 @@ function BlogPostTemplate ({ data: { previous, next, post } }) {
       storyTeam.video2 = 'Taylor Holbrooks';
       storyTeam.inter = 'Gina Flow';
       storyTeam.adpr = 'Florencia Loncán';
-      storyTeam.upr = 'Karina';
+      storyTeam.upr = 'Karina Torres';
       break;
     case 'Community':
       storyTeam.reporter = 'Liv Reilly';
@@ -98,12 +98,13 @@ function BlogPostTemplate ({ data: { previous, next, post } }) {
     <Seo title={post.title} description={post.excerpt} />
     <Navbar />
     <HeaderImg title={post.title} tagline={parse(post.excerpt)} />
-    <Tagline reporter={storyTeam.reporter} photo={storyTeam.photo} video1={storyTeam.video1} video2={storyTeam.video2} inter={storyTeam.inter} inter2={storyTeam.inter2} adpr={storyTeam.adpr} upr={storyTeam.upr} />
+   
     {/* <CustomImage /> */}
     {/* <div className="center-content">
       {componentTree}
     </div> */}
-    <div className="post-content">
+    <div className="post-grid">
+    <Tagline reporter={storyTeam.reporter} photo={storyTeam.photo} video1={storyTeam.video1} video2={storyTeam.video2} inter={storyTeam.inter} inter2={storyTeam.inter2} adpr={storyTeam.adpr} upr={storyTeam.upr} />
       <div className="post-text">
       {componentTree}
       </div>

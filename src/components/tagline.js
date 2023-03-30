@@ -5,18 +5,14 @@ export default function Tagline({ reporter, photo, video1, video2, inter, inter2
     
 
     return (
-        <div className="byline">
-            <div className="box">
-                <div id="main-title-contain">
-                  <p>Reporter {reporter}</p>
-                  {photo ? <p>Photo {photo}</p> : <></>}
-                  <p>Video {video1}</p>
-                  <p>Video {video2}</p>
-                  <p>Interactive {inter}</p>
-                  {inter2 ? <p>Interactive {inter2}</p> : <></>}
-                  {adpr ? <p>Ad/PR {adpr}</p> : <></>}
-                  {upr ? <p>UPR student {upr}</p> : <></>}
-                </div> 
+        <div className="byline-contain">
+            <div className="byline">
+                  <p><b>Reporter</b><br></br>{reporter}</p>
+                  {photo ? <p><b>Photo</b><br></br>{photo}</p> : <></>}
+                  <p><b>Video</b><br></br>{video1}<br></br>{video2}</p>
+                  <p><b>Interactive</b><br></br>{inter}{inter2 ? <><br></br>{inter2}</> : <></>}</p>
+                  {adpr ? <p><b>Ad/PR</b><br></br>{adpr}</p> : <></>}
+                  {upr ? <p><b>UPR student</b><br></br>{upr}</p> : <></>}
             </div>
           </div>
     );
