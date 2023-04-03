@@ -1,3 +1,6 @@
+@import url("https://use.typekit.net/ick1wdz.css");
+
+
 .bg {
     background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.093), rgba(245, 246, 252, 0.093),  rgba(0, 0, 0, 0.401)),
     url("https://picsum.photos/1920/1080");
@@ -22,6 +25,9 @@
 
 #main-title-contain {
     text-align: center;
+    font-family: "futura-pt-bold", sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }
 
 
