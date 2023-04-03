@@ -1,6 +1,13 @@
 @import url("https://use.typekit.net/ick1wdz.css");
 
 
+h1 {
+    font-family: "futura-pt-bold", sans-serif;
+    color: white;
+    font-weight: 700;
+    font-style: normal;
+}
+
 .bg {
     background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.093), rgba(245, 246, 252, 0.093),  rgba(0, 0, 0, 0.401)),
     url("https://picsum.photos/1920/1080");
@@ -15,12 +22,11 @@
 .box {
     display: flex;
     min-width: 100%;
+    min-height: 100%;
+    height: 100vh;
     justify-content: center;
+    align-items: center;
     position: relative;
-    top: 30%;
-    width: 45%;
-    padding: 2%;
-    margin: 0%;
 }
 
 #main-title-contain {
@@ -32,11 +38,15 @@
 
 
 #main-title {
-    font-size: 7em;
+    font-size: 127px;
 }
 
-
+.line {
+    width: 612px;
+    height: 10px;
+}
 
 #main-tagline {
-    font-size: 4em;
+    font-size: 30px;
+    color: white;
 }

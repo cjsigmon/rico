@@ -8,8 +8,8 @@ export default function HeaderImg({ title, tagline }) {
             <div className="box">
                 <div id="main-title-contain">
                   <h1 id="main-title">{title}</h1>
-                  <hl class="line"></hl>
-                  <h1 id="main-tagline">{tagline}</h1>
+                  <hr class="line"></hr>
+                  <h3 id="main-tagline">{tagline}</h3>
                 </div> 
             </div>
           </div>
