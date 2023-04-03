@@ -3,17 +3,6 @@ import { Link, graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import parse from "html-react-parser"
 
-
-// We're using Gutenberg so we need the block styles
-// these are copied into this project due to a conflict in the postCSS
-// version used by the Gatsby and @wordpress packages that causes build
-// failures.
-// @todo update this once @wordpress upgrades their postcss version
-// import "../css/@wordpress/block-library/build-style/style.css"
-// import "../css/@wordpress/block-library/build-style/theme.css"
-
-import Bio from "../components/bio"
-import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Navbar from "../components/navbar"
 import HeaderImg from "../components/header"
@@ -50,7 +39,7 @@ function BlogPostTemplate ({ data: { previous, next, post } }) {
 
   var storyTeam = {};
   switch(post.title) {
-    case 'Environment':
+    case 'ENVIRONMENT':
       storyTeam.reporter = 'Thomas Moody-Jones';
       storyTeam.photo = 'Dylan Thiessen';
       storyTeam.video1 = 'Ann Licharew';
@@ -59,7 +48,7 @@ function BlogPostTemplate ({ data: { previous, next, post } }) {
       storyTeam.adpr = 'Florencia Loncán';
       storyTeam.upr = 'Karina Torres';
       break;
-    case 'Community':
+    case 'COMMUNITY':
       storyTeam.reporter = 'Liv Reilly';
       storyTeam.photo = 'Anna Connors';
       storyTeam.video1 = 'Cynthia Liu';
@@ -67,7 +56,7 @@ function BlogPostTemplate ({ data: { previous, next, post } }) {
       storyTeam.inter = 'Nina Scott';
       storyTeam.upr = 'Carlos Ramírez Brito';
       break;
-    case 'Governance':
+    case 'GOVERNANCE':
       storyTeam.reporter = 'Emily Gajda';
       storyTeam.photo = 'Samantha Lewis';
       storyTeam.video1 = 'Allyson Rabon';
@@ -75,7 +64,7 @@ function BlogPostTemplate ({ data: { previous, next, post } }) {
       storyTeam.inter = 'Giuli Hoffmann';
       storyTeam.upr = 'Amanda Jiménez Berríos';
       break;
-    case 'Power':
+    case 'POWER':
       storyTeam.reporter = 'Preston Fore';
       storyTeam.video1 = 'Gerard Millman';
       storyTeam.video2 = 'Lauren Cmiel';
@@ -83,7 +72,7 @@ function BlogPostTemplate ({ data: { previous, next, post } }) {
       storyTeam.inter2 = 'Jacob Turner';
       storyTeam.upr = 'Yondy Agosto García';
       break;
-    case 'Healthcare':
+    case 'HEALTHCARE':
       storyTeam.reporter = 'Lucas Thomae';
       storyTeam.photo = 'Heather Diehl';
       storyTeam.video1 = 'Angelina Katsanis';

@@ -1,0 +1,38 @@
+.post-grid {
+    margin-top: 5%;
+    width: 100vw;
+    display: grid;
+    grid-template-areas: 
+    'mar body mar';
+  grid-template-columns: 2fr 6fr 2fr;
+  grid-gap: 8px;
+}
+
+.byline {
+    margin-left: 5vw;
+}
+
+
+
+/* .post-text {
+    margin: auto 10vw auto 10vw;
+} */
+
+
+
+.video-container {
+position: relative;
+  overflow: hidden;
+  margin: 5% auto;
+  padding-top: 56.25%;
+}
+
+.responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+  }
