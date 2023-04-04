@@ -22,6 +22,15 @@
 
 
 
+.playerDiv {
+  width:100%;
+  position: relative;
+}
+
+
+
+
+
 
 .video-container {
   position: relative;
@@ -37,3 +46,14 @@
   height: 100vh;
   left: calc(-50vw + 50%);
   } 
+
+#react-player {
+  position:absolute;
+  width: 100vw;
+  height: 100vh;
+  left: calc(-50vw + 50%);
+}
+
+  .vimeo-play-button {
+    background-color: #FF0000;
+  }
