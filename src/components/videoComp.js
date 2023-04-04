@@ -5,6 +5,8 @@ import screenfull from 'screenfull';
 import { useState } from "react";
 import Container from '@mui/material/Container';
 
+import ControlIcons from "./ControlIcons";
+
 
 
 
@@ -32,8 +34,8 @@ export default function VideoComp({link}) {
         <div className='playerDiv'>
           <ReactPlayer id="react-play" width={'100vw'} height='100vh' 
           url="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4"
-          playing={true}
-          muted={true}
+          playing={false}
+          muted={false}
           controls={true}
           />
         </div>
