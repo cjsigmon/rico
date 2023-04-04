@@ -47,10 +47,9 @@
   left: calc(-50vw + 50%);
   } 
 
-#react-player {
+#react-play {
   position:absolute;
   width: 100vw;
-  height: 100vh;
   left: calc(-50vw + 50%);
 }
 

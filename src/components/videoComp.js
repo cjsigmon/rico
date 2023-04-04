@@ -28,11 +28,16 @@ export default function VideoComp({link}) {
            
             
             
-<Container maxWidth="md">
+<div className="video-container">
         <div className='playerDiv'>
-          <ReactPlayer width={'100%'} height='100%' url="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4"/>
+          <ReactPlayer id="react-play" width={'100vw'} height='100vh' 
+          url="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4"
+          playing={true}
+          muted={true}
+          controls={true}
+          />
         </div>
-</Container>
+</div>
         
         </>
         
