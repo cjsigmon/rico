@@ -4,6 +4,7 @@
 
 .navbar {
     width: 100vw;
+    padding-top: 2vh;
     display: grid;
     grid-template-areas: 
     'mar side gap body gap side mar';
@@ -30,7 +31,8 @@
     margin: 0;
     color: #FFFFFF;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 1.2vw;
+    max-width: 8vw;
 }
 
 #stry-links {
@@ -50,7 +52,7 @@
 }
 
 #translation-box {
-    max-width: 78px;
+    max-width: 4vw;
     max-height: 25px;
     border: 1px solid white;
     display: flex;

@@ -3,6 +3,7 @@
 @import 'storyPage.css';
 @import 'nav.css';
 @import 'header.css';
+@import 'footer.css';
 
 
 body, html {
@@ -22,6 +23,8 @@ p, h2, h3, h4, h5, .wp-element-caption {
   p {
     font-weight: 400;
   }
+
+
 
 
 .split-bg {

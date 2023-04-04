@@ -36,9 +36,14 @@ h1 {
     font-style: normal;
 }
 
+#main-title, #main-tagline {
+    letter-spacing: 0.9vw;
+    text-shadow: 0px 6px 8px rgba(0, 0, 0, 0.117);
+}
 
 #main-title {
-    font-size: 127px;
+    font-size: 8vw;
+
 }
 
 .line {
@@ -46,7 +51,23 @@ h1 {
     height: 10px;
 }
 
+#POWER-line {
+    background-color: #F3CB47;
+}
+#COMMUNITY-line {
+    background-color: #FFAD00;
+}
+#HEALTHCARE-line {
+    background-color: #004E65;
+}
+#GOVERNANCE-line {
+    background-color: #FF6600;
+}
+#ENVIRONMENT-line {
+    background-color: #3EAAA7;
+}
+
 #main-tagline {
-    font-size: 30px;
+    font-size: 21px!important;
     color: white;
 }

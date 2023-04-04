@@ -10,6 +10,19 @@ import Tagline from "../components/tagline"
 import CustomImage from "../components/customImage";
 import Parser from "html-react-parser";
 import VideoComp from "../components/videoComp"
+import Footer from "../components/footer"
+
+
+function changeBodyBackground() {
+  if (window.pageYOffset >= 3600 && window.pageYOffset <= 4080) {
+    document.body.style.transition = "background-color 1s ease-in-out";
+    document.body.style.backgroundColor = "black";
+  } else {
+    document.body.style.backgroundColor = "white";
+  }
+}
+
+window.addEventListener("scroll", changeBodyBackground);
 
 function BlogPostTemplate ({ data: { previous, next, post } }) {
   const htmlString = post.content;
@@ -92,45 +105,19 @@ function BlogPostTemplate ({ data: { previous, next, post } }) {
     {/* <div className="center-content">
       {componentTree}
     </div> */}
-    <div className="post-grid">
+    <div className="post-grid" id="stry">
+      <div className="l-mar"></div>
     <Tagline reporter={storyTeam.reporter} photo={storyTeam.photo} video1={storyTeam.video1} video2={storyTeam.video2} inter={storyTeam.inter} inter2={storyTeam.inter2} adpr={storyTeam.adpr} upr={storyTeam.upr} />
       <div className="post-text">
       {componentTree}
       </div>
+      <div className="r-stry-mar"></div>
+      <div className="r-mar"></div>
     </div>
+    <Footer />
     </>
     
 
-      // 
-      // <h1 >{parse(post.title)}</h1>
-     
-      /* <nav className="blog-post-nav">
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.uri} rel="prev">
-                ← {parse(previous.title)}
-              </Link>
-            )}
-          </li>
-
-          <li>
-            {next && (
-              <Link to={next.uri} rel="next">
-                {parse(next.title)} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav> */
   )
 }
 

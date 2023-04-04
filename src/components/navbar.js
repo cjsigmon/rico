@@ -54,7 +54,7 @@ const Navbar = () => {
       const { allWpPost } = data;
 
     return (
-      <div class="navbar" style={{ top: visible ? '0' : '-70px' }}>
+      <div class="navbar" style={{ top: visible ? '0' : '-80px' }}>
             <div class="mar"></div>
   
 
