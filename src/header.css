@@ -42,8 +42,13 @@ h1 {
 }
 
 #main-title {
+    letter-spacing: 0.9vw;
     font-size: 8vw;
 
+}
+
+#main-tagline {
+    letter-spacing: 0.6vw;
 }
 
 .line {

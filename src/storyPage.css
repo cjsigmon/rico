@@ -21,38 +21,101 @@
 }
 
 
+/* SECTION SUBHEAD */
+.circle-container {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  margin-bottom: 0;
+}
 
-.playerDiv {
-  width:100%;
-  position: relative;
+.circle {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin: 5px;
+  margin-bottom: 0;
+}
+
+
+.yellow {
+  background-color: #F3CB47;
+}
+
+.orange {
+  background-color: #FFAD00;
+}
+
+.red {
+  background-color: #FF6600;
+}
+
+.cyan {
+  background-color: #3EAAA7;
+}
+
+.blue {
+  background-color: #004E65;
 }
 
 
 
+.section-wrapper {
+  position: relative;
+  padding-top: 4.9vh;
+  padding-bottom: 50vh;
+}
+
+
+#section {
+  position: absolute;
+  left: -27.1vw;
+  width: 100vw; 
+  height: 40vh;
+  background-repeat: no-repeat;
+  background-position: center 44%; 
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.subhead {
+  color: white;
+  font-size: 4em;
+  letter-spacing: 0.75px;
+  backdrop-filter: none;
+}
+
+
+/* VIDEO PLAYER */
 
 
 
 .video-container {
   position: relative;
   overflow: visible;
-  padding-top: 20vh;
-  padding-bottom: 120vh;
+  padding-top: 30%;
+  padding-bottom: 130vh;
 }
 
 
-.responsive-iframe {
-  position:absolute;
+#playa {
+  position: absolute;
+
+  left: -59%;
   width: 100vw;
   height: 100vh;
-  left: calc(-50vw + 50%);
-  } 
-
-#react-play {
-  position:absolute;
-  width: 100vw;
-  left: calc(-50vw + 50%);
 }
 
-  .vimeo-play-button {
-    background-color: #FF0000;
-  }
+#relat {
+  position: relative;
+}
+
+#playno {
+  display: none;
+}
+
+#playes {
+  display: block;
+}

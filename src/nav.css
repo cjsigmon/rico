@@ -33,6 +33,7 @@
     font-weight: bold;
     font-size: 1.2vw;
     max-width: 8vw;
+    min-width: max-content;
 }
 
 #stry-links {
@@ -52,28 +53,36 @@
 }
 
 #translation-box {
-    max-width: 4vw;
+    cursor: pointer;
+    max-width: fit-content;
     max-height: 25px;
     border: 1px solid white;
+    background: none;
     display: flex;
     margin-left: 20px;
+    margin-right: 20px;
+    padding: 0;
 }
 
 #translation-box > div {
-    text-align: center;
     width: 39px;
     height: 23px;
     font-family: "americane", sans-serif;
     font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #l-box {
     background-color: white;
+    min-width: 39px;
     font-weight: bold;
 }
 
 #r-box {
     color: white;
+    min-width: 39px;
 }
 
 

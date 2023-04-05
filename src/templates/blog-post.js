@@ -11,10 +11,11 @@ import CustomImage from "../components/customImage";
 import Parser from "html-react-parser";
 import VideoComp from "../components/videoComp"
 import Footer from "../components/footer"
+import Section from "../components/section"
 
 
 function changeBodyBackground() {
-  if (window.pageYOffset >= 3600 && window.pageYOffset <= 4080) {
+  if (window.pageYOffset >= 3600 && window.pageYOffset <= 4400) {
     document.body.style.transition = "background-color 1s ease-in-out";
     document.body.style.backgroundColor = "black";
   } else {
@@ -27,22 +28,23 @@ window.addEventListener("scroll", changeBodyBackground);
 function BlogPostTemplate ({ data: { previous, next, post } }) {
   const htmlString = post.content;
 
-  const replacePhotoComponent = <CustomImage />;
-
   const options = {
     replace: (node) => {
       if (node.attribs && node.attribs.class === "replace-photo") {
-        return replacePhotoComponent;
+        return  <CustomImage />;
       }
       else if (node.attribs && node.attribs.class === "replace-video") {
         switch(node.attribs.id) {
           case "health-vid":
-            return <VideoComp link={"https://player.vimeo.com/video/46494677?h=6ca8fadbb7&title=0&byline=0"} />;
+            return <VideoComp link={"https://player.vimeo.com/video/94282169?h=1e43d197da&title=0&byline=0&portrait=0"} />;
             break;
           case "power-vid":
             return <VideoComp link={"https://player.vimeo.com/video/291295858?h=fee30cc906"} />;
             break;
         }
+      }
+      else if (node.attribs && node.attribs.class === "replace-section") {
+        return <Section title={node.attribs.id}></Section>;
       }
     },
   };

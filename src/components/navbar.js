@@ -9,11 +9,9 @@ const Navbar = () => {
 
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
+  const [english, setLang] = useState(true);
 
   const navbarStyles = {
-    // position: 'fixed',
-    // height: '60px',
-    // width: '100%',
     transition: 'top 0.6s'
   }
 
@@ -21,10 +19,8 @@ const Navbar = () => {
   const handleScroll = () => {
     // find current scroll position
     const currentScrollPos = window.pageYOffset;
-
     // set state based on location info (explained in more detail below)
     setVisible((prevScrollPos > currentScrollPos) || currentScrollPos < 10);
-
     // set state to new scroll position
     setPrevScrollPos(currentScrollPos);
   };
@@ -32,12 +28,13 @@ const Navbar = () => {
   // new useEffect:
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
-
     return () => window.removeEventListener('scroll', handleScroll);
-
   }, [prevScrollPos, visible, handleScroll]);
 
 
+  function handleLangButton(){
+    setLang(!english);
+  }
 
   const data = useStaticQuery(graphql`
   {
@@ -50,15 +47,12 @@ const Navbar = () => {
   }
   }
   `)
-
       const { allWpPost } = data;
 
     return (
       <div class="navbar" style={{ top: visible ? '0' : '-80px' }}>
             <div class="mar"></div>
   
-
-
             <a id="nav-logo" href="/"><svg xmlns="http://www.w3.org/2000/svg" width="160" height="67.928" viewBox="0 0 160 67.928">
               <g id="Group_5" data-name="Group 5" transform="translate(203.099 229.839)">
                 <text id="Isla" transform="translate(-203.099 -205.839)" fill="#fff" font-size="25" font-family="Montserrat-ExtraBold, Montserrat" font-weight="800"><tspan x="0" y="0">Isla</tspan></text>
@@ -80,19 +74,10 @@ const Navbar = () => {
               
             <div id="abt-side">
               <a class="nav-elem-a" key={"ABOUT"} href={"/2023/04/03/about/"}><h4 class="nav-elem">{"ABOUT"}</h4></a>
-              <div id="translation-box"><div id="l-box">EN</div><div id="r-box">ES</div></div>
+              <button onClick={handleLangButton} id="translation-box"><div id={english ? "l-box" : "r-box"}>EN</div><div id={english ? "r-box" : "l-box"}>ES</div></button>
             </div>
           
     </div>
-        // <main> 
-        //     <div style={{ ...navbarStyles, top: visible ? '0' : '-60px' }} class="navbar">
-            //   <a id="nav-logo" href="/"><img src="https://picsum.photos/80/50"></img></a>
-            //   { allWpPost.nodes.map( post => (
-            //     <a key={post.title} href={post.uri}><h4>{post.title}</h4></a>
-            // ))}
-
-        //     </div>
-        // </main>
     )
 
   
