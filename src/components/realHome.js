@@ -27,11 +27,11 @@ const HomePage = () =>  {
             <Navbar/>
             <HeaderImg noline={true} />
 
-            <div className="post-grid" id="stry">
+            <div className="post-grid" id="homepage-txt">
               <div className="l-mar"></div>
               <div></div>
-              <div className="post-text">
-                  <h2 className="main-about">ABOUT THE PROJECT</h2>
+              <div id="main-about" className="post-text">
+                  <h2 className="main-about-title">ABOUT THE PROJECT</h2>
                   <p>This site encompasses 5 multimedia documentaries about Puerto Rico--it’s people, problems, 
                     passions It was created by a group of 30 journalism students at UNC-Chapel Hill with help 
                     from dozens of sources, local producers, and professional coaches.

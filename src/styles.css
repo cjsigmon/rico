@@ -23,9 +23,17 @@ p, h2, h3, h4, h5, .wp-element-caption {
     font-weight: 400;
   }
 
+#homepage-txt {
+    margin: 0;
+}
 
-.main-about {
-    margin-top: 0;
+
+#main-about {
+    padding-top: 80px;
+    padding-bottom: 50px;
+}
+
+.main-about-title {
     font-size: 50px;
 }
 
