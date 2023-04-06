@@ -3,18 +3,29 @@ import { useRef, useState, useEffect } from "react";
 import '../styles.css';
 import VimeoPlayer from "react-player/vimeo";
 import ReactPlayer from "react-player";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlay, faPause } from "@fortawesome/free-solid-svg-icons";
 
-export default function VideoComp({ link }) {
+export default function VideoComp({ link, color }) {
     const playerRef = useRef(null);
+    const titleRef = useRef(null);
     const [playing, setPlaying] = useState(false);
+    const PLAY = <FontAwesomeIcon icon={faPlay} color={color}/>;
+    const PAUSE = <FontAwesomeIcon icon={faPause} color={color}/>;
+
+    const headingStyle = {
+      color: `${color}`
+    };
 
 
     function handleButtonClick() {
         const player = playerRef.current.getInternalPlayer();
         if (playing) {
           player.pause();
+          titleRef.current.style.display = 'block';
         } else {
           player.play();
+          titleRef.current.style.display = 'none';
         }
         setPlaying(!playing);
       }
@@ -22,16 +33,17 @@ export default function VideoComp({ link }) {
     return (
         <div className="video-container">
             <div id="playa">
-            <ReactPlayer
-                ref={playerRef}
-                width="90%"
-                height="100%"
-                url={link}
-                // controls
-                onPlay={() => setPlaying(true)}
-                onPause={() => setPlaying(false)}
-             />
-             <button onClick={handleButtonClick}>{playing ? 'Pause' : 'Play'}</button>
+              <ReactPlayer
+                  ref={playerRef}
+                  width="90%"
+                  height="100%"
+                  url={link}
+                  // controls
+                  onPlay={() => setPlaying(true)}
+                  onPause={() => setPlaying(false)}
+              />
+              <button className="vid-btn" onClick={handleButtonClick}>{playing ? PAUSE : PLAY}</button>
+              <h1 ref={titleRef} className="vid-title" style={headingStyle}>VIDEO TITLE</h1>
             </div>
             
         </div>

@@ -14,27 +14,26 @@ import Footer from "../components/footer"
 import Section from "../components/section"
 import PullQuote from "../components/pullquote"
 import ReadMore from "../components/readMore"
+import { useContext } from 'react';
+import MyContext from "../MyContext"
 
 
 function changeBodyBackground() {
-  if (window.pageYOffset >= 3600 && window.pageYOffset <= 4200) {
+  if (window.pageYOffset >= 4100 && window.pageYOffset <= 5100) {
     document.body.style.transition = "background-color 1s ease-in-out";
     document.body.style.backgroundColor = "black";
   } else {
     document.body.style.backgroundColor = "white";
   }
 }
-
 window.addEventListener("scroll", changeBodyBackground);
 
-function BlogPostTemplate ({ data: { previous, next, post } }) {
-  const htmlString = post.content;
-  
-  const [parentState, setParentState] = useState('');
 
-  const updateParentState = (newValue) => {
-    setParentState(newValue);
-  };
+
+function BlogPostTemplate ({ data: { post } }) {
+  const htmlString = post.content;
+  const [myBoolean, setMyBoolean] = useState(MyContext);
+
 
 
   var storyTeam = {};
@@ -97,10 +96,10 @@ function BlogPostTemplate ({ data: { previous, next, post } }) {
       else if (node.attribs && node.attribs.class === "replace-video") {
         switch(node.attribs.id) {
           case "health-vid":
-            return <VideoComp link={"https://player.vimeo.com/video/94282169?h=1e43d197da&title=0&byline=0&portrait=0"} />;
+            return <VideoComp color={color.color} link={"https://player.vimeo.com/video/94282169?h=1e43d197da&title=0&byline=0&portrait=0"} />;
             break;
           case "power-vid":
-            return <VideoComp link={"https://player.vimeo.com/video/291295858?h=fee30cc906"} />;
+            return <VideoComp color={color.color} link={"https://player.vimeo.com/video/291295858?h=fee30cc906"} />;
             break;
         }
       }
@@ -108,7 +107,7 @@ function BlogPostTemplate ({ data: { previous, next, post } }) {
         return <Section title={node.attribs.id}></Section>;
       }
       else if (node.attribs && node.attribs.class === "replace-quote") {
-        return <PullQuote what={node.children[0].data} who={node.attribs.id} color={color} />
+        return <PullQuote what={node.children[0].data} who={node.attribs.id} color={color.color} />
       }
     },
   };
@@ -117,15 +116,12 @@ function BlogPostTemplate ({ data: { previous, next, post } }) {
   const componentTree = Parser(htmlString, options);
 
   return (
-    <>
-    <Seo title={post.title} description={post.excerpt} />
-    <Navbar updateParentState={updateParentState} parentState={parentState}/>
+    <MyContext.Provider value={{ myBoolean, setMyBoolean }}>
+    <main>
+    {/* <Seo title={post.title} description={post.excerpt} /> */}
+    <Navbar/>
     <HeaderImg title={post.title} tagline={parse(post.excerpt)} />
    
-    {/* <CustomImage /> */}
-    {/* <div className="center-content">
-      {componentTree}
-    </div> */}
     <div className="post-grid" id="stry">
       <div className="l-mar"></div>
     <Tagline reporter={storyTeam.reporter} photo={storyTeam.photo} video1={storyTeam.video1} video2={storyTeam.video2} inter={storyTeam.inter} inter2={storyTeam.inter2} adpr={storyTeam.adpr} upr={storyTeam.upr} />
@@ -137,10 +133,10 @@ function BlogPostTemplate ({ data: { previous, next, post } }) {
     </div>
 
     <ReadMore exclude={post.title}/> 
-    <Footer updateParentState={updateParentState} parentState={parentState}/>
-    </>
+    <Footer />
+    </main>
+    </MyContext.Provider>
     
-
   )
 }
 
@@ -154,7 +150,7 @@ function replaceImgWithCustomImage(htmlString) {
 }
 
 
-export default BlogPostTemplate
+export default BlogPostTemplate;
 
 export const pageQuery = graphql`
   query BlogPostById(

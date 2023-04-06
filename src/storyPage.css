@@ -22,7 +22,7 @@
 }
 
 .post-text > p {
-  font-size: 1.08vw;
+  font-size: 19px;
 }
 
 
@@ -42,9 +42,8 @@
   margin-bottom: 0;
 }
 
-
 .yellow {
-  background-color: #F3CB47;
+  background-color: #f3cb47;
 }
 
 .orange {
@@ -63,14 +62,11 @@
   background-color: #004E65;
 }
 
-
-
 .section-wrapper {
   position: relative;
   padding-top: 4.9vh;
   padding-bottom: 50vh;
 }
-
 
 #section {
   position: absolute;
@@ -123,7 +119,6 @@
   text-align: left;
 }
 
-
 .quote-auth {
   font-size: 24px;
   font-weight: 400!important;
@@ -135,9 +130,6 @@
 
 
 /* VIDEO PLAYER */
-
-
-
 .video-container {
   position: relative;
   overflow: visible;
@@ -148,23 +140,49 @@
 
 #playa {
   position: absolute;
+  left: -38%;
+  width: 90vw;
+  height: 90vh;
+}
 
-  left: -48%;
-  width: 100vw;
-  height: 100vh;
+.vid-btn {
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  right: 7.7vw;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 11vh;
+  width: 11vh;
+  background: none;
+  border: none;
+}
+
+.fa-play, .fa-pause {
+  font-size: 6em;
+}
+
+.vid-btn .fa-pause {
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.vid-btn:hover .fa-pause {
+  opacity: 1;
+}
+
+.vid-title {
+  position: absolute;
+  left: 2vw;
+  bottom: 10vh;
+  font-size: 3em;
 }
 
 #relat {
   position: relative;
 }
 
-#playno {
-  display: none;
-}
-
-#playes {
-  display: block;
-}
 
 
 /* READ MORE */

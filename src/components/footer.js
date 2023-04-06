@@ -1,18 +1,19 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useContext } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import '../styles.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
+import MyContext from "../MyContext";
 // help from https://www.rolandwrites.com/blog/sticky-navbar-hides-scroll
 
 
 
-const Footer = ({updateParentState, parentState}) => {
-    const [childState, setChildState] = useState({parentState});
+const Footer = () => {
+
+    const { myBoolean, setMyBoolean } = useContext(MyContext);
 
     const handleButtonClick = () => {
-        updateParentState(!parentState);
-        setChildState(parentState);
+        setMyBoolean(!myBoolean);
       };
 
 
@@ -36,16 +37,14 @@ const Footer = ({updateParentState, parentState}) => {
                 </div>
 
                 <div id="abt-side">
-                <a class="nav-elem-a" key={"ABOUT"} href={"/2023/04/03/about/"}><h4 class="nav-elem">{"ABOUT"}</h4></a>
-                <button onClick={handleButtonClick} id="translation-box"><div id={parentState ? "l-box" : "r-box"}>EN</div><div id={parentState ? "r-box" : "l-box"}>ES</div></button>
+                <a class="nav-elem-a" key={"ABOUT"} href={"/about/"}><h4 class="nav-elem">{"ABOUT"}</h4></a>
+                <button onClick={handleButtonClick} id="translation-box"><div id={myBoolean ? "l-box" : "r-box"}>EN</div><div id={myBoolean ? "r-box" : "l-box"}>ES</div></button>
                 </div> 
         </div>
            
         <h4 className="nav-elem" id="copyright">© 2023 UNC Global Storytelling</h4>    
         </div>
     )
-
-  
 }
 
 
