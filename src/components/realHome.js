@@ -6,6 +6,7 @@ import '../styles.css';
 import HeaderImg from "../components/header";
 import Footer from "../components/footer";
 import MyContext from "../MyContext";
+import VideoComp from "./videoComp";
 
 const HomePage = () =>  {
     const data = useStaticQuery(graphql`
@@ -41,6 +42,7 @@ const HomePage = () =>  {
               <div className="r-mar"></div>
              </div>
   
+            <VideoComp left={0} color={'white'} link={"https://player.vimeo.com/video/355172283?h=5e5299b581&title=0&byline=0&portrait=0"}/>
             { allWpPost.nodes.map((post, index) => (
               <div key={post.title} className="split-bg" id={post.title}>
                 <div className={index % 2 == 0 ? "halfground-text" : "halfground"}>

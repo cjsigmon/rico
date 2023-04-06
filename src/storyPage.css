@@ -131,30 +131,40 @@
 
 /* VIDEO PLAYER */
 .video-container {
+  grid-column: 1 / -1;
   position: relative;
   overflow: visible;
-  padding-top: 10%;
+  width: 100%;
+  padding-top: 5%;
   padding-bottom: 110vh;
 }
 
 
-#playa {
+#playa, #explain-playa {
   position: absolute;
-  left: -38%;
+  right: 0;
+  margin: auto;
   width: 90vw;
   height: 90vh;
+}
+
+#playa {
+  left: -22vw;
+  margin-top: 10%;
+}
+
+#explain-playa {
+  left: 0;
 }
 
 .vid-btn {
   position: absolute;
   z-index: 3;
   left: 0;
-  right: 7.7vw;
+  right: 0;
   top: 0;
   bottom: 0;
   margin: auto;
-  height: 11vh;
-  width: 11vh;
   background: none;
   border: none;
 }
@@ -175,7 +185,7 @@
 .vid-title {
   position: absolute;
   left: 2vw;
-  bottom: 10vh;
+  bottom: 5vh;
   font-size: 3em;
 }
 

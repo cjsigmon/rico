@@ -6,7 +6,7 @@ import ReactPlayer from "react-player";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faPause } from "@fortawesome/free-solid-svg-icons";
 
-export default function VideoComp({ link, color }) {
+export default function VideoComp({ left, link, color }) {
     const playerRef = useRef(null);
     const titleRef = useRef(null);
     const [playing, setPlaying] = useState(false);
@@ -32,10 +32,10 @@ export default function VideoComp({ link, color }) {
 
     return (
         <div className="video-container">
-            <div id="playa">
+            <div id={left == 0 ? "explain-playa" : "playa"}>
               <ReactPlayer
                   ref={playerRef}
-                  width="90%"
+                  width="100%"
                   height="100%"
                   url={link}
                   // controls
