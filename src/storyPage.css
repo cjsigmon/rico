@@ -16,6 +16,11 @@
   font-size: 1.08vw;
 }
 
+.post-text {
+  position: relative;
+  top: -20px;
+}
+
 .post-text > p {
   font-size: 1.08vw;
 }
@@ -69,7 +74,7 @@
 
 #section {
   position: absolute;
-  left: -27.1vw;
+  left: -27.08vw;
   width: 100vw; 
   height: 40vh;
   background-repeat: no-repeat;
@@ -88,6 +93,47 @@
 }
 
 
+/* Pullquote */
+.quote-wrapper-rel {
+  position: relative;
+  padding-bottom: 35vh;
+}
+
+.quote-wrapper-abs {
+  position: absolute;
+  width: 70vw;
+  left: -16vw;
+}
+
+.big-quote {
+  display: flex;
+  justify-content: left
+}
+
+.quote-svg {
+  margin-right: 2px;
+}
+
+.quote-txt {
+  font-weight: bold!important;
+  margin-top: 8%;
+  margin-bottom: 0;
+  font-size: 30px;
+  font-weight: 400;
+  text-align: left;
+}
+
+
+.quote-auth {
+  font-size: 24px;
+  font-weight: 400!important;
+  text-align: right;
+  margin: 0;
+}
+
+
+
+
 /* VIDEO PLAYER */
 
 
@@ -95,15 +141,15 @@
 .video-container {
   position: relative;
   overflow: visible;
-  padding-top: 30%;
-  padding-bottom: 130vh;
+  padding-top: 10%;
+  padding-bottom: 110vh;
 }
 
 
 #playa {
   position: absolute;
 
-  left: -59%;
+  left: -48%;
   width: 100vw;
   height: 100vh;
 }
@@ -118,4 +164,20 @@
 
 #playes {
   display: block;
+}
+
+
+/* READ MORE */
+.read-more {
+  text-align: center;
+  padding-bottom: 70px;
+}
+
+.more-thumbs > a {
+  cursor: pointer;
+  margin: 10px;
+}
+
+.more-thumbs > a > img {
+  width: 21%;
 }

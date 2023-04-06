@@ -24,9 +24,10 @@ export default function VideoComp({ link }) {
             <div id="playa">
             <ReactPlayer
                 ref={playerRef}
-                width="100%"
+                width="90%"
                 height="100%"
                 url={link}
+                // controls
                 onPlay={() => setPlaying(true)}
                 onPause={() => setPlaying(false)}
              />

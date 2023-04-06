@@ -5,6 +5,7 @@ import Layout from "../components/layout";
 import Navbar from "../components/navbar";
 import '../styles.css';
 import HeaderImg from "../components/header";
+import Footer from "../components/footer";
 
 const HomePage = () =>  {
   const data = useStaticQuery(graphql`
@@ -22,9 +23,16 @@ const HomePage = () =>  {
       const { allWpPost } = data;
 
 
+      const [parentState, setParentState] = useState('');
+
+  const updateParentState = (newValue) => {
+    setParentState(newValue);
+  };
+
+
       return (
         <main>
-          <Navbar />
+          <Navbar updateParentState={updateParentState} parentState={parentState}/>
           <HeaderImg title={"Isla de Fuerza"} tagline={"Site Tagline"} />
 
           { allWpPost.nodes.map((post, index) => (
@@ -40,9 +48,7 @@ const HomePage = () =>  {
           ))}
 
 {/* <CustomImage/> */}
-          <div className="nothing">
-              <h1>FOOTER COMPONENT</h1>
-            </div>
+            <Footer updateParentState={updateParentState} parentState={parentState}/>
         </main>
       )
     }
