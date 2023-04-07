@@ -43,7 +43,7 @@ const Navbar = () => {
 
   const data = useStaticQuery(graphql`
   {
-    allWpPost(filter: {id: {nin: "cG9zdDo1OA=="}}, sort: {date: ASC}) {
+    allWpPost(filter: {id: {nin: "cG9zdDo1OA=="}}) {
     nodes {
       id
       title
