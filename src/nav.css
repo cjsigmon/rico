@@ -3,8 +3,10 @@
 }
 
 .navbar {
+    transition: background-color 1s ease;
     width: 100vw;
     padding-top: 2vh;
+    padding-bottom: 1.5vh;
     display: grid;
     grid-template-areas: 
     'mar side gap body gap side mar';

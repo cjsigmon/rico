@@ -12,6 +12,7 @@ const Navbar = () => {
 
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
+  const [dark, setDark] = useState(false);
   const { myBoolean, setMyBoolean } = useContext(MyContext);
 
 
@@ -25,6 +26,7 @@ const Navbar = () => {
     const currentScrollPos = window.pageYOffset;
     // set state based on location info (explained in more detail below)
     setVisible((prevScrollPos > currentScrollPos) || currentScrollPos < 10);
+    setDark(currentScrollPos > window.innerHeight);
     // set state to new scroll position
     setPrevScrollPos(currentScrollPos);
   };
@@ -55,7 +57,7 @@ const Navbar = () => {
       const { allWpPost } = data;
 
     return (
-      <div class="navbar" style={{ top: visible ? '0' : '-80px' }}>
+      <div class="navbar" style={{ backgroundColor: dark ? "black" : "initial", top: visible ? '0' : '-100px',  transition: "background-color 0.5s ease, top 0.5s ease-in-out" }}>
             <div class="mar"></div>
   
             <a id="nav-logo" href="/"><svg xmlns="http://www.w3.org/2000/svg" width="160" height="67.928" viewBox="0 0 160 67.928">
