@@ -43,15 +43,14 @@ const HomePage = () =>  {
              </div>
   
             <VideoComp left={0} color={'white'} link={"https://player.vimeo.com/video/355172283?h=5e5299b581&title=0&byline=0&portrait=0"}/>
+            
             { allWpPost.nodes.map((post, index) => (
-              <div key={post.title} className="split-bg" id={post.title}>
-                <div className={index % 2 == 0 ? "halfground-text" : "halfground"}>
-                {index % 2 == 0 ? <a href={ post.uri }><h2>{ post.title }</h2></a> : <></>}
+              <div key={post.title} className="home-story-pics" id={post.title}>
+                <div className={index % 2 == 0 ? "left-title" : "right-title"}>
+                  <a href={ post.uri }><h2>{ post.title }</h2></a>
                 </div>
                
-                <div className={index % 2 == 0 ? "halfground" : "halfground-text"}>
-                {index % 2 == 0 ? <></> : <a href={ post.uri }><h2>{ post.title }</h2></a>}
-                </div>
+      
               </div>
             ))}
               <Footer/>

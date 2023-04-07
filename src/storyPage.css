@@ -22,7 +22,7 @@
 }
 
 .post-text > p {
-  font-size: 19px;
+  font-size: 17px;
 }
 
 
@@ -135,7 +135,7 @@
   position: relative;
   overflow: visible;
   width: 100%;
-  padding-top: 5%;
+  padding-top: 1%;
   padding-bottom: 110vh;
 }
 
@@ -155,6 +155,7 @@
 
 #explain-playa {
   left: 0;
+  width: 80vw;
 }
 
 .vid-btn {
