@@ -19,7 +19,7 @@ import MyContext from "../MyContext"
 
 
 function changeBodyBackground() {
-  if (window.pageYOffset >= 4100 && window.pageYOffset <= 5100) {
+  if (window.pageYOffset >= 4100 && window.pageYOffset <= 4800) {
     document.body.style.transition = "background-color 1s ease-in-out";
     document.body.style.backgroundColor = "black";
   } else {

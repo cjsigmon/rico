@@ -16,8 +16,13 @@ p, h2, h3, h4, h5, .wp-element-caption {
   }
 
   h1 {
+    font-family: "futura-pt-bold", sans-serif;
+    color: white;
     font-weight: 700;
-  }
+    font-style: normal;
+    letter-spacing: 0.1em;
+    font-size: 7em;
+}
 
   p {
     font-weight: 400;
@@ -45,8 +50,33 @@ p, h2, h3, h4, h5, .wp-element-caption {
 .home-story-pics {
     width: 100vw;
     height: 773px;
-    background-color: pink;
     position: relative;
+    background-size: cover;
+}
+
+.home-title {
+    font-size: 6em;
+    position: absolute;
+    bottom: 70%;
+    color: black;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+    padding-left: 3%;
+    padding-right: 4%;
+}
+
+.home-subtitle {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-left: 3%;
+    padding-right: 3%;
+    max-width: 60%;
+    font-size: larger;
+}
+
+#HEALTHCARE-home-title, #ENVIRONMENT-home-title, #HEALTHCARE-subtitle, #ENVIRONMENT-subtitle {
+    color: white;
+    text-shadow: none;
 }
 
 
@@ -58,14 +88,13 @@ p, h2, h3, h4, h5, .wp-element-caption {
     /* padding: 4%; */
 }
 
-.left-title {
-    background-color: rgb(0, 81, 151);
+
+
+.right-title p {
+    right: 0;
 }
-
-
-.right-title {
-    text-align: right;
-    background-color: red;
+.right-title h1 {
+    right: 0;
 }
 
 .home-link {
@@ -92,21 +121,40 @@ p, h2, h3, h4, h5, .wp-element-caption {
     text-align: center;
 }
 
-#Healthcare {
-    background-image: none;
-background-color: rgb(255, 188, 188);}
-#Power {
-    background-image: none;
-background-color: blanchedalmond;}
-#Governance {
-    background-image: none;
-background-color: rgb(170, 251, 224);}
-#Community {
-    background-image: none;
-background-color: lightblue;}
-#Environment {
-    background-image: none;
-background-color: lightgray;}
+#HEALTHCARE {
+    background-image: linear-gradient(to top, #004E65, #004d6584, #004d6500, #004d6500), url('img/healthcare.jpg');
+}
+#HEALTHCARE > div {
+    /* background-image: none; */
+background-color: #004E65;}
+
+#POWER {
+    background-image: linear-gradient(to top,  #F3CB47, #f3cb4779, #f3cb4700, #f3cb4700), url('img/power.jpg');
+}
+#POWER > div {
+    background-color: #F3CB47;
+}
+
+#GOVERNANCE {
+    background-image: linear-gradient(to top,  #FF6600, #ff660058, #ff660000, #ff660000), url('img/government.jpg');
+}
+#GOVERNANCE > div {
+    background-color: #FF6600;
+}
+
+#COMMUNITY {
+    background-image: linear-gradient(to top,  #FFAD00,  #ffae0060,  #ffae0000,  #ffae0000), url('img/community.jpg');
+}
+#COMMUNITY > div {
+    background-color:  #FFAD00;
+}
+
+#ENVIRONMENT {
+    background-image: linear-gradient(to top, #3EAAA7, #3eaaa66b, #3eaaa600, #3eaaa600), url('img/environment.jpg');
+}
+#ENVIRONMENT > div {
+    background-color:#3EAAA7;
+}
 
 
 .center-content {

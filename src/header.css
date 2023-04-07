@@ -1,12 +1,7 @@
 @import url("https://use.typekit.net/ick1wdz.css");
 
 
-h1 {
-    font-family: "futura-pt-bold", sans-serif;
-    color: white;
-    font-weight: 700;
-    font-style: normal;
-}
+
 
 .bg {
     background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.093), rgba(245, 246, 252, 0.093),  rgba(0, 0, 0, 0.401)),
@@ -41,11 +36,6 @@ h1 {
     text-shadow: 0px 6px 8px rgba(0, 0, 0, 0.117);
 }
 
-#main-title {
-    letter-spacing: 0.9vw;
-    font-size: 8vw;
-
-}
 
 #main-tagline {
     letter-spacing: 0.6vw;

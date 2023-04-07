@@ -33,9 +33,9 @@ const HomePage = () =>  {
               <div></div>
               <div id="main-about" className="post-text">
                   <h2 className="main-about-title">ABOUT THE PROJECT</h2>
-                  <p>This site encompasses 5 multimedia documentaries about Puerto Rico--it’s people, problems, 
-                    passions It was created by a group of 30 journalism students at UNC-Chapel Hill with help 
-                    from dozens of sources, local producers, and professional coaches.
+                  <p>This site encompasses 5 multimedia documentaries about Puerto Rico—its people, problems and 
+                    passions. It was created by a group of 30 journalism students at UNC-Chapel Hill with help 
+                    from dozens of sources, local producers and professional coaches.
                   </p>
               </div>
               <div className="r-stry-mar"></div>
@@ -47,7 +47,8 @@ const HomePage = () =>  {
             { allWpPost.nodes.map((post, index) => (
               <div key={post.title} className="home-story-pics" id={post.title}>
                 <div className={index % 2 == 0 ? "left-title" : "right-title"}>
-                  <a href={ post.uri }><h2>{ post.title }</h2></a>
+                  <a href={ post.uri }><h1 className="home-title" id={post.title + "-home-title"}>{ post.title }</h1></a>
+                  <p className="home-subtitle" id={post.title + "-subtitle"}>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eir mod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam volu</p>
                 </div>
                
       
