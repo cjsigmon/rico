@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useContext } from "react"
+import React, { useState, useEffect, useContext, useRef } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
+import { faBars } from "@fortawesome/free-solid-svg-icons"
 import '../styles.css';
 import MyContext from "../MyContext";
 // help from https://www.rolandwrites.com/blog/sticky-navbar-hides-scroll
@@ -13,6 +14,7 @@ const Navbar = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
   const [dark, setDark] = useState(false);
+  const [hamMenu, setHamMenu] = useState(false);
   const { myBoolean, setMyBoolean } = useContext(MyContext);
 
 
@@ -43,6 +45,22 @@ const Navbar = () => {
     setMyBoolean(!myBoolean);
   };
 
+  const navRef = useRef(null);
+  const abtRef = useRef(null);
+  const strsRef = useRef(null);
+  const handleHamClick = () => {
+    if(hamMenu) {
+      strsRef.current.style.display = 'none';
+      abtRef.current.style.display = 'none';
+      navRef.current.style.background = 'none';
+    } else {
+      strsRef.current.style.display = 'block';
+      abtRef.current.style.display = 'block';
+      navRef.current.style.backgroundColor = 'black';
+    }
+    setHamMenu(!hamMenu);
+  };
+
   const data = useStaticQuery(graphql`
   {
     allWpPost(filter: {id: {nin: "cG9zdDo1OA=="}}, sort: {date: DESC}) {
@@ -57,9 +75,13 @@ const Navbar = () => {
       const { allWpPost } = data;
 
     return (
-      <div class="navbar" style={{ backgroundColor: dark ? "black" : "initial", top: visible ? '0' : '-100px',  transition: "background-color 0.5s ease, top 0.5s ease-in-out" }}>
-            <div class="mar"></div>
-  
+      <>
+      {/* <FontAwesomeIcon icon={faBars} style={{color: "white", position: "fixed",}}/> */}
+      <div ref={navRef} className={`navbar ${dark ? 'dark' : ''} ${visible ? 'visible' : ''}`}>
+            
+            {/* <div class="mar"></div> */}
+            <a onClick={handleHamClick}><FontAwesomeIcon icon={faBars} style={{color: "white", position: "fixed",}}/></a>
+
             <a id="nav-logo" href="/"><svg xmlns="http://www.w3.org/2000/svg" width="160" height="67.928" viewBox="0 0 160 67.928">
               <g id="Group_5" data-name="Group 5" transform="translate(203.099 229.839)">
                 <text id="Isla" transform="translate(-203.099 -205.839)" fill="#fff" font-size="25" font-family="Montserrat-ExtraBold, Montserrat" font-weight="800"><tspan x="0" y="0">Isla</tspan></text>
@@ -71,7 +93,7 @@ const Navbar = () => {
 
             <div class="gap"></div>
 
-            <div id="stry-links">
+            <div ref={strsRef} id="stry-links">
               { allWpPost.nodes.map( post => (
                   <a class="nav-elem-a" key={post.title} href={post.uri}><h4 class="nav-elem">{post.title}</h4></a>
               ))}
@@ -79,12 +101,14 @@ const Navbar = () => {
 
             <div class="gap"></div>
               
-            <div id="abt-side">
+            <div ref={abtRef} id="abt-side">
               <a class="nav-elem-a" key={"ABOUT"} href={"/about/"}><h4 class="nav-elem">{"ABOUT"}</h4></a>
               <button onClick={handleButtonClick} id="translation-box"><div id={myBoolean ? "l-box" : "r-box"}>EN</div><div id={myBoolean ? "r-box" : "l-box"}>ES</div></button>
             </div>
           
     </div>
+      </>
+      
     )
 
   

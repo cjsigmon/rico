@@ -108,6 +108,8 @@
 
 .quote-svg {
   margin-right: 2px;
+  width: fit-content;
+  max-width: 22vw;
 }
 
 .quote-txt {
