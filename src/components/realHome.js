@@ -11,7 +11,7 @@ import VideoComp from "./videoComp";
 const HomePage = () =>  {
     const data = useStaticQuery(graphql`
     {
-      allWpPost(filter: {id: {nin: "cG9zdDo1OA=="}}) {
+      allWpPost(filter: {id: {nin: "cG9zdDo1OA=="}}, sort: {date: DESC}) {
         nodes {
           id
           excerpt

@@ -28,10 +28,10 @@ export default function ReadMore({ exclude }) {
             <h2>MORE FROM ISLA DE FUERZA</h2>
             
             <div className="more-thumbs">
-                {exclude === 'ENVIRONMENT' ? <></> :  <a href={envLink}><img src={envImage}></img></a>}
+                {exclude === 'POWER' ? <></> :  <a href={powLink}><img src={powImage}></img></a>}
                 {exclude === 'COMMUNITY' ? <></> :  <a href={comLink}><img src={comImage}></img></a>}
                 {exclude === 'GOVERNANCE' ? <></> :  <a href={govLink}><img src={govImage}></img></a>}
-                {exclude === 'POWER' ? <></> :  <a href={powLink}><img src={powImage}></img></a>}
+                {exclude === 'ENVIRONMENT' ? <></> :  <a href={envLink}><img src={envImage}></img></a>}
                 {exclude === 'HEALTHCARE' ? <></> :  <a href={healthLink}><img src={healthImage}></img></a>}
             </div>
         </div>
