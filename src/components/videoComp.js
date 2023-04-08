@@ -50,6 +50,10 @@ export default function VideoComp({ left, link, color }) {
 
   function handleProgress({ played }) {
     const progress = Math.floor(played * 100);
+    if (progress == 99) {
+      setProgress(100);
+      return;
+    }
     setProgress(progress);
   }
 
@@ -66,7 +70,7 @@ export default function VideoComp({ left, link, color }) {
                   onProgress={handleProgress}
                   // controls
                   onPlay={() => setPlaying(true)}
-                  onPause={() => setPlaying(false)}
+                  onPause={() => (setPlaying(false), handleProgress)}
               />
               <button className="vid-btn" onClick={handleButtonClick}>{playing ? PAUSE : PLAY}</button>
               <div className="vid-bar">
