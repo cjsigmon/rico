@@ -15,6 +15,7 @@
     display: flex;
     flex-direction: column;
     width: 90%;
+    text-align: center;
 }
 
 .byline > p {
@@ -88,7 +89,7 @@
 
 .subhead {
   color: white;
-  font-size: 4em;
+  font-size: 6vw;
   letter-spacing: 0.75px;
   backdrop-filter: none;
 }
@@ -181,7 +182,7 @@
 }
 
 .fa-play, .fa-pause {
-  font-size: 6em;
+  font-size: 3em;
 }
 
 .vid-btn .fa-pause {
@@ -219,7 +220,7 @@
 }
 
 .more-thumbs > a > img {
-  width: 21%;
+  width: 35vw;
 }
 
 
@@ -233,7 +234,7 @@
     grid-template-areas: 
     'mar body mar';
   grid-template-columns: 200fr 310fr 900fr 295fr 215fr;
-  grid-gap: 8px;
+  grid-gap: 2vw;
 }
 
 .video-container {
@@ -253,6 +254,10 @@
   bottom: 0;
 }
 
+.fa-play, .fa-pause {
+  font-size: 6em;
+}
+
 .vid-title {
   display: block;
   bottom: 10%;
@@ -260,10 +265,16 @@
 
 .byline {
   display: block;
+  text-align: initial;
 }
 
 #section {
-  left: -59.1%;
+  left: -66.1%;
+}
+
+
+.more-thumbs > a > img {
+  width: 21vw;
 }
 
 }
