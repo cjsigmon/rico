@@ -76,13 +76,22 @@ export default function VideoComp({ left, link, color }) {
     handleSkipTo(timeSeconds);
   };
 
- 
+  let player = null;
+
+  const handleFullScreen = () => {
+    const player = playerRef.current.getInternalPlayer();
+      if (player && player.requestFullscreen) {
+        player.requestFullscreen();
+      }
+  };
+
   
 
     return (
         <div className="video-container">
           <h3 ref={showRef}>SHOW ME SOMETHING: {progress}%</h3>
           <button onClick={() => handleSkipTo(30)}>Skip to 30 seconds</button>
+          <button onClick={handleFullScreen}>Full Screen</button>
             <div ref={filterRef} id={left == 0 ? "explain-playa" : "playa"}>
               <ReactPlayer
                   id="vid-ht"

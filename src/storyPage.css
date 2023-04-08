@@ -170,6 +170,7 @@
 }
 
 .vid-btn {
+  cursor: pointer;
   position: absolute;
   z-index: 1;
   left: 0;
@@ -204,6 +205,7 @@
 }
 
 .prog-bar {
+  cursor: pointer;
   width: 70%;
   height: 10px;
   position: absolute;
