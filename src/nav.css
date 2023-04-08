@@ -41,7 +41,7 @@
     padding-top: 5%;
 }
 
-#abt-side {
+.abt-side {
     display: none;
 }
 
@@ -89,9 +89,57 @@
     min-width: 39px;
 }
 
-#nav-logo {
+.nav-logo {
     display: none;
 }
+
+
+
+/* FOOTER */
+#footer {
+    width: 100vw;
+    height: 33vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+}
+
+#footer-main {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#footer-soc {
+    width: 100vw;
+    display: flex;
+    padding: 2vh;
+    justify-content: space-around;
+}
+
+#footer-soc > a {
+    font-size: 1.8em;
+    color: white;
+}
+
+
+#footer-logo {
+    display: block;
+}
+
+#footer-abt {
+    display: flex;
+}
+
+#copyright {
+    min-width: 30vw;
+    margin-bottom: 1vw;
+    margin-left: 1vw;
+    font-size: 15px;
+    text-align: center;
+}
+
 
 
 @media only screen and (min-width: 768px) {
@@ -123,7 +171,7 @@
         top: 0;
       }
     
-    #nav-logo {
+    .nav-logo {
         display: flex;
     }
     
@@ -142,11 +190,29 @@
         padding-left: 0.5%;
         padding-right: 0.5%;
     }
+
+
+    #footer-main {
+        width: 60vw;
+        display: flex;
+        flex-direction: row;
+        justify-content:space-between;
+        align-items: center;
+    }
+
+    #footer-soc {
+        width: 34%;
+    }
     
-    #abt-side {
+    .abt-side {
         display: flex;
         align-items: center;
         padding: 0.5%;
+    }
+
+    #copyright {
+        font-size: initial;
+        text-align: initial;
     }
   }
 
@@ -155,40 +221,3 @@
 
 
 /* FOOTER */
-/* FOOTER */
-#footer {
-    width: 100vw;
-    height: 33vh;
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-}
-
-#footer-main {
-    width: 60vw;
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
-    margin: auto;
-}
-
-#foot-soc {
-    width: 34%;
-    display: flex;
-    justify-content: space-around;
-}
-
-#foot-soc > a {
-    font-size: 1.8em;
-    color: white;
-    margin: 8%;
-}
-
-#copyright {
-    min-width: 30vw;
-    margin-bottom: 1vw;
-    margin-left: 1vw;
-}
-
-
-
