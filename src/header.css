@@ -12,6 +12,10 @@
     min-height: 100%;
     height: 100vh;
     position: relative;
+    opacity: 0;
+  animation-name: fade-in;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
 }
 
 .box {
@@ -24,6 +28,23 @@
     position: relative;
 }
 
+#home-title {
+    opacity: 0;
+  animation-name: fade-in;
+  animation-duration: 2.8s;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
 #main-title-contain {
     position: relative;
     text-align: center;
@@ -32,7 +53,7 @@
     font-style: normal;
 }
 
-#main-title, #main-tagline {
+.main-title, #main-tagline {
     letter-spacing: 0.9vw;
     text-shadow: 0px 6px 8px rgba(0, 0, 0, 0.117);
 }

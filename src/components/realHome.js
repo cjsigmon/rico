@@ -26,7 +26,7 @@ const HomePage = () =>  {
         return (
             <main>
             <Navbar/>
-            <HeaderImg noline={true} />
+            <HeaderImg noline={true} title={"ISLA DE FUERZA"}/>
 
             <div className="post-grid" id="homepage-txt">
               <div className="l-mar"></div>
