@@ -34,6 +34,7 @@ export default function VideoComp({ left, link, color }) {
         <div className="video-container">
             <div id={left == 0 ? "explain-playa" : "playa"}>
               <ReactPlayer
+                  id="vid-ht"
                   ref={playerRef}
                   width="100%"
                   height="100%"

@@ -75,7 +75,7 @@
 
 #section {
   position: absolute;
-  left: -27.08vw;
+  left: -23%;
   width: 100vw; 
   height: 40vh;
   background-repeat: no-repeat;
@@ -138,26 +138,29 @@
 
 /* VIDEO PLAYER */
 .video-container {
-  grid-column: 1 / -1;
   position: relative;
-  overflow: visible;
-  width: 100%;
-  padding-top: 1%;
-  padding-bottom: 110vh;
+  /* width: 100vw; */
+  padding-bottom: 60vh;
 }
 
 
 #playa, #explain-playa {
   position: absolute;
+  left: 0;
   right: 0;
   margin: auto;
-  width: 90vw;
-  height: 90vh;
+  width: 100vw;
+  height: 100vh;
+
 }
 
 #playa {
-  left: -22vw;
+  left: -15vw;
   margin-top: 10%;
+}
+
+#vid-ht {
+  height: 50%!important;
 }
 
 #explain-playa {
@@ -167,11 +170,11 @@
 
 .vid-btn {
   position: absolute;
-  z-index: 3;
+  z-index: 1;
   left: 0;
   right: 0;
   top: 0;
-  bottom: 0;
+  bottom: 50vh;
   margin: auto;
   background: none;
   border: none;
@@ -191,9 +194,10 @@
 }
 
 .vid-title {
+  display: none;
   position: absolute;
   left: 2vw;
-  bottom: 5vh;
+  bottom: 20vh;
   font-size: 3em;
 }
 
@@ -232,8 +236,34 @@
   grid-gap: 8px;
 }
 
+.video-container {
+  padding-top: 15vh;
+  padding-bottom: 130vh;
+}
+
+#playa {
+  left: -27vw;
+}
+
+#vid-ht {
+  height: 100%!important;
+}
+
+.vid-btn {
+  bottom: 0;
+}
+
+.vid-title {
+  display: block;
+  bottom: 10%;
+}
+
 .byline {
   display: block;
+}
+
+#section {
+  left: -59.1%;
 }
 
 }
