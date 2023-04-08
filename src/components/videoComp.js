@@ -17,6 +17,7 @@ export default function VideoComp({ left, link, color }) {
     const PAUSE = <FontAwesomeIcon icon={faPause} color={color}/>;
     const [isDragging, setIsDragging] = useState(false);
     const [currentTime, setCurrentTime] = useState(0);
+    const elementRef = useRef(null);
     var duration;
    
     if (playerRef.current) {
@@ -57,9 +58,31 @@ export default function VideoComp({ left, link, color }) {
     setProgress(progress);
   }
 
+  function handleSkipTo(time) {
+    playerRef.current.seekTo(time);
+  }
+
+
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const dotRef = useRef(null);
+
+  const divRef = useRef();  
+  const handleTimeClick = (event) => {
+    const divWidth = divRef.current.offsetWidth;
+    const clickPosition = event.clientX - divRef.current.getBoundingClientRect().left;
+    const percentage = (clickPosition / divWidth);
+    console.log(percentage + " of the div was clicked");
+    const timeSeconds = percentage * duration;
+    handleSkipTo(timeSeconds);
+  };
+
+ 
+  
+
     return (
         <div className="video-container">
           <h3 ref={showRef}>SHOW ME SOMETHING: {progress}%</h3>
+          <button onClick={() => handleSkipTo(30)}>Skip to 30 seconds</button>
             <div ref={filterRef} id={left == 0 ? "explain-playa" : "playa"}>
               <ReactPlayer
                   id="vid-ht"
@@ -74,9 +97,9 @@ export default function VideoComp({ left, link, color }) {
               />
               <button className="vid-btn" onClick={handleButtonClick}>{playing ? PAUSE : PLAY}</button>
               <div className="vid-bar">
-                <div className="prog-bar">
+                <div className="prog-bar" ref={divRef} onClick={handleTimeClick} >
                   <div className="prog-fill-bar" ref={progRef} style={{ width: `${progress}%` }}>
-                    <div className="prog-fill-dot"></div>
+                    <div className="prog-fill-dot" ref={dotRef}></div>
                   </div>
                 </div>
               </div>
