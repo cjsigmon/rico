@@ -186,6 +186,10 @@
   font-size: 3em;
 }
 
+.fa-play {
+  filter: drop-shadow(0 0 5px rgb(225, 225, 225));
+}
+
 .vid-btn .fa-pause {
   transition: opacity 0.5s ease-in-out;
   opacity: 0;
@@ -276,6 +280,10 @@
 
 .more-thumbs > a > img {
   width: 35vw;
+}
+
+.more-thumbs > a > img:hover {
+  filter:sepia(50%);
 }
 
 

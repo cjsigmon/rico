@@ -36,11 +36,9 @@ export default function VideoComp({ left, link, color }) {
         const player = playerRef.current.getInternalPlayer();
         if (playing) {
           player.pause();
-          // filterRef.current.style.filter = 'brightness(80%)';
           // titleRef.current.style.display = 'block';
         } else {
           player.play();
-          
           // filterRef.current.style.filter = '';
           // titleRef.current.style.display = 'none';
         }
@@ -92,14 +90,16 @@ export default function VideoComp({ left, link, color }) {
           <h3 ref={showRef}>SHOW ME SOMETHING: {progress}%</h3>
           <button onClick={() => handleSkipTo(30)}>Skip to 30 seconds</button>
           <button onClick={handleFullScreen}>Full Screen</button>
-            <div ref={filterRef} id={left == 0 ? "explain-playa" : "playa"}>
+            <div id={left == 0 ? "explain-playa" : "playa"} >
               <ReactPlayer
                   id="vid-ht"
                   ref={playerRef}
                   width="100%"
                   height="100%"
+                  style={playing ? {} : { filter: 'blur(5px)',  filter: 'brightness(50%)'}}
                   url={link}
                   onProgress={handleProgress}
+                  
                   // controls
                   onPlay={() => setPlaying(true)}
                   onPause={() => (setPlaying(false), handleProgress)}
