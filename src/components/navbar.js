@@ -80,7 +80,19 @@ const Navbar = () => {
       <div ref={navRef} className={`navbar ${dark ? 'dark' : ''} ${visible ? 'visible' : ''}`}>
             
             {/* <div class="mar"></div> */}
-            <a onClick={handleHamClick}><FontAwesomeIcon icon={faBars} style={{color: "white", position: "fixed",}}/></a>
+            <div className="mob-menu">
+              <a onClick={handleHamClick}><FontAwesomeIcon icon={faBars} style={{color: "white", position: "fixed",}}/></a>
+              
+              <a id="mob-logo" href="/"><svg xmlns="http://www.w3.org/2000/svg" width="160" height="50.928" viewBox="0 0 160 67.928">
+              <g id="Group_5" data-name="Group 5" transform="translate(203.099 229.839)">
+                <text id="Isla" transform="translate(-203.099 -205.839)" fill="#fff" font-size="10" font-family="Montserrat-ExtraBold, Montserrat" font-weight="800"><tspan x="0" y="0">Isla</tspan></text>
+                <text id="de" transform="translate(-178.83 -205.44)" fill="#fff" font-size="10" font-family="Montserrat-ExtraBold, Montserrat" font-weight="800"><tspan x="0" y="0">de</tspan></text>
+                <text id="FUERZA" transform="translate(-205.099 -175.911)" fill="#fff" font-size="37" font-family="Montserrat-ExtraBold, Montserrat" font-weight="800"><tspan x="0" y="0">FUERZA</tspan></text>
+              </g>
+            </svg>
+            </a>
+            </div>
+            
 
             <a id="nav-logo" href="/"><svg xmlns="http://www.w3.org/2000/svg" width="160" height="67.928" viewBox="0 0 160 67.928">
               <g id="Group_5" data-name="Group 5" transform="translate(203.099 229.839)">
@@ -107,6 +119,7 @@ const Navbar = () => {
             </div>
           
     </div>
+    
       </>
       
     )

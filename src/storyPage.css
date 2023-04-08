@@ -1,19 +1,24 @@
 .post-grid {
-    margin-top: 125px;
+    padding-left: 15vw;
+    padding-right: 20vw;
     width: 100vw;
-    display: grid;
-    grid-template-areas: 
-    'mar body mar';
-  grid-template-columns: 200fr 310fr 900fr 295fr 215fr;
-  grid-gap: 8px;
+    
+}
+
+.byline-contain {
+  max-width: 100vw;
 }
 
 .byline {
     margin-left: 5vw;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
 }
 
 .byline > p {
-  font-size: 1.08vw;
+  font-size: 17px;
 }
 
 .post-text {
@@ -211,4 +216,24 @@
 
 .more-thumbs > a > img {
   width: 21%;
+}
+
+
+@media only screen and (min-width: 768px) {
+  .post-grid {
+    padding-left: initial;
+    padding-right: initial;
+    margin-top: 125px;
+    width: 100vw;
+    display: grid;
+    grid-template-areas: 
+    'mar body mar';
+  grid-template-columns: 200fr 310fr 900fr 295fr 215fr;
+  grid-gap: 8px;
+}
+
+.byline {
+  display: block;
+}
+
 }

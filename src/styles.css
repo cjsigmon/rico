@@ -55,22 +55,18 @@ p, h2, h3, h4, h5, .wp-element-caption {
 }
 
 .home-title {
-    font-size: 6em;
+    font-size: 7vw;
     position: absolute;
-    bottom: 70%;
+    bottom: 80%;
     color: black;
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
     padding-left: 3%;
     padding-right: 4%;
+    width: 100vw;
 }
 
 .home-subtitle {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    padding-left: 3%;
-    padding-right: 3%;
-    max-width: 60%;
+    padding: 3%;
     font-size: larger;
 }
 
@@ -161,6 +157,18 @@ background-color: #004E65;}
     margin: 5%;
     display: flex;
     justify-content: center;
+}
+
+
+@media only screen and (min-width: 768px) {
+    .home-title {
+        bottom: 15vh;
+        width: initial;
+    }
+
+    .home-subtitle {
+        max-width: 60%;
+    }
 }
 
 

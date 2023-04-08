@@ -25,6 +25,7 @@
 }
 
 #main-title-contain {
+    position: relative;
     text-align: center;
     font-family: "futura-pt-bold", sans-serif;
     font-weight: 700;
@@ -39,8 +40,12 @@
 
 #main-tagline {
     letter-spacing: 0.6vw;
-    padding-left: 4%;
-    padding-right: 4%;
+    /* padding-left: 10%;
+    padding-right: 10%; */
+    max-width: 90vw;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 
 .line {
@@ -68,4 +73,12 @@
     font-size: 21px!important;
     color: white;
 }
+
+
+@media only screen and (min-width: 768px) {
+    #main-tagline {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+  }
 

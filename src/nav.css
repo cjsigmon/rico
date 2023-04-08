@@ -1,14 +1,31 @@
 .navbar {
     width: 100vw;
     padding-top: 2vh;
-    padding-bottom: 6vh;    
+    padding-bottom: 2vh;    
     z-index: 1;
     position: fixed;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
 }
 
-.dark > a > svg {
+/* .dark > div > a > svg {
     color: black!important;
     transition: color 0.5s ease;
+} */
+
+.visible {
+    opacity: 1;
+}
+
+.dark {
+    background-color: black!important;
+    transition: background-color 0.5s ease, opacity 0.6s ease-in-out;;
+}
+
+
+#mob-logo {
+    padding-left: 30%;
+   padding-bottom: 1vh;
 }
 
 .fa-bars {
@@ -16,6 +33,7 @@
     padding-bottom: 4%;
     font-size: 2em;
 }
+
 
 #stry-links {
     display: none;
@@ -76,7 +94,7 @@
 
 
 @media only screen and (min-width: 768px) {
-    .fa-bars {
+    .fa-bars, #mob-logo {
         display: none;
     }
 
@@ -108,7 +126,6 @@
         display: flex;
     }
     
-    
     .nav-elem {
         margin: 0;
         font-size: 1.2vw;
@@ -118,6 +135,7 @@
     #stry-links {
         width: 100%;
         display: flex;
+        padding-top: 0%;
         justify-content: space-around;
         align-items: center;
         padding-left: 0.5%;
@@ -129,44 +147,6 @@
         align-items: center;
         padding: 0.5%;
     }
-    
-    #translation-box {
-        cursor: pointer;
-        max-width: fit-content;
-        max-height: 25px;
-        border: 1px solid white;
-        background: none;
-        display: flex;
-        margin-left: 20px;
-        margin-right: 20px;
-        padding: 0;
-    }
-    
-    #translation-box > div {
-        width: 39px;
-        height: 23px;
-        font-family: "americane", sans-serif;
-        font-size: 15px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    #l-box {
-        background-color: white;
-        min-width: 39px;
-        font-weight: bold;
-    }
-    
-    #r-box {
-        color: white;
-        min-width: 39px;
-    }
-
-
-
-
-
   }
 
 
