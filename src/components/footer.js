@@ -31,9 +31,9 @@ const Footer = () => {
                 </a>
 
                 <div id="footer-soc">
-                    <a href="https://www.instagram.com/uncglobalstory/"><FontAwesomeIcon icon={faInstagram}/></a>
-                    <a><FontAwesomeIcon icon={faLinkedinIn}/></a>
-                    <a><FontAwesomeIcon icon={faFacebookF}/></a>
+                    <a href="https://www.instagram.com/uncglobalstory/" target="_blank"><FontAwesomeIcon icon={faInstagram}/></a>
+                    <a href="https://www.linkedin.com/company/unc-global-storytelling/" target="_blank"><FontAwesomeIcon icon={faLinkedinIn}/></a>
+                    <a href="https://www.facebook.com/uncglobalstory/" target="_blank"><FontAwesomeIcon icon={faFacebookF}/></a>
                 </div>
 
                 <div id="footer-abt" className="abt-side">
