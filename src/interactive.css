@@ -1,0 +1,59 @@
+.fill-width {
+    position: relative;
+    width: 140%;
+    transform: translateX(-15%);
+    height: 60vh;
+    margin: 55px 0 55px 0;
+    background-color: gray;
+    box-shadow: 5px 5px 1px black;
+}
+
+#fent-bg {
+    background-image: url('img/chalkboard.jpg')
+}
+
+#shading-inner-cap {
+    display: none;
+}
+
+#measure > g > line, #measure > g > path {
+    stroke: gray;
+}
+
+#drugs-2, #drugs-3 {
+    display: none;
+}
+
+  .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
+    stroke: rgb(0, 0, 0);
+    stroke-miterlimit: 10;
+  }
+
+  .cls-3 {
+    stroke: gray;
+  }
+
+  .cls-1, .cls-3 {
+    fill: none;
+  }
+
+  .cls-1, .cls-4 {
+    stroke-width: 3px;
+  }
+
+  .cls-2 {
+    stroke-width: 5px;
+  }
+
+  .cls-2, .cls-5 {
+    fill:gray;
+  }
+
+  .cls-3, .cls-5 {
+    stroke-width: .75px;
+  }
+
+  .cls-4 {
+    fill: #fff;
+  }
+

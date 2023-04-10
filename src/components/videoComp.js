@@ -4,7 +4,7 @@ import '../styles.css';
 import VimeoPlayer from "react-player/vimeo";
 import ReactPlayer from "react-player";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlay, faPause } from "@fortawesome/free-solid-svg-icons";
+import { faPlay, faPause, faBaby } from "@fortawesome/free-solid-svg-icons";
 
 export default function VideoComp({ left, link, color }) {
     const playerRef = useRef(null);
@@ -15,6 +15,8 @@ export default function VideoComp({ left, link, color }) {
     const [playing, setPlaying] = useState(false);
     const PLAY = <FontAwesomeIcon icon={faPlay} color={color}/>;
     const PAUSE = <FontAwesomeIcon icon={faPause} color={color}/>;
+    const vidBtnRef = useRef(null);
+
     const [isDragging, setIsDragging] = useState(false);
     const [currentTime, setCurrentTime] = useState(0);
     const elementRef = useRef(null);
@@ -33,6 +35,8 @@ export default function VideoComp({ left, link, color }) {
 
 
     function handleButtonClick() {
+      const iconElement = vidBtnRef.current.querySelector('svg');
+          iconElement.icon = faBaby;
         const player = playerRef.current.getInternalPlayer();
         if (playing) {
           player.pause();
@@ -104,7 +108,7 @@ export default function VideoComp({ left, link, color }) {
                   onPlay={() => setPlaying(true)}
                   onPause={() => (setPlaying(false), handleProgress)}
               />
-              <button className="vid-btn" onClick={handleButtonClick}>{playing ? PAUSE : PLAY}</button>
+              <button className="vid-btn" ref={vidBtnRef} onClick={handleButtonClick}>{playing ? PAUSE : PLAY}</button>
               <div className="vid-bar">
                 <div className="prog-bar" ref={divRef} onClick={handleTimeClick} >
                   <div className="prog-fill-bar" ref={progRef} style={{ width: `${progress}%` }}>

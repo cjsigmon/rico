@@ -16,6 +16,7 @@ import PullQuote from "../components/pullquote"
 import ReadMore from "../components/readMore"
 import { useContext } from 'react';
 import MyContext from "../MyContext"
+import Interactive from "../components/Interactive"
 
 
 function changeBodyBackground() {
@@ -103,6 +104,9 @@ function BlogPostTemplate ({ data: { post } }) {
             break;
         }
       }
+      else if (node.attribs && node.attribs.class === "replace-interactive") {
+        return <Interactive title={node.attribs.id}></Interactive>;
+      }
       else if (node.attribs && node.attribs.class === "replace-section") {
         return <Section title={node.attribs.id}></Section>;
       }
@@ -142,12 +146,12 @@ function BlogPostTemplate ({ data: { post } }) {
 
 
 
-function replaceImgWithCustomImage(htmlString) {
-  const customImageRegex = /<figure[^>]+class="wp-block-image size-large"[^>]*>([\s\S]*?)<\/figure>/g;
-  const replacedHtmlString = htmlString.replace(customImageRegex, '<img src="https://picsum.photos/id/237/200/300" />'); // Replace <img> tags with <CustomImage> component
+// function replaceImgWithCustomImage(htmlString) {
+//   const customImageRegex = /<figure[^>]+class="wp-block-image size-large"[^>]*>([\s\S]*?)<\/figure>/g;
+//   const replacedHtmlString = htmlString.replace(customImageRegex, '<img src="https://picsum.photos/id/237/200/300" />'); // Replace <img> tags with <CustomImage> component
 
-  return { __html: replacedHtmlString }; // Set the dangerouslySetInnerHTML attribute with the new HTML string
-}
+//   return { __html: replacedHtmlString }; // Set the dangerouslySetInnerHTML attribute with the new HTML string
+// }
 
 
 export default BlogPostTemplate;

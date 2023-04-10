@@ -187,7 +187,7 @@
 }
 
 .fa-play {
-  filter: drop-shadow(0 0 5px rgb(225, 225, 225));
+  filter: drop-shadow(0 0 5px black);
 }
 
 .vid-btn .fa-pause {
@@ -204,7 +204,7 @@
   height: 55px;
   position: absolute;
   bottom: 0;
-  background-color: #004d656d;
+  background-color: #000000;
   z-index: 1;
 }
 
@@ -218,7 +218,7 @@
   top: 0;
   bottom: 0;
   margin: auto;
-  background-color: white;
+  background-color: rgb(115, 135, 139);
   border-radius: 20px 10px 30px 5px;
 }
 
@@ -231,7 +231,7 @@
   top: 0;
   bottom: 0;
   margin: auto;
-  background-color: rgb(0, 249, 241);
+  background-color: gainsboro;
   border-radius: 20px 10px 30px 5px;
 }
 
@@ -243,7 +243,7 @@
   top: 0;
   bottom: 0;
   margin: auto;
-  background-color: rgb(253, 47, 47);
+  background-color: white;
   z-index: 2;
   border-radius: 50%;
 }
