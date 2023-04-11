@@ -141,7 +141,8 @@
 .video-container {
   position: relative;
   /* width: 100vw; */
-  padding-bottom: 60vh;
+  padding-top: 15vh;
+  padding-bottom: 75vh;
 }
 
 
@@ -151,8 +152,6 @@
   right: 0;
   margin: auto;
   width: 100vw;
-  height: 100vh;
-
 }
 
 #playa {
@@ -166,24 +165,48 @@
 
 #explain-playa {
   left: 0;
-  width: 80vw;
+  right: 0;
+  height: 100%;
+  width: 100vw;
+
 }
 
+
 .vid-btn {
+  font-size: 1vw;
   cursor: pointer;
   position: absolute;
-  z-index: 1;
+  /* z-index: 1; */
   left: 0;
   right: 0;
   top: 0;
+  height: 50px;
   bottom: 50vh;
   margin: auto;
-  background: none;
   border: none;
 }
 
-.fa-play, .fa-pause {
-  font-size: 3em;
+.all {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+}
+
+#sml-play-pause {
+  cursor: pointer;
+  font-size: 0.3vw;
+  margin-left: 2%;
+}
+
+.fa-expand {
+  cursor: pointer;
+  position: absolute;
+  bottom: 50%;
+  right: 2%;
+  font-size: 1.5vw;
+  transform: translateY(50%);
+
 }
 
 .fa-play {
@@ -200,12 +223,26 @@
 }
 
 .vid-bar {
+  display: block;
   width: 100%;
   height: 55px;
   position: absolute;
   bottom: 0;
   background-color: #000000;
   z-index: 1;
+  transition: opacity 1s ease;
+  opacity: 1;
+}
+
+#explain-bar {
+  width: 91vw;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.vid-bar:hover {
+  opacity: 1!important;
 }
 
 .prog-bar {
@@ -301,13 +338,20 @@
 }
 
 .video-container {
-  padding-top: 15vh;
-  padding-bottom: 130vh;
+  margin-top: 15vh;
+  margin-bottom: 55vh;
+  width: max-content;
+  height: max-content;
+
 }
 
 #playa {
-  left: -28.4vw;
+  width: 100vw;
+  height: 100vh;
+  left: -28.45vw;
 }
+
+
 
 #vid-ht {
   height: 100%!important;

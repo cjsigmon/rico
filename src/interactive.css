@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Roboto:wght@300&display=swap');
+@import url('https://use.typekit.net/ick1wdz.css');
+
 .fill-width {
     position: relative;
-    width: 140%;
-    transform: translateX(-15%);
+    width: 180%;
+    transform: translateX(-25%);
     height: 60vh;
     margin: 55px 0 55px 0;
     background-color: gray;
@@ -10,6 +13,106 @@
 
 #fent-bg {
     background-image: url('img/chalkboard.jpg')
+}
+
+#fent-title {
+  font-family: "futura-pt-bold", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 2.7vw;
+    letter-spacing: 0;
+margin: 0;
+  position: absolute;
+  top: 20px;
+  width: max-content;
+  left: 50%;
+  
+  transform: translateX(-50%);
+  color: white;
+}
+
+#abt-drug-cont {
+  position: absolute;
+  width: 40%;
+  top: 80px;
+  right: 20px;
+}
+
+#drugname {
+  border: 3px dashed gainsboro;
+  padding: 4px;
+}
+
+#drugname-title {
+  font-size: 100%;
+}
+
+#drugname h5, #drugname p {
+  margin: 0;
+  color: white;
+}
+
+#drugname p, #fact-graf p   { 
+  font-size: 1vw;
+}
+
+#fact-graf p {
+  margin-top: 5px;
+  color: white;
+}
+
+#grams-cont {
+  position: absolute;
+  bottom: 0;
+  left: 44%;
+  transform: translateX(-50%);
+}
+
+#grams {
+  color: white;
+}
+
+#btn-cont {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  border: none;
+  background: none;
+  margin: 15px;
+  display: flex;
+  align-items: center;
+}
+
+button:focus > .sq {
+  background-color: whitesmoke;
+}
+
+.sq {
+  cursor: pointer;
+  height: 2.5vw;
+  width: 2.5vw;
+  border: 2px solid white;
+  margin-right: 8px;
+}
+
+.btn-text {
+  color: white;
+  font-family: "americane", sans-serif;
+  font-weight: 700;
+  font-size: 1.5vw;
+  font-style: bold;
+  margin: 0;
+}
+
+
+
+#Layer_1 {
+  transform: translateX(10%);
 }
 
 #shading-inner-cap {
@@ -24,13 +127,17 @@
     display: none;
 }
 
-  .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
-    stroke: rgb(0, 0, 0);
+  .cls-1, .cls-2, .cls-5 {
+    stroke: rgb(255, 255, 255);
     stroke-miterlimit: 10;
   }
 
   .cls-3 {
     stroke: gray;
+  }
+  
+  .cls-4 {
+    stroke: rgb(230, 230, 230);
   }
 
   .cls-1, .cls-3 {
@@ -46,7 +153,7 @@
   }
 
   .cls-2, .cls-5 {
-    fill:gray;
+    fill:  #004E65;
   }
 
   .cls-3, .cls-5 {

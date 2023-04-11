@@ -4,7 +4,7 @@ import '../styles.css';
 import VimeoPlayer from "react-player/vimeo";
 import ReactPlayer from "react-player";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlay, faPause, faBaby } from "@fortawesome/free-solid-svg-icons";
+import { faPlay, faPause, faExpand } from "@fortawesome/free-solid-svg-icons";
 
 export default function VideoComp({ left, link, color }) {
     const playerRef = useRef(null);
@@ -15,34 +15,67 @@ export default function VideoComp({ left, link, color }) {
     const [playing, setPlaying] = useState(false);
     const PLAY = <FontAwesomeIcon icon={faPlay} color={color}/>;
     const PAUSE = <FontAwesomeIcon icon={faPause} color={color}/>;
+    const FULLSCREEN = <FontAwesomeIcon icon={faExpand} color={color}/>;
     const vidBtnRef = useRef(null);
-
-    const [isDragging, setIsDragging] = useState(false);
-    const [currentTime, setCurrentTime] = useState(0);
     const elementRef = useRef(null);
+    const dotRef = useRef(null);
+    const barRef = useRef(null);
+    const cursRef = useRef(null);
     var duration;
+    var yPosition;
+    const myRef = useRef(null);
+    const [isMoving, setIsMoving] = useState(false);
+
+  function handleMouseMove(event) {
+    barRef.current.style.opacity = '1';
+
+    // Clear any previous setTimeout function
+    clearTimeout(myRef.current);
+    // Set a new setTimeout function to change isMoving to false after 1 second of no mouse movement
+    if (playing) {
+      myRef.current = setTimeout(() => {
+        barRef.current.style.opacity = '0';
+      }, 3000);
+    }
+    
+  }
+
+    // make bg go black
+    useEffect(() => {
+
+      if (myRef.current) {
+        yPosition = myRef.current.getBoundingClientRect().y;
+      }
+
+     
+    }, []);
+
+    function changeBodyBackground() {
+      if (window.pageYOffset >= (yPosition - 400) && window.pageYOffset <= (yPosition + 700)) {
+        document.body.style.transition = "background-color 0.7s ease-in-out";
+        document.body.style.backgroundColor = "black";
+      } else {
+        document.body.style.backgroundColor = "white";
+      }
+    }
+    window.addEventListener("scroll", changeBodyBackground);
+// end make bg go black
+
+
    
     if (playerRef.current) {
       duration = playerRef.current.getDuration();
     }
 
-
-    const headingStyle = {
-      color: `${color}`
-    };
-
-    
-
-
     function handleButtonClick() {
-      const iconElement = vidBtnRef.current.querySelector('svg');
-          iconElement.icon = faBaby;
         const player = playerRef.current.getInternalPlayer();
         if (playing) {
           player.pause();
+          barRef.current.style.opacity = 1;
           // titleRef.current.style.display = 'block';
         } else {
           player.play();
+          barRef.current.style.opacity = 0;
           // filterRef.current.style.filter = '';
           // titleRef.current.style.display = 'none';
         }
@@ -64,10 +97,6 @@ export default function VideoComp({ left, link, color }) {
     playerRef.current.seekTo(time);
   }
 
-
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const dotRef = useRef(null);
-
   const divRef = useRef();  
   const handleTimeClick = (event) => {
     const divWidth = divRef.current.offsetWidth;
@@ -79,7 +108,6 @@ export default function VideoComp({ left, link, color }) {
   };
 
   let player = null;
-
   const handleFullScreen = () => {
     const player = playerRef.current.getInternalPlayer();
       if (player && player.requestFullscreen) {
@@ -89,35 +117,54 @@ export default function VideoComp({ left, link, color }) {
 
   
 
+  
+
+
+  
+
     return (
-        <div className="video-container">
-          <h3 ref={showRef}>SHOW ME SOMETHING: {progress}%</h3>
-          <button onClick={() => handleSkipTo(30)}>Skip to 30 seconds</button>
-          <button onClick={handleFullScreen}>Full Screen</button>
-            <div id={left == 0 ? "explain-playa" : "playa"} >
+        <div className="video-container" ref={myRef}>
+          {/* <h3 ref={showRef}>PROGRESS: {progress}%</h3> */}
+          {/* <button onClick={() => handleSkipTo(30)}>Skip to 30 seconds</button> */}
+            
+            <div id={left == 0 ? "explain-playa" : "playa"}>
+              
+              
               <ReactPlayer
                   id="vid-ht"
                   ref={playerRef}
                   width="100%"
-                  height="100%"
                   style={playing ? {} : { filter: 'blur(5px)',  filter: 'brightness(50%)'}}
                   url={link}
                   onProgress={handleProgress}
+                  
                   
                   // controls
                   onPlay={() => setPlaying(true)}
                   onPause={() => (setPlaying(false), handleProgress)}
               />
-              <button className="vid-btn" ref={vidBtnRef} onClick={handleButtonClick}>{playing ? PAUSE : PLAY}</button>
-              <div className="vid-bar">
-                <div className="prog-bar" ref={divRef} onClick={handleTimeClick} >
-                  <div className="prog-fill-bar" ref={progRef} style={{ width: `${progress}%` }}>
-                    <div className="prog-fill-dot" ref={dotRef}></div>
-                  </div>
-                </div>
-              </div>
+              
               {/* <h1 ref={titleRef} className="vid-title" style={headingStyle}>VIDEO TITLE</h1> */}
+            
+                <div className="vid-bar" id={left == 0 ? "explain-bar" : ""} ref={barRef}>
+                  <div className="prog-bar" ref={divRef} onClick={handleTimeClick} >
+                    <div className="prog-fill-bar" ref={progRef} style={{ width: `${progress}%` }}>
+                      <div className="prog-fill-dot" ref={dotRef}></div>
+                    </div>
+                  </div>
+
+                  <button id="sml-play-pause" ref={vidBtnRef} onClick={handleButtonClick}>{playing ? PAUSE : PLAY}</button>
+                  <button onClick={handleFullScreen}>{FULLSCREEN}</button>
+              </div>
+
+              
+            
+              <div className="all" onMouseMove={handleMouseMove} ref={cursRef}>
+              <button className="vid-btn" ref={vidBtnRef} onClick={handleButtonClick}>{playing ? PAUSE : PLAY}</button>
+              </div>
             </div>
+
+            
             
         </div>
 

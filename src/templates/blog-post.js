@@ -19,18 +19,6 @@ import MyContext from "../MyContext"
 import Interactive from "../components/Interactive"
 
 
-function changeBodyBackground() {
-  if (window.pageYOffset >= 4100 && window.pageYOffset <= 4800) {
-    document.body.style.transition = "background-color 1s ease-in-out";
-    document.body.style.backgroundColor = "black";
-  } else {
-    document.body.style.backgroundColor = "white";
-  }
-}
-window.addEventListener("scroll", changeBodyBackground);
-
-
-
 function BlogPostTemplate ({ data: { post } }) {
   const htmlString = post.content;
   const [myBoolean, setMyBoolean] = useState(MyContext);
