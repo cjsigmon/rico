@@ -21,6 +21,7 @@ export default function VideoComp({ left, link, color }) {
     const dotRef = useRef(null);
     const barRef = useRef(null);
     const cursRef = useRef(null);
+    const playaRef = useRef(null);
     var duration;
     var yPosition;
     const myRef = useRef(null);
@@ -127,7 +128,7 @@ export default function VideoComp({ left, link, color }) {
           {/* <h3 ref={showRef}>PROGRESS: {progress}%</h3> */}
           {/* <button onClick={() => handleSkipTo(30)}>Skip to 30 seconds</button> */}
             
-            <div id={left == 0 ? "explain-playa" : "playa"}>
+            <div id={left == 0 ? "explain-playa" : "playa"} ref={playaRef}>
               
               
               <ReactPlayer
@@ -137,6 +138,7 @@ export default function VideoComp({ left, link, color }) {
                   style={playing ? {} : { filter: 'blur(5px)',  filter: 'brightness(50%)'}}
                   url={link}
                   onProgress={handleProgress}
+                  wrapper={(props) => <section {...props} className="my-player" />}
                   
                   
                   // controls
@@ -146,21 +148,21 @@ export default function VideoComp({ left, link, color }) {
               
               {/* <h1 ref={titleRef} className="vid-title" style={headingStyle}>VIDEO TITLE</h1> */}
             
-                <div className="vid-bar" id={left == 0 ? "explain-bar" : ""} ref={barRef}>
+                
+
+              
+            
+              <div className="all" onMouseMove={handleMouseMove} ref={cursRef}>
+              <div className="vid-bar" id={left == 0 ? "explain-bar" : ""} ref={barRef}>
                   <div className="prog-bar" ref={divRef} onClick={handleTimeClick} >
                     <div className="prog-fill-bar" ref={progRef} style={{ width: `${progress}%` }}>
                       <div className="prog-fill-dot" ref={dotRef}></div>
                     </div>
                   </div>
-
                   <button id="sml-play-pause" ref={vidBtnRef} onClick={handleButtonClick}>{playing ? PAUSE : PLAY}</button>
                   <button onClick={handleFullScreen}>{FULLSCREEN}</button>
-              </div>
-
-              
-            
-              <div className="all" onMouseMove={handleMouseMove} ref={cursRef}>
-              <button className="vid-btn" ref={vidBtnRef} onClick={handleButtonClick}>{playing ? PAUSE : PLAY}</button>
+                </div>
+                <button className="vid-btn" ref={vidBtnRef} onClick={handleButtonClick}>{playing ? PAUSE : PLAY}</button>
               </div>
             </div>
 

@@ -1,0 +1,67 @@
+#ESC {
+  font-size: 35px;
+}
+
+.goback {
+    position: fixed;
+    right: 10px;
+    z-index: 5;
+}
+
+.wipes {
+  overflow: hidden;
+}
+
+.bg-img {
+  
+  width: 100%;
+  /* height: 100vh; */
+}
+
+#pinContainer {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+  }
+  #pinContainer .panel {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    text-align: center;
+  }
+  .panel span {
+    position: relative;
+    display: block;
+    top: 50%;
+    font-size: 80px;
+    font-family: "futura-pt-bold", sans-serif;
+    color: white;
+    font-weight: bold;
+  }
+
+  .panel {
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .panel.bg1 {
+    background-image: url('img/adjuntas-lago-garzas.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .panel.bg2 {
+    background-image: url('img/government.jpg');
+  }
+  
+  .panel.turqoise {
+    background-color: #38ced7;
+  }
+  
+  .panel.green {
+    background-color: #22d659;
+  }
+  
+  .panel.bordeaux {
+    background-color: #953543;
+  }

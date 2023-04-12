@@ -22,8 +22,6 @@ export default function Section({ img, title }) {
                     <h2 className="subhead">{TITLE}</h2>
                 </div>
             </div>
-        </>
-        
-       
+        </> 
     );
 }

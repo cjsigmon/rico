@@ -1,6 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Roboto:wght@300&display=swap');
 @import url('https://use.typekit.net/ick1wdz.css');
 
+
+
+/* timeline */
+
+.actual-fill-width-cont {
+  position: relative;
+    width: 235%;
+    height: 60vh;
+    transform: translateX(-28.5%);
+    background-color: gray;
+    overflow: scroll;
+}
+
+.actual-fill-width {
+  position: absolute;
+    width: 200vw;
+    height: 60vh;
+    background-color: lightskyblue;
+  
+}
+/* 
+.timeline {
+    width: 100vw;
+    height: 60vh;
+    background-color: pink;
+   
+} */
+
+/* end timeline */
+
+
+
+
+/* fentanyl interactive */
 .fill-width {
     position: relative;
     width: 180%;
@@ -21,7 +55,7 @@
     font-style: normal;
     font-size: 2.7vw;
     letter-spacing: 0;
-margin: 0;
+    margin: 0;
   position: absolute;
   top: 20px;
   width: max-content;
@@ -29,6 +63,36 @@ margin: 0;
   
   transform: translateX(-50%);
   color: white;
+}
+
+#src-cont {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.sources {
+  display: none;
+  width: 80%;
+  height: 70%;
+  position: absolute;
+  padding-left: 20px;
+  padding-top: 10px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: aliceblue;
+  z-index: 1;
+}
+
+.sources > a {
+  color: var(--healthcare);
+  font-family: "americane", sans-serif;
+  font-weight: bold;
+  line-height: 50px;
 }
 
 #abt-drug-cont {
@@ -88,9 +152,14 @@ button {
   align-items: center;
 }
 
-button:focus > .sq {
+button:focus {
+  outline: none;
+}
+
+button:focus > .sq:not(#srcSq) {
   background-color: whitesmoke;
 }
+
 
 .sq {
   cursor: pointer;

@@ -95,7 +95,7 @@
 /* FOOTER */
 #footer {
     width: 100vw;
-    height: 33vh;
+    height: 39vh;
     background-color: black;
     display: flex;
     flex-direction: column;
@@ -127,6 +127,7 @@
 
 #footer-abt {
     display: flex;
+    align-items: center;
 }
 
 #copyright {

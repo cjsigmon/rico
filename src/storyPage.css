@@ -71,14 +71,14 @@
 .section-wrapper {
   position: relative;
   padding-top: 4.9vh;
-  padding-bottom: 50vh;
+  padding-bottom: 40vh;
 }
 
 #section {
   position: absolute;
   left: -23%;
   width: 100vw; 
-  height: 40vh;
+  height: 30vh;
   background-repeat: no-repeat;
   background-position: center 44%; 
   background-size: cover;
@@ -89,7 +89,7 @@
 
 .subhead {
   color: white;
-  font-size: 6vw;
+  font-size: 4vw;
   letter-spacing: 0.75px;
   backdrop-filter: none;
 }
@@ -98,7 +98,7 @@
 /* Pullquote */
 .quote-wrapper-rel {
   position: relative;
-  padding-bottom: 35vh;
+  padding-bottom: 55vh;
 }
 
 .quote-wrapper-abs {
@@ -113,9 +113,9 @@
 }
 
 .quote-svg {
-  margin-right: 2px;
-  width: fit-content;
-  max-width: 22vw;
+  margin-right: 6vw;
+  margin-left: 2%;
+  min-width: 30%;
 }
 
 .quote-txt {
@@ -159,9 +159,6 @@
   margin-top: 10%;
 }
 
-#vid-ht {
-  height: 50%!important;
-}
 
 #explain-playa {
   left: 0;
@@ -173,15 +170,16 @@
 
 
 .vid-btn {
-  font-size: 1vw;
+  font-size: 4vw;
   cursor: pointer;
+  height: 50px;
   position: absolute;
   /* z-index: 1; */
   left: 0;
   right: 0;
   top: 0;
-  height: 50px;
-  bottom: 50vh;
+  bottom: 0;
+
   margin: auto;
   border: none;
 }
@@ -195,8 +193,15 @@
 
 #sml-play-pause {
   cursor: pointer;
-  font-size: 0.3vw;
-  margin-left: 2%;
+  margin-left: 4vw;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+#sml-play-pause > .fa-play, #sml-play-pause > .fa-pause {
+  font-size: 1.5vh;
 }
 
 .fa-expand {
@@ -204,7 +209,7 @@
   position: absolute;
   bottom: 50%;
   right: 2%;
-  font-size: 1.5vw;
+  font-size: 1.5vh;
   transform: translateY(50%);
 
 }
@@ -323,6 +328,13 @@
   filter:sepia(50%);
 }
 
+@media only screen and (max-width: 445px) {
+ .vid-bar {
+  bottom: 10%;
+ }
+
+}
+
 
 @media only screen and (min-width: 768px) {
   .post-grid {
@@ -337,6 +349,13 @@
   grid-gap: 2vw;
 }
 
+
+.quote-svg {
+  margin-right: 0;
+  margin-left: 2%;
+  min-width: 0;
+}
+
 .video-container {
   margin-top: 15vh;
   margin-bottom: 55vh;
@@ -345,13 +364,26 @@
 
 }
 
+.all {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+}
+
 #playa {
   width: 100vw;
   height: 100vh;
   left: -28.45vw;
 }
 
+.vid-bar {
+  bottom: 0;
+}
 
+#explain-bar {
+  width: 90%;
+}
 
 #vid-ht {
   height: 100%!important;
@@ -362,8 +394,22 @@
 }
 
 .fa-play, .fa-pause {
-  font-size: 6em;
+  font-size: 6vw;
 }
+
+.fa-expand {
+  font-size: 1.5vw;
+}
+
+#sml-play-pause, #sml-play-pause {
+  margin-left: 4%;
+}
+
+#sml-play-pause > .fa-play, #sml-play-pause > .fa-pause {
+  font-size: 1.5vw;
+}
+
+
 
 .vid-title {
   display: block;

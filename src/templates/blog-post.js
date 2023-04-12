@@ -17,6 +17,7 @@ import ReadMore from "../components/readMore"
 import { useContext } from 'react';
 import MyContext from "../MyContext"
 import Interactive from "../components/Interactive"
+import Timeline from "../components/Timeline"
 
 
 function BlogPostTemplate ({ data: { post } }) {
@@ -94,6 +95,9 @@ function BlogPostTemplate ({ data: { post } }) {
       }
       else if (node.attribs && node.attribs.class === "replace-interactive") {
         return <Interactive title={node.attribs.id}></Interactive>;
+      }
+      else if (node.attribs && node.attribs.class === "replace-timeline") {
+        return <Timeline />;
       }
       else if (node.attribs && node.attribs.class === "replace-section") {
         return <Section title={node.attribs.id}></Section>;

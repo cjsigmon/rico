@@ -9,6 +9,10 @@ function Interactive({ title }) {
     const gramsRef = useRef(null);
     const nameRef = useRef(null);
     const subRef = useRef(null);
+    const descRef = useRef(null);
+    const srcRef = useRef(null);
+    const srcSqRef = useRef(null);
+    const [srcVis, setSrcVis] = useState(false);
     var mg = 80;
     var mls = 57.14;
 
@@ -16,7 +20,9 @@ function Interactive({ title }) {
       mg = 80;
       mls = 57.14; 
       gramsRef.current.textContent = '80mg / about 57.14mL';
+      subRef.current.innerHTML = 'C<sub>18</sub>H<sub>21</sub>NO<sub>4</sub> | Density: ~1.4g/mL';
       nameRef.current.textContent = 'Oxycodone';
+      descRef.current.textContent = 'Prescription opioids account for most overdoses. And oxycodone is one of the most common prescription opioids, being found in the drugs OxyContin and Percocet. According to Delphi Behavioral Health Group, the typical overdose is 80mg; however, many factors—like weight and previous prescriptions—affect tolerance.'
       drugsRef2.current.style.display = 'none';
       drugsRef3.current.style.display = 'none';
       drugsRef.current.style.display = 'block';
@@ -26,7 +32,9 @@ function Interactive({ title }) {
       mg = 30;
       mls = 21.43  
       gramsRef.current.textContent = '30mg / about 21.43mL';
-      nameRef.current.textContent = 'Heroin';
+      nameRef.current.textContent = 'Heroin     (diacetylmorphine)';
+      subRef.current.innerHTML = 'C<sub>21</sub>H<sub>23</sub>NO<sub>5</sub> | Density: ~1.4g/mL'
+      descRef.current.textContent = 'Heroin is an illegal opioid made from morphine. Most users started out by first misusing prescription opioids.';
       drugsRef3.current.style.display = 'none';
       drugsRef.current.style.display = 'none';
       drugsRef2.current.style.display = 'block';
@@ -37,9 +45,22 @@ function Interactive({ title }) {
       mls = 2.72;
       gramsRef.current.textContent = '2-3mg / about 2.72mL';
       nameRef.current.textContent = 'Fentanyl';
+      subRef.current.innerHTML = 'C<sub>22</sub>H<sub>28</sub>N<sub>2</sub>O | Density: ~1.1g/mL'
+      descRef.current.textContent = 'Fentanyl is the most dangerous drug in the world. It is 50 times more potent than heroin and 100 times stronger than morphine. Just 3mg is enough to kill the average adult man.'
       drugsRef2.current.style.display = 'none';
       drugsRef.current.style.display = 'none';
       drugsRef3.current.style.display = 'block';
+    }
+
+    const handleSrc = () => {
+      if (srcVis) {
+        srcRef.current.style.display = 'none';
+        srcSqRef.current.style.background = 'none';
+      } else {
+        srcRef.current.style.display = 'block';
+        srcSqRef.current.style.backgroundColor = 'white';
+      }
+      setSrcVis(!srcVis);
     }
 
     const [viewBox, setViewBox] = useState('0 0 100 100');
@@ -58,16 +79,34 @@ function Interactive({ title }) {
                   <div id="abt-drug-cont">
                     <div id="drugname">
                       <h5 ref={nameRef} id="drugname-title">Oxycodone</h5>
-                      <p ref={subRef}>Oxycodone is the opioid used in percocet.</p>
+                      <p ref={subRef}>C<sub>18</sub>H<sub>21</sub>NO<sub>4</sub> | Density: ~1.4g/mL</p>
                     </div>
                     <div id="fact-graf">
-                      <p>It's really just gonna be one long run-on sentence about
-                        something to do with this particular drug. In oxycodone's case I'll
-                         talk about how percocet also contains the ingredient for aspirin. And 
-                         keep in mind that effects also depend on individual factors other than 
-                         body weight; this is just an estimated average based on my sources.
+                      <p ref={descRef}>Prescription opioids account for most overdoses. And oxycodone is one of the most common prescription opioids, being 
+                        found in the drugs OxyContin and Percocet. According to Delphi 
+                        Behavioral Health Group, the typical overdose is 80mg; however, many
+                         factors—like weight and previous prescriptions—affect tolerance.
                       </p>
                     </div>
+                  </div>
+
+                  <div id="src-cont">
+                    <button onClick={handleSrc}>
+                      <div ref={srcSqRef} className="sq" id="srcSq"></div>
+                      <p className="btn-text">SOURCES</p>
+                    </button>
+                  </div>
+
+                  <div className="sources" ref={srcRef}>
+                      <a href="http://www.chemspider.com/Chemical-Structure.4447649.html">chemspider.com</a>
+                      <br />
+                      <a href="https://academic.oup.com/painmedicine/article/15/7/1187/1878393?login=true#pme12391-tbl-0003">academic.oup.com</a>
+                      <br />
+                      <a href="https://nida.nih.gov/publications/drugfacts/heroin">nida.nih.gov</a>
+                      <br />
+                      <a href="https://www.dea.gov/factsheets/fentanyl">dea.gov</a>
+                      <br />
+                      <a href="https://www.statnews.com/2016/09/29/why-fentanyl-is-deadlier-than-heroin/">statnews.com</a>
                   </div>
 
                   <div id="grams-cont">
@@ -75,7 +114,7 @@ function Interactive({ title }) {
                   </div>
 
                   <div id="btn-cont">
-                    <button onClick={handleOx}>
+                    <button autoFocus onClick={handleOx}>
                       <div className="sq"></div>
                       <p className="btn-text">OXYCODONE</p>
                     </button>
