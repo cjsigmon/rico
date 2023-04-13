@@ -306,6 +306,97 @@ const Chronos = () => {
             </span>
           </div>
           
+          <div className="vert-line-event">
+            <div className="top-date">
+              <h4 className="date top">2014</h4>
+            </div>  
+            <span className="lil-circ"></span>
+            <div className="botter">  
+              <div className="vert-line-top"></div>
+              <div className="desc-box bot">
+              <p className="white-desc">Andrés Santos, María Luisa Cortijo, & others found El Ancón</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="vert-line-event">
+            <div className="topper">
+              <div className="desc-box">
+              <p className="white-desc">The island cannot meet its debt obligations</p>
+              </div>
+              <div className="vert-line-top"></div>
+            </div>
+            <span className="lil-circ"></span>
+            <div className="bott-date">
+              <h4 className="date">2015</h4>
+            </div>
+          </div>
+
+          <div className="vert-line-event">
+            <div className="top-date">
+              <h4 className="date top">2016</h4>
+            </div>  
+            <span className="lil-circ"></span>
+            <div className="botter">  
+              <div className="vert-line-top"></div>
+              <div className="desc-box bot">
+              <p className="white-desc">President Obama signs PROMESA into law</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="vert-line-event">
+            <div className="topper">
+              <div className="desc-box">
+              <p className="white-desc">(May) - Puerto Rico seeks bankruptcy relief in federal court</p>
+              </div>
+              <div className="vert-line-top"></div>
+            </div>
+            <span className="lil-circ"></span>
+            <div className="bott-date">
+              <h4 className="date">2017</h4>
+            </div>
+          </div>
+
+          <div className="vert-line-event">
+            <div className="top-date">
+              <h4 className="date top">2017</h4>
+            </div>  
+            <span className="lil-circ"></span>
+            <div className="botter">  
+              <div className="vert-line-top"></div>
+              <div className="desc-box bot">
+              <p className="white-desc">(September)- Hurricane Maria makes landfall on the island</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="vert-line-event">
+            <div className="topper">
+              <div className="desc-box">
+              <p className="white-desc">The Financial Oversight and Management Board wants more control</p>
+              </div>
+              <div className="vert-line-top"></div>
+            </div>
+            <span className="lil-circ"></span>
+            <div className="bott-date">
+              <h4 className="date">2020</h4>
+            </div>
+          </div>
+
+          <div className="vert-line-event">
+            <div className="top-date">
+              <h4 className="date top">2022</h4>
+            </div>  
+            <span className="lil-circ"></span>
+            <div className="botter">  
+              <div className="vert-line-top"></div>
+              <div className="desc-box bot">
+              <p className="white-desc">Puerto Rico exits bankruptcy</p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
