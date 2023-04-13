@@ -22,7 +22,16 @@ position:absolute;
   display: inline-block;
   overflow-x: scroll;
   overflow-y: hidden;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
+
+.time-container::-webkit-scrollbar {
+  display: none;
+}
+
+
 
 #titlecard {
   position: relative;
