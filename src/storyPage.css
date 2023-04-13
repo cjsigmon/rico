@@ -138,34 +138,32 @@
 
 
 /* VIDEO PLAYER */
-.video-container {
+.video-container-anchor {
+  transform: translateX(calc(-28.125% + 5%));
   position: relative;
-  /* width: 100vw; */
-  padding-top: 15vh;
-  padding-bottom: 75vh;
+  margin-top: 15%;
+  margin-bottom: 115%;
 }
 
+#explain-anchor {
+  transform: none;
+}
 
-#playa, #explain-playa {
+.video-container {
   position: absolute;
-  left: 0;
-  right: 0;
-  margin: auto;
   width: 100vw;
+  height: calc(56.25vw);
+
 }
 
-#playa {
-  left: -15vw;
-  margin-top: 10%;
+#vid-ht {
+  width: 100vw!important;
+  height: 56.25vw!important;
 }
 
-
-#explain-playa {
-  left: 0;
-  right: 0;
+.all {
   height: 100%;
-  width: 100vw;
-
+  width: 100%;
 }
 
 
@@ -184,20 +182,14 @@
   border: none;
 }
 
-.all {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-}
 
 #sml-play-pause {
   cursor: pointer;
-  margin-left: 4vw;
   position: absolute;
   top: 0;
   bottom: 0;
   margin: auto;
+  margin-left: 4%;
 }
 
 #sml-play-pause > .fa-play, #sml-play-pause > .fa-pause {
@@ -208,7 +200,7 @@
   cursor: pointer;
   position: absolute;
   bottom: 50%;
-  right: 2%;
+  right: 4%;
   font-size: 1.5vh;
   transform: translateY(50%);
 
@@ -234,16 +226,9 @@
   position: absolute;
   bottom: 0;
   background-color: #000000;
-  z-index: 1;
+  /* z-index: 1; */
   transition: opacity 1s ease;
   opacity: 1;
-}
-
-#explain-bar {
-  width: 91vw;
-  left: 0;
-  right: 0;
-  margin: auto;
 }
 
 .vid-bar:hover {
@@ -327,12 +312,10 @@
 .more-thumbs > a > img:hover {
   filter:sepia(50%);
 }
-
-@media only screen and (max-width: 445px) {
- .vid-bar {
-  bottom: 10%;
- }
-
+@media only screen and (max-width: 420px) {
+  .quote-wrapper-rel {
+    padding-bottom: 60vh;
+  }
 }
 
 
@@ -356,37 +339,14 @@
   min-width: 0;
 }
 
-.video-container {
+.video-container-anchor {
+  transform: translateX(calc(-56.25vw / 1.978));
   margin-top: 15vh;
-  margin-bottom: 55vh;
-  width: max-content;
-  height: max-content;
-
+  margin-bottom: 135vh;
 }
 
-.all {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-}
-
-#playa {
-  width: 100vw;
-  height: 100vh;
-  left: -28.45vw;
-}
-
-.vid-bar {
-  bottom: 0;
-}
-
-#explain-bar {
-  width: 90%;
-}
-
-#vid-ht {
-  height: 100%!important;
+#explain-anchor {
+  transform: none;
 }
 
 .vid-btn {

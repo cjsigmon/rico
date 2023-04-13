@@ -91,6 +91,9 @@ function BlogPostTemplate ({ data: { post } }) {
           case "power-vid":
             return <VideoComp color={color.color} link={"https://player.vimeo.com/video/291295858?h=fee30cc906"} />;
             break;
+
+            
+
         }
       }
       else if (node.attribs && node.attribs.class === "replace-interactive") {

@@ -117,7 +117,7 @@
 }
 
 #drugname p, #fact-graf p   { 
-  font-size: 1vw;
+  font-size: 2vh;
 }
 
 #fact-graf p {
@@ -178,10 +178,16 @@ button:focus > .sq:not(#srcSq) {
   margin: 0;
 }
 
-
+.svg-cont {
+  width: 100%;
+}
 
 #Layer_1 {
-  transform: translateX(10%);
+  width: 27vw;
+  padding-left: 10vw;
+  transform: translate(11vw, 7vw);
+  height: auto;
+  
 }
 
 #shading-inner-cap {
@@ -231,5 +237,67 @@ button:focus > .sq:not(#srcSq) {
 
   .cls-4 {
     fill: #fff;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .fill-width{
+      width: 100vw;
+      height: 230vw;
+      transform: translateX(-15%);
+    }
+
+    #fent-title {
+      font-size: 1.5vh;
+    }
+
+    #btn-cont {
+      left: 0;
+      right: 0;
+      margin: auto;
+      top: 5%;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    #btn-cont button {
+      margin: 0;
+    }
+
+    .sq {
+      height: 2.5vh;
+      width: 2.5vh;
+    }
+
+    .btn-text {
+      font-size: 1.5vh;
+    }
+
+
+    #Layer_1 {
+      width: 60vw;
+      padding-left: 10vw;
+      transform: translate(11vw, 30vw);
+      height: auto;
+    }
+
+    #abt-drug-cont {
+      position: absolute;
+      width: 75%;
+      top: 53%;
+      right: 0;
+      bottom: auto;
+      left: 0;
+      margin: auto;
+    }
+
+    #grams-cont {
+      position: absolute;
+      top: 43%;
+      bottom: auto;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+
   }
 

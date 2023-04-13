@@ -62,7 +62,7 @@ p, h2, h3, h4, h5, .wp-element-caption {
 
 .home-story-pics {
     width: 100vw;
-    height: 49.48vw;
+    height: 100vw;
     position: relative;
     background-size: cover;
 }
@@ -191,6 +191,10 @@ background-color: #004E65;}
     .home-title {
         bottom: 15vh;
         width: initial;
+    }
+
+    .home-story-pics {
+        height: 49.48vw;
     }
 
     .home-subtitle {

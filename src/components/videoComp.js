@@ -124,36 +124,30 @@ export default function VideoComp({ left, link, color }) {
   
 
     return (
-        <div className="video-container" ref={myRef}>
+
+        <div className="video-container-anchor" ref={myRef} onMouseMove={handleMouseMove} id={left == 0 ? "explain-anchor" : ""}>
           {/* <h3 ref={showRef}>PROGRESS: {progress}%</h3> */}
           {/* <button onClick={() => handleSkipTo(30)}>Skip to 30 seconds</button> */}
             
-            <div id={left == 0 ? "explain-playa" : "playa"} ref={playaRef}>
-              
+            
+            <div className="video-container">
               
               <ReactPlayer
                   id="vid-ht"
                   ref={playerRef}
-                  width="100%"
-                  style={playing ? {} : { filter: 'blur(5px)',  filter: 'brightness(50%)'}}
+                  style={playing ? {} : { filter: 'blur(5px)',  filter: 'brightness(50%)', position: 'absolute', top:'0', left:'0', width: '100%', height:'100%'}}
                   url={link}
                   onProgress={handleProgress}
-                  wrapper={(props) => <section {...props} className="my-player" />}
                   
                   
                   // controls
                   onPlay={() => setPlaying(true)}
                   onPause={() => (setPlaying(false), handleProgress)}
+                  
               />
-              
-              {/* <h1 ref={titleRef} className="vid-title" style={headingStyle}>VIDEO TITLE</h1> */}
-            
-                
-
-              
-            
-              <div className="all" onMouseMove={handleMouseMove} ref={cursRef}>
-              <div className="vid-bar" id={left == 0 ? "explain-bar" : ""} ref={barRef}>
+           
+              <div className="all" id={left == 0 ? "explain-all" : ""} ref={cursRef}>
+                <div className="vid-bar" id={left == 0 ? "explain-bar" : ""} ref={barRef}>
                   <div className="prog-bar" ref={divRef} onClick={handleTimeClick} >
                     <div className="prog-fill-bar" ref={progRef} style={{ width: `${progress}%` }}>
                       <div className="prog-fill-dot" ref={dotRef}></div>
@@ -164,11 +158,11 @@ export default function VideoComp({ left, link, color }) {
                 </div>
                 <button className="vid-btn" ref={vidBtnRef} onClick={handleButtonClick}>{playing ? PAUSE : PLAY}</button>
               </div>
-            </div>
 
-            
-            
-        </div>
+
+              </div>
+     
+         </div>
 
       );
 }

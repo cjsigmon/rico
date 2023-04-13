@@ -8,6 +8,7 @@ import { Tween, Timeline } from "react-gsap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown, faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import gov1 from '../img/gov/1Lewis-03112023-SAT-225.jpg';
+import gov2 from '../img/gov/2Lewis-03112023-SAT-163.jpg';
 
 const SectionWipes2 = () => {
   const DOWN = <FontAwesomeIcon icon={faArrowDown} color="white"/>
@@ -33,14 +34,22 @@ const SectionWipes2 = () => {
             from={{ x: '100%' }}
             to={{ x: '0%' }}
           >
-            <section className="panel black"></section>
+            <section className="panel"><img src={gov1}/><p>Loíza, Puerto Rico, is a lively and joyful community supporting itself in the face of continued adversity. Loíza is representative of Puerto Rico’s broader resistance.</p></section>
           </Tween>
 {/* 2 */}
           <Tween
             from={{ x: '100%' }}
             to={{ x: '0%' }}
           >
-            <section className="panel gov2"><span>Panel</span></section>
+            <section className="panel"><img src={gov2}/></section>
+          </Tween>
+{/* 2.5 */}
+          <Tween
+            from={{ x: '100%' }}
+            to={{ x: '0%' }}
+          >
+            <section className="panel"><p>Bomba is an improvisational style of dance that begins with a solo dancer approaching a group of percussionists. The percussionists follow the dancer's movements instead of the dancer following the music. The style of Bomba is heavily tied to expression and freedom instead of performance and entertainment. 
+          </p></section>
           </Tween>
 {/* 3 */}
           <Tween

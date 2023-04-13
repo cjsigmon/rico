@@ -63,13 +63,9 @@ function Interactive({ title }) {
       setSrcVis(!srcVis);
     }
 
-    const [viewBox, setViewBox] = useState('0 0 100 100');
     const svgRef = useRef(null);
   
-    useEffect(() => {
-      const { width, height } = svgRef.current.getBoundingClientRect();
-      setViewBox(`-200 -90 ${width} ${height}`);
-    }, []);
+    
     
     
             return (
@@ -128,9 +124,8 @@ function Interactive({ title }) {
                     </button>
                   </div>
                     
-                    
-                  <svg ref={svgRef} id="Layer_1" data-name="Layer 1" viewBox={viewBox}>
-
+                <div className="svg-cont">
+                  <svg ref={svgRef} id="Layer_1" data-name="Layer 1" viewBox="0 0 212.4 276.9">
                     <g id="bottle">
                       <path id="glass" class="cls-1" d="m23.8,65.08c35.56,97.05,63.43,167.9,72.37,188.91,2.18,5.12,6.98,15.88,22.86,19.54,26.5,4.34,63.2-5.13,84.32-25.59,26.4-31.44-23.54-116.87-65.01-225.2-22.98,15.98-87.41,39.44-114.54,42.34Z"/>
                       <g id="shading-inner-cap">
@@ -210,7 +205,8 @@ function Interactive({ title }) {
                       </g>
                     </g>
                   </svg>
-                                        
+                  </div>  
+
                 </div>
             );
 }
