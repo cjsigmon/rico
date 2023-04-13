@@ -30,26 +30,27 @@ import early2 from '../img/timeline/early_1500s_slaves.jpeg';
 import mid from '../img/timeline/Mid_1600s.jpg';
 import tbg from '../img/timeline/timeline_background1.jpg';
 
-const CRED = "Photo courtesy of The Office of Information for Puerto Rico Collection, <br />1944-1948"
+const CRED = "Photo courtesy of The Office of Information for Puerto Rico Collection, 1944-1948"
 
 const myArray = [
   { yr: 'Before 1493', img: before_1493, cred: "", desc: 'Taíno natives settle on the island. They call the island Borinquén and refer to themselves as Boricuas. '},
   { yr: '1493', img: t1493, cred: "", desc: 'Explorer and colonizer Christopher Columbus “discovers” the island. He claims it for Spain and calls it San Juan Bautista.'},
   { yr: 'Early 1500s', img: early2, cred: "", desc: 'Spanish colonizers import slaves from Africa to produce cash crops.'},
+  { yr: 'Early 1500s', img: early1, cred: "", desc: 'Members of the West African Yoruba tribe—brought to the island as slaves—settle the land that will become Loíza.'},
   { yr: '1521', img: t1521, cred: "", desc: 'The first European settlement—today known as San Juan Bay— is renamed Puerto Rico (“rich port”), which eventually becomes the name for the whole island.'},
-  { yr: 'Mid 1600s', img: mid, cred: {CRED}, desc: 'The Parish Church of the Holy Spirit and Saint Patrick is built in Loíza, making it one of the oldest churches on the island.'},
-  { yr: '1690', img: t1690, cred: {CRED}, desc: 'The governor of the island requests authorization from the Spanish government to recognize Loiza as a town.'},
-  { yr: '1719', img: t1719, cred: {CRED}, desc: 'The Spanish government officially declares Loiza a town.'},
+  { yr: 'Mid 1600s', img: mid, cred: CRED, desc: 'The Parish Church of the Holy Spirit and Saint Patrick is built in Loíza, making it one of the oldest churches on the island.'},
+  { yr: '1690', img: t1690, cred: CRED, desc: 'The governor of the island requests authorization from the Spanish government to recognize Loiza as a town.'},
+  { yr: '1719', img: t1719, cred: CRED, desc: 'The Spanish government officially declares Loiza a town.'},
   { yr: '1873', img: t1873, cred: "", desc: 'The Spanish National Assembly abolishes slavery in Puerto Rico.'},
   { yr: '1898', img: t1521, cred: "", desc: 'The Treaty of Paris is signed, ending the Spanish-American War. The Spanish cede Puerto Rico, Guam, and the Philippines to the U.S.'},
   { yr: '1917', img: t1917, cred: "", desc: 'Congress passes an act granting U.S. citizenship to all Puerto Ricans.'},
   { yr: '1920', img: t1521, cred: "", desc: 'Congress passes the Jones Act, requiring all goods shipped between U.S. ports to be transported by U.S. vessels and operated by U.S. crews. This increases the cost and delivery time for Puerto Rican imports.'},
-  { yr: '1924', img: t1924, cred: {CRED}, desc: 'The U.S. Coast Guard begins to regulate el ancón, a barge that transported goods and people from one side of the Río Grande of Loíza to the other. When the barge was established is unclear, but it could have been operational as early as the 1700s.'},
+  { yr: '1924', img: t1924, cred: CRED, desc: 'The U.S. Coast Guard begins to regulate el ancón, a barge that transported goods and people from one side of the Río Grande of Loíza to the other. When the barge was established is unclear, but it could have been operational as early as the 1700s.'},
   { yr: '1940s', img: t1940s, cred: "", desc: 'The U.S. and Puerto Rican governments launch Operation Bootstrap to industrialize the island, leading to a massive decline in agriculture.'},
   { yr: '1948', img: t1948, cred: "", desc: 'Congress passes an act permitting Puerto Ricans to elect their own governor.'},
   { yr: '1952', img: t1952_c, cred: "", desc: 'Puerto Rico officially becomes a U.S. commonwealth, allowing the island to create its own constitution and have a degree of self-governance.'},
-  { yr: '1952', img: t1952_a, cred: {CRED}, desc: 'Don Feliciano “Chano” Cortijo becomes the owner of el ancón. His family runs the barge for three generations.'},
-  { yr: '1980s', img: t1985, cred: {CRED}, desc: 'A bridge is built from one side of the Rio Grande of Loíza to the other, eliminating the need for the barge.'},
+  { yr: '1952', img: t1952_a, cred: CRED, desc: 'Don Feliciano “Chano” Cortijo becomes the owner of el ancón. His family runs the barge for three generations.'},
+  { yr: '1980s', img: t1985, cred: CRED, desc: 'A bridge is built from one side of the Rio Grande of Loíza to the other, eliminating the need for the barge.'},
   { yr: '2014', img: t2015, cred: "", desc: 'María Luisa Cortijo—daughter of Chano Cortijo—Andrés Santos, and others found El Ancón, a non-profit, community-based organization. Its mission is to preserve the historical culture and create opportunities for the youth of Loíza.'},
   { yr: '2015', img: t2015, cred: "", desc: 'The governor of Puerto Rico announces that the island cannot meet its debt obligations due to its worsening economic crisis.'},
   { yr: '2016', img: t2015, cred: "", desc: 'President Obama signs the Puerto Rico Oversight, Management, and Economic Stability Act (PROMESA) into law to restructure debt and achieve fiscal responsibility.'},
@@ -59,17 +60,22 @@ const myArray = [
   { yr: '2022', img: t2017_b, cred: "", desc: 'The government of Puerto Rico formally exits bankruptcy, meaning it’ll resume payments to bondholders and settle claims filed by residents and businesses alike.'}
 ];
 
+
+
 const Chronos = () => {
-  const ESC = <FontAwesomeIcon icon={faCircleXmark} color="orange"/>
+  const ESC = <FontAwesomeIcon icon={faCircleXmark} color="#FF6600"/>
   const INVIS = <FontAwesomeIcon icon={faCircleXmark} color="white"/>
-  const LARR = <FontAwesomeIcon icon={faChevronLeft} color="orange"/>
-  const RARR = <FontAwesomeIcon icon={faChevronRight} color="orange"/>
+  const LARR = <FontAwesomeIcon icon={faChevronLeft} color="#FF6600"/>
+  const RARR = <FontAwesomeIcon icon={faChevronRight} color="#FF6600"/>
+  const modalRef= useRef(null);
   const yeaRef = useRef(null);
   const imgRef = useRef(null);
   const descRef = useRef(null);
   const credRef = useRef(null);
   const [index, setIndex] = useState(0);
   const len = myArray.length;
+
+  
 
   useEffect(() => {
     const year = yeaRef.current;
@@ -82,6 +88,10 @@ const Chronos = () => {
     img.src = myArray[index].img;
     cred.innerText = myArray[index].cred;
   }, [index]);
+
+  const handleEsc = () => {
+    modalRef.current.style.display = 'none';
+  }
 
   const handleRight = () => {
     if (index < len - 1) {
@@ -99,6 +109,35 @@ const Chronos = () => {
     // console.log("WHA");
   }
 
+  function handleClick(childIndex) {
+    
+    console.log(`Child ${childIndex + 1} of class vert-line-event was clicked!`);
+    let amends = 0;
+    // if (childIndex > 1) {
+    //   amends += 1;
+    //   if (childIndex > 3) {
+    //     amends += 1;
+    //     if (childIndex > 7) {
+    //       amends += 1;
+    //       if (childIndex > 10) {
+    //         amends += 1;
+    //         if (childIndex > 12) {
+    //           amends += 1;
+    //           if (childIndex > 24) {
+    //             amends += 1;
+    //             console.log("very late item")
+    //           }
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
+    setIndex(childIndex - amends);
+    
+    console.log("Index is" + index);
+    modalRef.current.style.display = 'grid';
+  }
+
   return (
     <div className="time-anchor">
       <div className="time-container">
@@ -109,7 +148,7 @@ const Chronos = () => {
 
 
 
-          <div id="modal-window">
+          <div id="modal-window" ref={modalRef}>
 
           <span className="arr-esc">
               {INVIS}
@@ -119,12 +158,12 @@ const Chronos = () => {
             <div className="modal-content">
               <h4 ref={yeaRef}>{myArray[index].yr}</h4>
               <p ref={descRef} >{myArray[index].desc}</p>
-              <img ref={imgRef} width={"100%"} src={before_1493}/>
+              <img width="100%" ref={imgRef} src={before_1493}/>
               <p ref={credRef} >{myArray[index].cred}</p>
             </div>
 
             <span className="arr-esc">
-              {ESC}
+              <a className="esc" onClick={handleEsc} >{ESC}</a>
               <a className="arrow" onClick={handleRight}>{RARR}</a>
             </span> 
             
@@ -135,7 +174,7 @@ const Chronos = () => {
           <div id="midline"></div>
 
 
-          <div className="vert-line-event">
+          <div className="vert-line-event" onClick={() => handleClick(0)}>
             <div className="top-date">
               <h4 className="date top">Before <br/>1493</h4>
             </div>  
@@ -148,14 +187,14 @@ const Chronos = () => {
             </div>
           </div>
 
-          <div className="vert-line-event">
+          <div className="vert-line-event cent">
             <span className="century"><h4 className="century-name">
               15<sup>th</sup>
               <br />Century</h4>
             </span>
           </div>
 
-          <div className="vert-line-event">
+          <div className="vert-line-event" onClick={() => handleClick(1)}>
             <div className="topper">
               <div className="desc-box">
               <p className="white-desc">Christopher Columbus "discovers" the island</p>
@@ -168,14 +207,14 @@ const Chronos = () => {
             </div>
           </div>
 
-          <div className="vert-line-event">
+          <div className="vert-line-event cent">
             <span className="century"><h4 className="century-name">
               16<sup>th</sup>
               <br />Century</h4>
             </span>
           </div>
 
-          <div className="vert-line-event">
+          <div className="vert-line-event" onClick={() => handleClick(2)}>
             <div className="top-date">
               <h4 className="date top">Early <br/>1500s</h4>
             </div>  
@@ -188,7 +227,7 @@ const Chronos = () => {
             </div>
           </div>
 
-          <div className="vert-line-event">
+          <div className="vert-line-event" onClick={() => handleClick(3)}>
             <div className="topper">
               <div className="desc-box">
               <p className="white-desc">Former slaves settle Loíza</p>
@@ -201,7 +240,7 @@ const Chronos = () => {
             </div>
           </div>
 
-          <div className="vert-line-event">
+          <div className="vert-line-event" onClick={() => handleClick(4)}>
             <div className="top-date">
               <h4 className="date top">1521</h4>
             </div>  
@@ -214,14 +253,14 @@ const Chronos = () => {
             </div>
           </div>
 
-          <div className="vert-line-event">
+          <div className="vert-line-event cent">
             <span className="century"><h4 className="century-name">
               17<sup>th</sup>
               <br />Century</h4>
             </span>
           </div>
           
-          <div className="vert-line-event">
+          <div className="vert-line-event" onClick={() => handleClick(5)}>
             <div className="topper">
               <div className="desc-box">
               <p className="white-desc">The Saint Patrick Church is built in Loíza</p>
@@ -234,7 +273,7 @@ const Chronos = () => {
             </div>
           </div>
 
-          <div className="vert-line-event">
+          <div className="vert-line-event" onClick={() => handleClick(6)}>
             <div className="top-date">
               <h4 className="date top">1690</h4>
             </div>  
@@ -247,14 +286,14 @@ const Chronos = () => {
             </div>
           </div>
 
-          <div className="vert-line-event">
+          <div className="vert-line-event cent">
             <span className="century"><h4 className="century-name">
               18<sup>th</sup>
               <br />Century</h4>
             </span>
           </div>
 
-          <div className="vert-line-event">
+          <div className="vert-line-event" onClick={() => handleClick(7)}>
             <div className="topper">
               <div className="desc-box">
               <p className="white-desc">Spain declares Loiza a town</p>
@@ -267,14 +306,14 @@ const Chronos = () => {
             </div>
           </div>
 
-          <div className="vert-line-event">
+          <div className="vert-line-event cent">
             <span className="century"><h4 className="century-name">
               19<sup>th</sup>
               <br />Century</h4>
             </span>
           </div>
 
-          <div className="vert-line-event">
+          <div className="vert-line-event" onClick={() => handleClick(8)}>
             <div className="top-date">
               <h4 className="date top">1873</h4>
             </div>  
@@ -287,7 +326,7 @@ const Chronos = () => {
             </div>
           </div>
 
-          <div className="vert-line-event">
+          <div className="vert-line-event" onClick={() => handleClick(9)}>
             <div className="topper">
               <div className="desc-box">
               <p className="white-desc">Spain cedes Puerto Rico to the U.S.</p>
@@ -300,14 +339,14 @@ const Chronos = () => {
             </div>
           </div>
 
-          <div className="vert-line-event">
+          <div className="vert-line-event cent">
             <span className="century"><h4 className="century-name">
               20<sup>th</sup>
               <br />Century</h4>
             </span>
           </div>
 
-          <div className="vert-line-event">
+          <div className="vert-line-event" onClick={() => handleClick(10)}>
             <div className="top-date">
               <h4 className="date top">1917</h4>
             </div>  
@@ -320,7 +359,7 @@ const Chronos = () => {
             </div>
           </div>
 
-          <div className="vert-line-event">
+          <div className="vert-line-event" onClick={() => handleClick(11)}>
             <div className="topper">
               <div className="desc-box">
               <p className="white-desc">Congress passes the Jones Act</p>
@@ -333,7 +372,7 @@ const Chronos = () => {
             </div>
           </div>
 
-          <div className="vert-line-event">
+          <div className="vert-line-event" onClick={() => handleClick(12)}>
             <div className="top-date">
               <h4 className="date top">1924</h4>
             </div>  
@@ -346,7 +385,7 @@ const Chronos = () => {
             </div>
           </div>
 
-          <div className="vert-line-event">
+          <div className="vert-line-event" onClick={() => handleClick(13)}>
             <div className="topper">
               <div className="desc-box">
               <p className="white-desc">The U.S. and Puerto Rican governments launch Operation Bootstrap</p>
@@ -359,7 +398,7 @@ const Chronos = () => {
             </div>
           </div>
 
-          <div className="vert-line-event">
+          <div className="vert-line-event" onClick={() => handleClick(14)}>
             <div className="top-date">
               <h4 className="date top">1948</h4>
             </div>  
@@ -372,7 +411,7 @@ const Chronos = () => {
             </div>
           </div>
 
-          <div className="vert-line-event">
+          <div className="vert-line-event" onClick={() => handleClick(15)}>
             <div className="topper">
               <div className="desc-box">
               <p className="white-desc">Puerto Rico becomes a commonwealth</p>
@@ -385,7 +424,7 @@ const Chronos = () => {
             </div>
           </div>
 
-          <div className="vert-line-event">
+          <div className="vert-line-event" onClick={() => handleClick(16)}>
             <div className="top-date">
               <h4 className="date top">1952</h4>
             </div>  
@@ -398,7 +437,7 @@ const Chronos = () => {
             </div>
           </div>
 
-          <div className="vert-line-event">
+          <div className="vert-line-event" onClick={() => handleClick(17)}>
             <div className="topper">
               <div className="desc-box">
               <p className="white-desc">A bridge is built over the Rio Grande of Loíza</p>
@@ -411,14 +450,14 @@ const Chronos = () => {
             </div>
           </div>
 
-          <div className="vert-line-event">
+          <div className="vert-line-event cent">
             <span className="century"><h4 className="century-name">
               21<sup>st</sup>
               <br />Century</h4>
             </span>
           </div>
           
-          <div className="vert-line-event">
+          <div className="vert-line-event" onClick={() => handleClick(18)}>
             <div className="top-date">
               <h4 className="date top">2014</h4>
             </div>  
@@ -431,7 +470,7 @@ const Chronos = () => {
             </div>
           </div>
 
-          <div className="vert-line-event">
+          <div className="vert-line-event" onClick={() => handleClick(19)}>
             <div className="topper">
               <div className="desc-box">
               <p className="white-desc">The island cannot meet its debt obligations</p>
@@ -444,7 +483,7 @@ const Chronos = () => {
             </div>
           </div>
 
-          <div className="vert-line-event">
+          <div className="vert-line-event" onClick={() => handleClick(20)}>
             <div className="top-date">
               <h4 className="date top">2016</h4>
             </div>  
@@ -457,7 +496,7 @@ const Chronos = () => {
             </div>
           </div>
 
-          <div className="vert-line-event">
+          <div className="vert-line-event" onClick={() => handleClick(21)}>
             <div className="topper">
               <div className="desc-box">
               <p className="white-desc">(May) - Puerto Rico seeks bankruptcy relief in federal court</p>
@@ -470,7 +509,7 @@ const Chronos = () => {
             </div>
           </div>
 
-          <div className="vert-line-event">
+          <div className="vert-line-event" onClick={() => handleClick(22)}>
             <div className="top-date">
               <h4 className="date top">2017</h4>
             </div>  
@@ -483,7 +522,7 @@ const Chronos = () => {
             </div>
           </div>
 
-          <div className="vert-line-event">
+          <div className="vert-line-event" onClick={() => handleClick(23)}>
             <div className="topper">
               <div className="desc-box">
               <p className="white-desc">The Financial Oversight and Management Board wants more control</p>
@@ -496,7 +535,7 @@ const Chronos = () => {
             </div>
           </div>
 
-          <div className="vert-line-event">
+          <div id="end" className="vert-line-event" onClick={() => handleClick(24)}>
             <div className="top-date">
               <h4 className="date top">2022</h4>
             </div>  
@@ -508,6 +547,7 @@ const Chronos = () => {
               </div>
             </div>
           </div>
+
 
         </div>
       </div>
