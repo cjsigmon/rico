@@ -30,13 +30,33 @@ import early2 from '../img/timeline/early_1500s_slaves.jpeg';
 import mid from '../img/timeline/Mid_1600s.jpg';
 import tbg from '../img/timeline/timeline_background1.jpg';
 
+const CRED = "Photo courtesy of The Office of Information for Puerto Rico Collection, <br />1944-1948"
 
 const myArray = [
-  { yr: 'Before 1493', img: before_1493, cred: "cred", desc: 'Taíno natives settle on the island. They call the island Borinquén and refer to themselves as Boricuas. '},
-  { yr: '1493', img: t1493, cred: "credit", desc: 'Explorer and colonizer Christopher Columbus “discovers” the island. He claims it for Spain and calls it San Juan Bautista.'},
-  { yr: 'Early 1500s', img: early2, cred: "credit", desc: 'Spanish colonizers import slaves from Africa to produce cash crops.'},
-  { yr: 'Early 1500s', img: early1, cred: "credit", desc: 'Members of the West African Yoruba tribe—brought to the island as slaves—settle the land that will become Loíza.'},
-  { yr: '2022', img: t2017_b, cred: "credit", desc: 'The government of Puerto Rico formally exits bankruptcy, meaning it’ll resume payments to bondholders and settle claims filed by residents and businesses alike.'}
+  { yr: 'Before 1493', img: before_1493, cred: "", desc: 'Taíno natives settle on the island. They call the island Borinquén and refer to themselves as Boricuas. '},
+  { yr: '1493', img: t1493, cred: "", desc: 'Explorer and colonizer Christopher Columbus “discovers” the island. He claims it for Spain and calls it San Juan Bautista.'},
+  { yr: 'Early 1500s', img: early2, cred: "", desc: 'Spanish colonizers import slaves from Africa to produce cash crops.'},
+  { yr: '1521', img: t1521, cred: "", desc: 'The first European settlement—today known as San Juan Bay— is renamed Puerto Rico (“rich port”), which eventually becomes the name for the whole island.'},
+  { yr: 'Mid 1600s', img: mid, cred: {CRED}, desc: 'The Parish Church of the Holy Spirit and Saint Patrick is built in Loíza, making it one of the oldest churches on the island.'},
+  { yr: '1690', img: t1690, cred: {CRED}, desc: 'The governor of the island requests authorization from the Spanish government to recognize Loiza as a town.'},
+  { yr: '1719', img: t1719, cred: {CRED}, desc: 'The Spanish government officially declares Loiza a town.'},
+  { yr: '1873', img: t1873, cred: "", desc: 'The Spanish National Assembly abolishes slavery in Puerto Rico.'},
+  { yr: '1898', img: t1521, cred: "", desc: 'The Treaty of Paris is signed, ending the Spanish-American War. The Spanish cede Puerto Rico, Guam, and the Philippines to the U.S.'},
+  { yr: '1917', img: t1917, cred: "", desc: 'Congress passes an act granting U.S. citizenship to all Puerto Ricans.'},
+  { yr: '1920', img: t1521, cred: "", desc: 'Congress passes the Jones Act, requiring all goods shipped between U.S. ports to be transported by U.S. vessels and operated by U.S. crews. This increases the cost and delivery time for Puerto Rican imports.'},
+  { yr: '1924', img: t1924, cred: {CRED}, desc: 'The U.S. Coast Guard begins to regulate el ancón, a barge that transported goods and people from one side of the Río Grande of Loíza to the other. When the barge was established is unclear, but it could have been operational as early as the 1700s.'},
+  { yr: '1940s', img: t1940s, cred: "", desc: 'The U.S. and Puerto Rican governments launch Operation Bootstrap to industrialize the island, leading to a massive decline in agriculture.'},
+  { yr: '1948', img: t1948, cred: "", desc: 'Congress passes an act permitting Puerto Ricans to elect their own governor.'},
+  { yr: '1952', img: t1952_c, cred: "", desc: 'Puerto Rico officially becomes a U.S. commonwealth, allowing the island to create its own constitution and have a degree of self-governance.'},
+  { yr: '1952', img: t1952_a, cred: {CRED}, desc: 'Don Feliciano “Chano” Cortijo becomes the owner of el ancón. His family runs the barge for three generations.'},
+  { yr: '1980s', img: t1985, cred: {CRED}, desc: 'A bridge is built from one side of the Rio Grande of Loíza to the other, eliminating the need for the barge.'},
+  { yr: '2014', img: t2015, cred: "", desc: 'María Luisa Cortijo—daughter of Chano Cortijo—Andrés Santos, and others found El Ancón, a non-profit, community-based organization. Its mission is to preserve the historical culture and create opportunities for the youth of Loíza.'},
+  { yr: '2015', img: t2015, cred: "", desc: 'The governor of Puerto Rico announces that the island cannot meet its debt obligations due to its worsening economic crisis.'},
+  { yr: '2016', img: t2015, cred: "", desc: 'President Obama signs the Puerto Rico Oversight, Management, and Economic Stability Act (PROMESA) into law to restructure debt and achieve fiscal responsibility.'},
+  { yr: '2017 (May)', img: t2017_b, cred: "", desc: 'The government of Puerto Rico seeks bankruptcy relief in federal court, making it the first U.S. state or territory to do so. Its over $70 billion debt is the largest municipal bankruptcy in U.S. history.'},
+  { yr: '2017 (September)', img: t2017_h, cred: "", desc: 'Maria, a category 4 hurricane, makes landfall on the island, causing $90 billion in damages and over 100,000 residents to emigrate.'},
+  { yr: '2020', img: t2017_b, cred: "", desc: 'A term change in the Financial Oversight and Management Board replaces half of the members, shifting its main goal from debt restructuring to stricter financial oversight.'},
+  { yr: '2022', img: t2017_b, cred: "", desc: 'The government of Puerto Rico formally exits bankruptcy, meaning it’ll resume payments to bondholders and settle claims filed by residents and businesses alike.'}
 ];
 
 const Chronos = () => {
