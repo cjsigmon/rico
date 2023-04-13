@@ -5,29 +5,150 @@
 
 /* timeline */
 
-.actual-fill-width-cont {
+.time-anchor {
+  transform: translateX(calc(-56.25vw / 2));
   position: relative;
-    width: 235%;
-    height: 60vh;
-    transform: translateX(-28.5%);
-    background-color: gray;
-    overflow: scroll;
+  margin-top: 15%;
+  margin-bottom: 170%;
+  background-color: pink;
 }
 
-.actual-fill-width {
-  position: absolute;
-    width: 200vw;
-    height: 60vh;
-    background-color: lightskyblue;
-  
+.time-container {
+position:absolute;
+  width: 99vw;
+  height: auto;
+  border: 3px solid orange;
+  background: none;
+  display: inline-block;
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
-/* 
-.timeline {
-    width: 100vw;
-    height: 60vh;
-    background-color: pink;
-   
-} */
+
+#bigline {
+  width: 1000vw;
+  height: 80vh;
+  background: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+#midline {
+  position: absolute;
+  height: 1px;
+  width: inherit;
+  border: 2px solid #ee702dd2;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.timeline-bg {
+  height: inherit;
+  position: fixed;
+  z-index: -1;
+}
+
+.timeline-bg img {
+  height: inherit;
+  filter: sepia(50%) brightness(40%);
+}
+
+.vert-line-event {
+  position: relative;
+  height: 100%;
+  width: auto;
+  margin-left: 5vw;
+}
+
+.vert-line-event:hover {
+  cursor: pointer;
+  scale: 110%;
+}
+
+.topper, .botter {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.desc-box {
+  max-width: 180px;
+  height: 60%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.desc-box.bot {
+  align-items: flex-start;
+}
+
+
+.white-desc {
+  max-width: 180px;
+  text-align: center;
+  color: white;
+  font-size: 1.9vh;
+  margin-bottom: 5px;
+}
+
+
+.bott-date, .top-date {
+  height: 50%;
+}
+
+.date {
+  margin-top: 13%;
+  max-width: 180px;
+  font-size: 3.5vh;
+  color: var(--goverance);
+  color: #ff6600;
+  text-align: center;
+}
+
+.top-date {
+  display: flex;
+  justify-content: center;
+}
+
+.date.top {
+  display: flex;
+  align-items: flex-end;
+}
+
+.vert-line-top {
+  height: 40%;
+  width: 1px;
+  border: 1px solid #ee702dec;
+  margin-bottom: 10%;
+}
+
+.lil-circ {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 15px;
+  width: 15px;
+  border: 3px solid #ee702d;
+  border-radius: 50%;
+}
+
+.century {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 2px solid #ee702d;
+}
+
+.century-name {
+  color: #ff6600;
+  max-width: 180px;
+  margin: 0;
+  line-height: 1.2;
+  padding-bottom: 5px;
+}
 
 /* end timeline */
 
