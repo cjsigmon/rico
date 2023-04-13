@@ -24,6 +24,55 @@ position:absolute;
   overflow-y: hidden;
 }
 
+#titlecard {
+  position: relative;
+  display: inline-block;
+  flex-direction: row;
+  z-index: 1;
+  width: 100vw;
+  height: 80vh;
+  /* background-image: url('/img/timeline/2015.jpeg'); */
+  background-image: url('./img/timeline/timeline_background1.jpg');
+  background-size: cover;
+  background-position-y: center;
+  /* background-color: #004E65; */
+}
+
+#titlecard h1, h4 {
+  color: #ff6600;
+  max-width: 60vw;
+  margin: 2vh;
+}
+
+#titlecard h1 {
+  font-size: 13.5vh;
+}
+
+#titlecard h4 {
+  margin-left: 3vh;
+  font-weight: 600;
+}
+
+#progbar {
+  position: fixed;
+  z-index: 2;
+  left: 50vw;
+  transform: translateX(-50%);
+  
+  margin-top: 100%;
+  width: 80vw;
+  height: 9px;
+  background-color: #ff660082;
+}
+
+#progfill {
+  position: inherit;
+  z-index: inherit;
+  height: 9px;
+  width: 1%;
+  background-color: #ff6600;
+}
+
 #bigline {
   position: relative;
   width: 1200vw;

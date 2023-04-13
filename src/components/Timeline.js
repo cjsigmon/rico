@@ -72,6 +72,9 @@ const Chronos = () => {
   const imgRef = useRef(null);
   const descRef = useRef(null);
   const credRef = useRef(null);
+  const overRef = useRef(null);
+  const lineRef = useRef(null);
+  const fillRef = useRef(null);
   const [index, setIndex] = useState(0);
   const len = myArray.length;
 
@@ -110,46 +113,40 @@ const Chronos = () => {
   }
 
   function handleClick(childIndex) {
-    
-    console.log(`Child ${childIndex + 1} of class vert-line-event was clicked!`);
-    let amends = 0;
-    // if (childIndex > 1) {
-    //   amends += 1;
-    //   if (childIndex > 3) {
-    //     amends += 1;
-    //     if (childIndex > 7) {
-    //       amends += 1;
-    //       if (childIndex > 10) {
-    //         amends += 1;
-    //         if (childIndex > 12) {
-    //           amends += 1;
-    //           if (childIndex > 24) {
-    //             amends += 1;
-    //             console.log("very late item")
-    //           }
-    //         }
-    //       }
-    //     }
-    //   }
-    // }
-    setIndex(childIndex - amends);
-    
-    console.log("Index is" + index);
+    setIndex(childIndex);
     modalRef.current.style.display = 'grid';
   }
 
+  const handleScroll = () => {
+    let scroll = overRef.current.scrollLeft;
+    let tot = lineRef.current.clientWidth - (2 * window.innerWidth) + 8;
+    let percentage = (scroll / tot) * 100;
+    console.log(percentage);
+    fillRef.current.style.width = percentage + "%";
+  };
+
   return (
-    <div className="time-anchor">
-      <div className="time-container">
+    <div className="time-anchor" >
+      <div className="time-container" ref={overRef}
+      onScroll={handleScroll}>
 
         
-        <div id="bigline">
+
+        
+        <div id="bigline" ref={lineRef}>
           <div className="timeline-bg"><img src={before_1493}/></div>
 
+          <div id="titlecard">
+            <h4>A timeline of</h4>
+            <h1>[Insert Clever Title Here]</h1>
+            <h4>[Insert Clarifying Subtitle Here]</h4>
+          </div>
 
+          <span id="progbar">
+           <span ref={fillRef} id="progfill"></span>
+          </span>
 
-          <div id="modal-window" ref={modalRef}>
-
+          <div id="modal-window" ref={modalRef} style={{display: 'none',}}>
           <span className="arr-esc">
               {INVIS}
               <a onClick={handleLeft} className="arrow">{LARR}</a> 
@@ -165,8 +162,7 @@ const Chronos = () => {
             <span className="arr-esc">
               <a className="esc" onClick={handleEsc} >{ESC}</a>
               <a className="arrow" onClick={handleRight}>{RARR}</a>
-            </span> 
-            
+            </span>  
           </div>
             
             
