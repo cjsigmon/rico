@@ -1,25 +1,117 @@
 // @flow
 import * as React from "react";
-import { useState, useContext } from "react";
+import { useState, useContext, useRef, useEffect } from "react";
 import { useStaticQuery, graphql, Link as GatsbyLink } from "gatsby";
 import '../photo.css';
 import { Controller, Scene } from 'react-scrollmagic';
 import { Tween, Timeline } from "react-gsap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowDown, faCircleXmark } from "@fortawesome/free-solid-svg-icons";
-import gov1 from '../img/gov/1Lewis-03112023-SAT-225.jpg';
-import gov2 from '../img/gov/2Lewis-03112023-SAT-163.jpg';
+import { faArrowDown, faCircleXmark, faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import before_1493 from '../img/timeline/before_1493.jpeg';
+import t1493 from '../img/timeline/1493.jpg';
+import t1521 from '../img/timeline/1521.jpeg';
+import t1690 from '../img/timeline/1690.jpg';
+import t1719 from '../img/timeline/1719.jpeg';
+import t1873 from '../img/timeline/1873.jpeg';
+import t1898 from '../img/timeline/1898.jpeg';
+import t1917 from '../img/timeline/1917.jpeg';
+import t1920 from '../img/timeline/1920.jpeg';
+import t1924 from '../img/timeline/1924.jpg';
+import t1940s from '../img/timeline/1940s.jpeg';
+import t1948 from '../img/timeline/1948.jpeg';
+import t1952_a from '../img/timeline/1952_ancon.jpg';
+import t1952_c from '../img/timeline/1952_commonwealth.jpeg';
+import t1985 from '../img/timeline/1985.jpg';
+import t2015 from '../img/timeline/2015.jpeg';
+import t2017_b from '../img/timeline/2017_bankruptcy.jpeg';
+import t2017_h from '../img/timeline/2017_hurricane_maria.jpeg';
+import early1 from '../img/timeline/early_1500s_former_slaves.jpeg';
+import early2 from '../img/timeline/early_1500s_slaves.jpeg';
+import mid from '../img/timeline/Mid_1600s.jpg';
+import tbg from '../img/timeline/timeline_background1.jpg';
+
+
+const myArray = [
+  { yr: 'Before 1493', img: before_1493, cred: "cred", desc: 'Taíno natives settle on the island. They call the island Borinquén and refer to themselves as Boricuas. '},
+  { yr: '1493', img: t1493, cred: "credit", desc: 'Explorer and colonizer Christopher Columbus “discovers” the island. He claims it for Spain and calls it San Juan Bautista.'},
+  { yr: 'Early 1500s', img: early2, cred: "credit", desc: 'Spanish colonizers import slaves from Africa to produce cash crops.'},
+  { yr: 'Early 1500s', img: early1, cred: "credit", desc: 'Members of the West African Yoruba tribe—brought to the island as slaves—settle the land that will become Loíza.'},
+  { yr: '2022', img: t2017_b, cred: "credit", desc: 'The government of Puerto Rico formally exits bankruptcy, meaning it’ll resume payments to bondholders and settle claims filed by residents and businesses alike.'}
+];
 
 const Chronos = () => {
-  const DOWN = <FontAwesomeIcon icon={faArrowDown} color="white"/>
-  const ESC = <FontAwesomeIcon icon={faCircleXmark} color="white"/>
+  const ESC = <FontAwesomeIcon icon={faCircleXmark} color="orange"/>
+  const INVIS = <FontAwesomeIcon icon={faCircleXmark} color="white"/>
+  const LARR = <FontAwesomeIcon icon={faChevronLeft} color="orange"/>
+  const RARR = <FontAwesomeIcon icon={faChevronRight} color="orange"/>
+  const yeaRef = useRef(null);
+  const imgRef = useRef(null);
+  const descRef = useRef(null);
+  const credRef = useRef(null);
+  const [index, setIndex] = useState(0);
+  const len = myArray.length;
+
+  useEffect(() => {
+    const year = yeaRef.current;
+    const desc = descRef.current;
+    const cred = credRef.current;
+    const img = imgRef.current;
+
+    year.innerText = myArray[index].yr;
+    desc.innerText = myArray[index].desc;
+    img.src = myArray[index].img;
+    cred.innerText = myArray[index].cred;
+  }, [index]);
+
+  const handleRight = () => {
+    if (index < len - 1) {
+      setIndex(index + 1);
+    }
+    console.log(index);
+    // console.log("WHA");
+  }
+
+  const handleLeft = () => {
+    if (index > 0) {
+      setIndex(index - 1);
+    }
+    console.log(index);
+    // console.log("WHA");
+  }
 
   return (
     <div className="time-anchor">
       <div className="time-container">
+
         
         <div id="bigline">
-          <div className="timeline-bg"><img src={gov1}/></div>
+          <div className="timeline-bg"><img src={before_1493}/></div>
+
+
+
+          <div id="modal-window">
+
+          <span className="arr-esc">
+              {INVIS}
+              <a onClick={handleLeft} className="arrow">{LARR}</a> 
+            </span>
+
+            <div className="modal-content">
+              <h4 ref={yeaRef}>{myArray[index].yr}</h4>
+              <p ref={descRef} >{myArray[index].desc}</p>
+              <img ref={imgRef} width={"100%"} src={before_1493}/>
+              <p ref={credRef} >{myArray[index].cred}</p>
+            </div>
+
+            <span className="arr-esc">
+              {ESC}
+              <a className="arrow" onClick={handleRight}>{RARR}</a>
+            </span> 
+            
+          </div>
+            
+            
+
           <div id="midline"></div>
 
 

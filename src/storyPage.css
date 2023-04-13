@@ -2,7 +2,7 @@
     padding-left: 15vw;
     padding-right: 20vw;
     width: 100vw;
-    
+    overflow-x: hidden;
 }
 
 .byline-contain {
