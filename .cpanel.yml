@@ -1,6 +1,6 @@
 --- 
 deployment: 
      tasks: 
-          - export DEPLOYPATH=/home/mejo58423/isladefuerza.unc.edu/
+          - export DEPLOYPATH=/home/mejo58423/public_html/rico
           - /bin/cp -R public/* $DEPLOYPATH
 
