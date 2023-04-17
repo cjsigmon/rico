@@ -67,6 +67,33 @@ p, h2, h3, h4, h5, .wp-element-caption {
     background-size: cover;
 }
 
+.clickme {
+    width: 18%;
+    height: 7%;
+    border-radius: 10px 0 0 10px;
+    position: absolute;
+    right: 0;
+    top: 10%;
+}
+
+.clickme a {
+    position: absolute;
+}
+
+
+
+#lcl {
+    left: 0;
+    border-radius: 0 10px 10px 0;
+}
+
+#lcl > a {
+    right: 6%;
+}
+#rcl > a {
+    left: 6%;
+}
+
 .home-title {
     font-size: 7vw;
     position: absolute;
@@ -111,6 +138,24 @@ p, h2, h3, h4, h5, .wp-element-caption {
     /* padding: 4%; */
 }
 
+.rsub {
+    position: absolute;
+    right: 0;
+}
+
+.cl-title {
+    position: inherit;
+    top: 50%;
+    transform: translateY(-50%);
+    text-decoration: none;
+}
+
+.cl-title > h5 {
+    margin: 0;
+}
+
+
+
 
 
 .right-title p {
@@ -149,13 +194,21 @@ p, h2, h3, h4, h5, .wp-element-caption {
 }
 #HEALTHCARE > div {
     /* background-image: none; */
-background-color: #004E65;}
+background-color: #004E65;
+}
+#HEALTHCARE > div > a > h5 {
+    /* background-image: none; */
+    color: #004E65;
+}
 
 #POWER {
     background-image: linear-gradient(to top,  #F3CB47, #f3cb4779, #f3cb4700, #f3cb4700), url('img/power.jpg');
 }
 #POWER > div {
     background-color: #F3CB47;
+}
+#POWER > div > a > h5 {
+    color: #F3CB47;
 }
 
 #GOVERNANCE {
@@ -164,6 +217,9 @@ background-color: #004E65;}
 #GOVERNANCE > div {
     background-color: #FF6600;
 }
+#GOVERNANCE > div > a > h5 {
+    color: #FF6600;
+}
 
 #COMMUNITY {
     background-image: linear-gradient(to top,  #FFAD00,  #ffae0060,  #ffae0000,  #ffae0000), url('img/community.jpg');
@@ -171,12 +227,26 @@ background-color: #004E65;}
 #COMMUNITY > div {
     background-color:  #FFAD00;
 }
+#COMMUNITY > div > a > h5 {
+    color:  #FFAD00;
+}
 
 #ENVIRONMENT {
     background-image: linear-gradient(to top, #3EAAA7, #3eaaa66b, #3eaaa600, #3eaaa600), url('img/environment.jpg');
 }
 #ENVIRONMENT > div {
     background-color:#3EAAA7;
+}
+#ENVIRONMENT > div > a > h5 {
+    color:#3EAAA7;
+}
+
+.bl {
+    background-color: black!important;
+}
+
+.wh {
+    background-color: white!important;
 }
 
 

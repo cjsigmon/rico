@@ -38,8 +38,15 @@
     padding-top: 5%;
 }
 
+#stry-links > a {
+    text-decoration: none;
+}
+
 .abt-side {
     display: none;
+}
+.abt-side > a {
+    text-decoration: none;
 }
 
 .nav-elem {
@@ -47,10 +54,6 @@
     color: #FFFFFF;
     font-weight: bold;
     min-width: max-content;
-}
-
-.nav-elem-a {
-    text-decoration: none;
 }
 
 #translation-box {

@@ -46,9 +46,14 @@ const HomePage = () =>  {
             
             { allWpPost.nodes.map((post, index) => (
               <div key={post.title} className="home-story-pics" id={post.title}>
+                <div className={index < 3 ? "clickme bl" : "clickme wh"} id={index % 2 == 0 ? "rcl" : "lcl"}>
+                  <Link className="cl-title" to={ post.uri }>
+                    <h5>READ THIS STORY</h5>
+                  </Link>
+                </div>
                 <div className={index % 2 == 0 ? "left-title" : "right-title"}>
                   <Link to={ post.uri }><h1 className="home-title" id={post.title + "-home-title"}>{ post.title }</h1></Link>
-                  <p className="home-subtitle" id={post.title + "-subtitle"}>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eir mod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam volu</p>
+                  <p className={index % 2 == 0 ? "home-subtitle lsub" : "home-subtitle rsub"} id={post.title + "-subtitle"}>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eir mod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam volu</p>
                 </div>
               </div>
             ))}
