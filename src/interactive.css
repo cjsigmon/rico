@@ -288,6 +288,7 @@ position:absolute;
 
 
 /* fentanyl interactive */
+
 .fill-width {
     position: relative;
     width: 180%;
@@ -493,6 +494,39 @@ button:focus > .sq:not(#srcSq) {
   }
 
   @media only screen and (max-width: 768px) {
+    /* timeline */
+    .time-anchor {
+      transform: translateX(-15.5vw);
+    }
+
+    #bigline {
+      height: 70vw;
+    }
+
+    #titlecard {
+      height: 100%;
+      width: 75vh;
+    }
+
+    #titlecard h1 {
+      font-size: 6.5vw;
+    }
+    
+    .white-desc {
+      font-size: 1.5vh;
+    }
+
+    .cent {
+      width: 80px;
+    }
+
+    .vert-line-event:hover {
+      cursor: initial;
+      scale: initial;
+    }
+
+
+    /* fentanyl interactive */
     .fill-width{
       width: 100vw;
       height: 230vw;
@@ -550,7 +584,14 @@ button:focus > .sq:not(#srcSq) {
       left: 50%;
       transform: translateX(-50%);
     }
+  }
 
+
+  @media only screen and (max-width: 420px) {
+
+    #bigline {
+      height: 30vh;
+    }
 
   }
 

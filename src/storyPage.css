@@ -24,7 +24,8 @@
 
 .post-text {
   position: relative;
-  top: -10px;
+  overflow-y: clip;
+  /* top: -10px; */
 }
 
 .post-text > p {

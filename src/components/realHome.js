@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useState, useContext } from "react";
-import { useStaticQuery, graphql, Link as GatsbyLink } from "gatsby";
+import { useStaticQuery, graphql, Link } from "gatsby";
 import Navbar from "../components/navbar";
 import '../styles.css';
 import HeaderImg from "../components/header";
@@ -47,11 +47,9 @@ const HomePage = () =>  {
             { allWpPost.nodes.map((post, index) => (
               <div key={post.title} className="home-story-pics" id={post.title}>
                 <div className={index % 2 == 0 ? "left-title" : "right-title"}>
-                  <a href={ post.uri }><h1 className="home-title" id={post.title + "-home-title"}>{ post.title }</h1></a>
+                  <Link to={ post.uri }><h1 className="home-title" id={post.title + "-home-title"}>{ post.title }</h1></Link>
                   <p className="home-subtitle" id={post.title + "-subtitle"}>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eir mod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam volu</p>
                 </div>
-               
-      
               </div>
             ))}
               <Footer/>

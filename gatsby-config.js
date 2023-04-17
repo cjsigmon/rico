@@ -11,6 +11,8 @@ module.exports = {
   siteMetadata: {
     title: "Isla de Fuerza",
   },
+  // pathPrefix: `/rico`, 
+  // add this back as necessary ^^^
   /**
    * Adding plugins to this array adds them to your Gatsby site.
    *

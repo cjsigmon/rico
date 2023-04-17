@@ -8,11 +8,11 @@ import comImage from '../img/community.jpg';
 import { useStaticQuery, graphql } from "gatsby"
 
 export default function ReadMore({ exclude }) {
-    const envLink = "/environment/";
-    const comLink = "/community/";
-    const govLink = "/governance/";
-    const powLink = "/power/";
-    const healthLink = "/healthcare/";
+    const envLink = "/environment";
+    const comLink = "/community";
+    const govLink = "/governance";
+    const powLink = "/power";
+    const healthLink = "/healthcare";
     
 
     return (

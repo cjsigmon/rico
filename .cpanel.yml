@@ -1,0 +1,6 @@
+--- 
+deployment: 
+     tasks: 
+          - export DEPLOYPATH=/home/mejo58423/isladefuerza.unc.edu/
+          - /bin/cp -R public/* $DEPLOYPATH
+

@@ -3,7 +3,7 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 import parse from "html-react-parser"
 import Navbar from "./navbar"
 
-const Layout = ({ isHomePage, children }) => {
+const Layout = ({ isHomePage, pageTitle, children }) => {
   const {
     wp: {
       generalSettings: { title },
@@ -21,7 +21,7 @@ const Layout = ({ isHomePage, children }) => {
 
   return (
     <>
-    <Navbar />
+
     <div className="global-wrapper" data-is-root-path={isHomePage}>
       {/* <header className="global-header">
         {isHomePage ? (
@@ -38,12 +38,10 @@ const Layout = ({ isHomePage, children }) => {
     
       <main>
         <br></br>
-        {children}</main>
+        {children}
+      </main>
 
-      <footer>
-        © {new Date().getFullYear()}, UNC MEJO 584
-        
-      </footer>
+      
     </div>
     </>
   )

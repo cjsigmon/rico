@@ -2,7 +2,6 @@ import React, {useState} from "react"
 import { Link, graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import parse from "html-react-parser"
-
 import Seo from "../components/seo"
 import Navbar from "../components/navbar"
 import HeaderImg from "../components/header"
@@ -154,8 +153,6 @@ export default BlogPostTemplate;
 export const pageQuery = graphql`
   query BlogPostById(
     $id: String!
-    $previousPostId: String
-    $nextPostId: String
   ) {
     post: wpPost(id: { eq: $id }) {
       id
@@ -177,14 +174,6 @@ export const pageQuery = graphql`
           }
         }
       }
-    }
-    previous: wpPost(id: { eq: $previousPostId }) {
-      uri
-      title
-    }
-    next: wpPost(id: { eq: $nextPostId }) {
-      uri
-      title
     }
   }
 `

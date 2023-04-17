@@ -42,24 +42,24 @@ export default function VideoComp({ left, link, color }) {
   }
 
     // make bg go black
-    useEffect(() => {
+    // useEffect(() => {
 
-      if (myRef.current) {
-        yPosition = myRef.current.getBoundingClientRect().y;
-      }
+    //   if (myRef.current) {
+    //     yPosition = myRef.current.getBoundingClientRect().y;
+    //   }
 
      
-    }, []);
+    // }, []);
 
-    function changeBodyBackground() {
-      if (window.pageYOffset >= (yPosition - 400) && window.pageYOffset <= (yPosition + 700)) {
-        document.body.style.transition = "background-color 0.7s ease-in-out";
-        document.body.style.backgroundColor = "black";
-      } else {
-        document.body.style.backgroundColor = "white";
-      }
-    }
-    window.addEventListener("scroll", changeBodyBackground);
+    // function changeBodyBackground() {
+    //   if (window.pageYOffset >= (yPosition - 400) && window.pageYOffset <= (yPosition + 700)) {
+    //     document.body.style.transition = "background-color 0.7s ease-in-out";
+    //     document.body.style.backgroundColor = "black";
+    //   } else {
+    //     document.body.style.backgroundColor = "white";
+    //   }
+    // }
+    // window.addEventListener("scroll", changeBodyBackground);
 // end make bg go black
 
 

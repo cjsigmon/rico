@@ -531,6 +531,8 @@ const Chronos = () => {
             </div>
           </div>
 
+          
+
           <div id="end" className="vert-line-event" onClick={() => handleClick(24)}>
             <div className="top-date">
               <h4 className="date top">2022</h4>
