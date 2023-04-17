@@ -1,6 +1,6 @@
 --- 
 deployment: 
      tasks: 
-          - export DEPLOYPATH=/home/mejo58423/public_html/rico
+          - export DEPLOYPATH=/home/mejo58423/public_html/
           - /bin/cp -R public/* $DEPLOYPATH
 
