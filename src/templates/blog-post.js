@@ -28,7 +28,7 @@ function BlogPostTemplate ({ data: { post } }) {
   var storyTeam = {};
   var color = {};
   switch(post.title) {
-    case 'ENVIRONMENT':
+    case ('ENVIRONMENT'):
       storyTeam.reporter = 'Thomas Moody-Jones';
       storyTeam.photo = 'Dylan Thiessen';
       storyTeam.video1 = 'Ann Licharew';
@@ -39,7 +39,7 @@ function BlogPostTemplate ({ data: { post } }) {
       color =  {color: '#3EAAA7'};
       
       break;
-    case 'COMMUNITY':
+    case ('COMMUNITY'):
       storyTeam.reporter = 'Liv Reilly';
       storyTeam.photo = 'Anna Connors';
       storyTeam.video1 = 'Cynthia Liu';
@@ -57,7 +57,7 @@ function BlogPostTemplate ({ data: { post } }) {
       storyTeam.upr = 'Amanda Jiménez Berríos';
       color = {color: '#FF6600'};
       break;
-    case 'POWER':
+    case 'Paso a paso':
       storyTeam.reporter = 'Preston Fore';
       storyTeam.video1 = 'Gerard Millman';
       storyTeam.video2 = 'Lauren Cmiel';
@@ -67,6 +67,53 @@ function BlogPostTemplate ({ data: { post } }) {
       color = {color: '#F3CB47'};
       break;
     case 'HEALTHCARE':
+      storyTeam.reporter = 'Lucas Thomae';
+      storyTeam.photo = 'Heather Diehl';
+      storyTeam.video1 = 'Angelina Katsanis';
+      storyTeam.video2 = 'Jennifer Tran';
+      storyTeam.inter = 'Caleb Sigmon';
+      storyTeam.adpr = 'Bella Cankurtaran';
+      color = {color: '#004E65'};
+      break;
+
+      case 'AMBIENTE':
+      storyTeam.reporter = 'Thomas Moody-Jones';
+      storyTeam.photo = 'Dylan Thiessen';
+      storyTeam.video1 = 'Ann Licharew';
+      storyTeam.video2 = 'Taylor Holbrooks';
+      storyTeam.inter = 'Gina Flow';
+      storyTeam.adpr = 'Florencia Loncán';
+      storyTeam.upr = 'Karina Torres';
+      color =  {color: '#3EAAA7'};  
+      break;
+    case 'COMUNIDAD':
+      storyTeam.reporter = 'Liv Reilly';
+      storyTeam.photo = 'Anna Connors';
+      storyTeam.video1 = 'Cynthia Liu';
+      storyTeam.video2 = 'Fallon Maher';
+      storyTeam.inter = 'Nina Scott';
+      storyTeam.upr = 'Carlos Ramírez Brito';
+      color = {color: '#FFAD00'};
+      break;
+    case 'GOBERNANCIA':
+      storyTeam.reporter = 'Emily Gajda';
+      storyTeam.photo = 'Samantha Lewis';
+      storyTeam.video1 = 'Allyson Rabon';
+      storyTeam.video2 = 'Quincy Marks';
+      storyTeam.inter = 'Giuli Hoffmann';
+      storyTeam.upr = 'Amanda Jiménez Berríos';
+      color = {color: '#FF6600'};
+      break;
+    case 'FUERZA':
+      storyTeam.reporter = 'Preston Fore';
+      storyTeam.video1 = 'Gerard Millman';
+      storyTeam.video2 = 'Lauren Cmiel';
+      storyTeam.inter = 'Clara Mello';
+      storyTeam.inter2 = 'Jacob Turner';
+      storyTeam.upr = 'Yondy Agosto García';
+      color = {color: '#F3CB47'};
+      break;
+    case 'SALUD':
       storyTeam.reporter = 'Lucas Thomae';
       storyTeam.photo = 'Heather Diehl';
       storyTeam.video1 = 'Angelina Katsanis';

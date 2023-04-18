@@ -9,13 +9,30 @@ import MyContext from "../MyContext";
 
 
 
-const Navbar = () => {
+function Navbar () {
 
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
   const [dark, setDark] = useState(false);
   const [hamMenu, setHamMenu] = useState(false);
   const { myBoolean, setMyBoolean } = useContext(MyContext);
+
+
+
+  const data = useStaticQuery(graphql`
+    {
+      allWpPost(filter: {id: {nin: ["cG9zdDo1OA==", "cG9zdDoyMDQ=", "cG9zdDoyMDA=", "cG9zdDoyMTA=", "cG9zdDoyMTM=", "cG9zdDoyMTY=", "cG9zdDoyMDc="]}}, sort: {date: DESC}) {
+        nodes {
+          id
+          title
+          uri
+        }
+      }
+    }
+    `)
+        const { allWpPost } = data; 
+ 
+
 
 
 
@@ -61,18 +78,11 @@ const Navbar = () => {
     setHamMenu(!hamMenu);
   };
 
-  const data = useStaticQuery(graphql`
-  {
-    allWpPost(filter: {id: {nin: "cG9zdDo1OA=="}}, sort: {date: DESC}) {
-    nodes {
-      id
-      title
-      uri
-    }
-  }
-  }
-  `)
-      const { allWpPost } = data;
+
+  // const { allEnPost } = data.engl;
+
+  const sobreId = "cG9zdDoyMDc=";
+
 
     return (
       <>
@@ -106,15 +116,18 @@ const Navbar = () => {
             <div class="gap"></div>
 
             <div ref={strsRef} id="stry-links">
-              { allWpPost.nodes.map( post => (
-                  <Link class="nav-elem-a" key={post.title} to={post.uri}><h4 class="nav-elem">{post.title}</h4></Link>
-              ))}
+              
+                  <Link class="nav-elem-a" to={myBoolean ? "/paso-a-paso" : "/paso-a-paso-esp"}><h4 class="nav-elem">{myBoolean? "Paso a paso" : "Paso a paso"}</h4></Link>
+                  <Link class="nav-elem-a" to={myBoolean ? "/community" : "/comunidad"}><h4 class="nav-elem">{myBoolean? "COMMUNITY" : "COMUNIDAD"}</h4></Link>
+                  <Link class="nav-elem-a" to={myBoolean ? "/governance" : "/gobernancia"}><h4 class="nav-elem">{myBoolean? "GOVERNANCE" : "GOBERNANCIA"}</h4></Link>
+                  <Link class="nav-elem-a" to={myBoolean ? "/environment" : "/ambiente"}><h4 class="nav-elem">{myBoolean? "ENVIRONMENT" : "AMBIENTE"}</h4></Link>
+                  <Link class="nav-elem-a" to={myBoolean ? "/healthcare" : "/salud"}><h4 class="nav-elem">{myBoolean? "HEALTHCARE" : "SALUD"}</h4></Link>
             </div>
 
             <div class="gap"></div>
               
             <div ref={abtRef} className="abt-side">
-              <Link class="nav-elem-a" key={"ABOUT"} to={"/about"}><h4 class="nav-elem">{"ABOUT"}</h4></Link>
+              <Link class="nav-elem-a" to={myBoolean ? "/about" : "/sobre"}><h4 class="nav-elem">{myBoolean? "ABOUT" : "SOBRE"}</h4></Link>
               <button onClick={handleButtonClick} id="translation-box"><div id={myBoolean ? "l-box" : "r-box"}>EN</div><div id={myBoolean ? "r-box" : "l-box"}>ES</div></button>
             </div>
           

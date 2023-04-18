@@ -5,12 +5,25 @@
     overflow-x: hidden;
 }
 
+.post-text > figure {
+  max-width: 300px;
+}
+
+.post-text > figure > img {
+  max-width: 60vw;
+  transform: translateX(-20%);
+}
+
+.wp-element-caption {
+  width: 500px;
+}
+
 .byline-contain {
   max-width: 100vw;
 }
 
 .byline {
-    margin-left: 5vw;
+    margin-left: 3.2vw;
     padding-top: 20px;
     display: flex;
     flex-direction: column;

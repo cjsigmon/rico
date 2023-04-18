@@ -11,7 +11,7 @@ export default function ReadMore({ exclude }) {
     const envLink = "/environment";
     const comLink = "/community";
     const govLink = "/governance";
-    const powLink = "/power";
+    const powLink = "/paso-a-paso";
     const healthLink = "/healthcare";
     
 
@@ -28,7 +28,7 @@ export default function ReadMore({ exclude }) {
             <h2>MORE FROM ISLA DE FUERZA</h2>
             
             <div className="more-thumbs">
-                {exclude === 'POWER' ? <></> :  <a href={powLink}><img src={powImage}></img></a>}
+                {exclude === 'Paso a paso' ? <></> :  <a href={powLink}><img src={powImage}></img></a>}
                 {exclude === 'COMMUNITY' ? <></> :  <a href={comLink}><img src={comImage}></img></a>}
                 {exclude === 'GOVERNANCE' ? <></> :  <a href={govLink}><img src={govImage}></img></a>}
                 {exclude === 'ENVIRONMENT' ? <></> :  <a href={envLink}><img src={envImage}></img></a>}
