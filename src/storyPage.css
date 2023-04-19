@@ -318,6 +318,7 @@
 
 .more-thumbs {
   display: flex;
+  flex-wrap: wrap;
   width: 100vw;
   justify-content: center;
 }
