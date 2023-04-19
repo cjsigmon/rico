@@ -7,12 +7,13 @@ export default function Tagline({ reporter, photo, video1, video2, inter, inter2
     return (
         <div className="byline-contain">
             <div className="byline">
-                  <p><b>Reporter</b><br></br>{reporter}</p>
+                  {reporter ? <p><b>Reporter</b><br></br>{reporter}</p> : <></>}
                   {photo ? <p><b>Photo</b><br></br>{photo}</p> : <></>}
-                  <p><b>Video</b><br></br>{video1}<br></br>{video2}</p>
-                  <p><b>Interactive</b><br></br>{inter}{inter2 ? <><br></br>{inter2}</> : <></>}</p>
+                  {video1 || video2 ? <p><b>Video</b><br></br>{video1}<br></br>{video2}</p> : <></>}
+                  {inter ? <p><b>Interactive</b><br></br>{inter}{inter2 ? <><br></br>{inter2}</> : <></>}</p> : <></>}
                   {adpr ? <p><b>Ad/PR</b><br></br>{adpr}</p> : <></>}
                   {upr ? <p><b>UPR student</b><br></br>{upr}</p> : <></>}
+                  <p></p>
             </div>
           </div>
     );
