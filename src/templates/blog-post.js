@@ -36,6 +36,7 @@ function BlogPostTemplate ({ data: { post } }) {
       storyTeam.inter = 'Gina Flow';
       storyTeam.adpr = 'Florencia Loncán';
       storyTeam.upr = 'Karina Torres';
+      storyTeam.theme = 'ENVIRONMENT';
       color =  {color: '#3EAAA7'};
       
       break;
@@ -46,6 +47,7 @@ function BlogPostTemplate ({ data: { post } }) {
       storyTeam.video2 = 'Fallon Maher';
       storyTeam.inter = 'Nina Scott';
       storyTeam.upr = 'Carlos Ramírez Brito';
+      storyTeam.theme = 'COMMUNITY';
       color = {color: '#FFAD00'};
       break;
     case 'GOVERNANCE':
@@ -55,6 +57,7 @@ function BlogPostTemplate ({ data: { post } }) {
       storyTeam.video2 = 'Quincy Marks';
       storyTeam.inter = 'Giuli Hoffmann';
       storyTeam.upr = 'Amanda Jiménez Berríos';
+      storyTeam.theme = 'GOVERNANCE';
       color = {color: '#FF6600'};
       break;
     case 'Paso a paso':
@@ -64,6 +67,7 @@ function BlogPostTemplate ({ data: { post } }) {
       storyTeam.inter = 'Clara Mello';
       storyTeam.inter2 = 'Jacob Turner';
       storyTeam.upr = 'Yondy Agosto García';
+      storyTeam.theme = 'POWER';
       color = {color: '#F3CB47'};
       break;
     case 'HEALTHCARE':
@@ -73,6 +77,7 @@ function BlogPostTemplate ({ data: { post } }) {
       storyTeam.video2 = 'Jennifer Tran';
       storyTeam.inter = 'Caleb Sigmon';
       storyTeam.adpr = 'Bella Cankurtaran';
+      storyTeam.theme = 'HEALTHCARE';
       color = {color: '#004E65'};
       break;
 
@@ -84,6 +89,7 @@ function BlogPostTemplate ({ data: { post } }) {
       storyTeam.inter = 'Gina Flow';
       storyTeam.adpr = 'Florencia Loncán';
       storyTeam.upr = 'Karina Torres';
+      storyTeam.theme = 'ENVIRONMENT';
       color =  {color: '#3EAAA7'};  
       break;
     case 'COMUNIDAD':
@@ -93,6 +99,7 @@ function BlogPostTemplate ({ data: { post } }) {
       storyTeam.video2 = 'Fallon Maher';
       storyTeam.inter = 'Nina Scott';
       storyTeam.upr = 'Carlos Ramírez Brito';
+      storyTeam.theme = 'COMMUNITY';
       color = {color: '#FFAD00'};
       break;
     case 'GOBERNANCIA':
@@ -102,6 +109,7 @@ function BlogPostTemplate ({ data: { post } }) {
       storyTeam.video2 = 'Quincy Marks';
       storyTeam.inter = 'Giuli Hoffmann';
       storyTeam.upr = 'Amanda Jiménez Berríos';
+      storyTeam.theme = 'GOVERNANCE';
       color = {color: '#FF6600'};
       break;
     case 'FUERZA':
@@ -111,6 +119,7 @@ function BlogPostTemplate ({ data: { post } }) {
       storyTeam.inter = 'Clara Mello';
       storyTeam.inter2 = 'Jacob Turner';
       storyTeam.upr = 'Yondy Agosto García';
+      storyTeam.theme = 'POWER';
       color = {color: '#F3CB47'};
       break;
     case 'SALUD':
@@ -120,6 +129,7 @@ function BlogPostTemplate ({ data: { post } }) {
       storyTeam.video2 = 'Jennifer Tran';
       storyTeam.inter = 'Caleb Sigmon';
       storyTeam.adpr = 'Bella Cankurtaran';
+      storyTeam.theme = 'HEALTHCARE';
       color = {color: '#004E65'};
       break;
   }
@@ -165,7 +175,7 @@ function BlogPostTemplate ({ data: { post } }) {
     <main>
     {/* <Seo title={post.title} description={post.excerpt} /> */}
     <Navbar/>
-    <HeaderImg title={post.title} tagline={parse(post.excerpt)} />
+    <HeaderImg title={post.title} tagline={parse(post.excerpt)} theme={storyTeam.theme} />
    
     <div className="post-grid" id="stry">
       <div className="l-mar"></div>

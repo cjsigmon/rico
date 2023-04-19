@@ -511,9 +511,22 @@ button:focus > .sq:not(#srcSq) {
     #titlecard h1 {
       font-size: 6.5vw;
     }
+
+    .modal-window {
+      height: 55vh;
+      top: -20vh;
+    }
     
     .white-desc {
-      font-size: 1.5vh;
+      font-size: 1.1vh;
+    }
+
+    /* .modal-content {
+      max-height: ;
+    } */
+
+    .modal-content > img {
+      max-width: 100%;
     }
 
     .cent {
