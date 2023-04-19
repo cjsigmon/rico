@@ -142,7 +142,7 @@ function BlogPostTemplate ({ data: { post } }) {
       else if (node.attribs && node.attribs.class === "replace-video") {
         switch(node.attribs.id) {
           case "health-vid":
-            return <VideoComp color={color.color} link={"https://player.vimeo.com/video/94282169?h=1e43d197da&title=0&byline=0&portrait=0"} />;
+            return <VideoComp color={color.color} link={"https://player.vimeo.com/video/291295858?h=fee30cc906"} />;
             break;
           case "power-vid":
             return <VideoComp color={color.color} link={"https://player.vimeo.com/video/291295858?h=fee30cc906"} />;
