@@ -6,7 +6,7 @@
 /* timeline */
 
 .time-anchor {
-  transform: translateX(-28.65vw);
+  transform: translateX(-27.85vw);
   position: relative;
   margin-top: 15%;
   margin-bottom: 170%;
@@ -68,7 +68,7 @@ position:absolute;
   left: 50vw;
   transform: translateX(-50%);
   
-  margin-top: 100%;
+  margin-top: 98%;
   width: 80vw;
   height: 9px;
   background-color: #ff660082;

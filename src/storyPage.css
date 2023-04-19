@@ -316,18 +316,64 @@
   padding-bottom: 70px;
 }
 
+.more-thumbs {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+}
+
 .more-thumbs > a {
   cursor: pointer;
   margin: 10px;
 }
 
-.more-thumbs > a > img {
-  width: 35vw;
+.readmore-hold {
+  width: fit-content;
+  position: relative;
 }
 
-.more-thumbs > a > img:hover {
-  filter:sepia(50%);
+.readmore-hold > h4 {
+  color: rgb(255, 255, 255);
+  position: absolute;
+  background-color: #000000;
+  margin: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 50%;
+  transform: translateY(50%);
+  opacity: 0;
 }
+
+#powread {
+  color: var(--power);
+}
+#comread {
+  color: var(--community);
+}
+#govread {
+  color: var(--governance);
+}
+#envread {
+  color: var(--environment);
+  /* background-color: rgba(255, 255, 255, 0.733); */
+}
+#hearead {
+  color: var(--healthcare);
+  /* background-color: rgba(255, 255, 255, 0.733); */
+}
+
+.readmore-hold img {
+  width: 22vw;
+}
+
+.readmore-hold:hover img {
+ filter: grayscale(96%);
+}
+.readmore-hold:hover h4 {
+  opacity: 1;
+ }
+
 @media only screen and (max-width: 420px) {
   .quote-wrapper-rel {
     padding-bottom: 60vh;
