@@ -7,6 +7,8 @@
 
 .post-text > figure {
   max-width: 500px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .post-text > figure > img {
@@ -15,7 +17,8 @@
 }
 
 .wp-element-caption {
-  width: 500px;
+  /* width: 700px; */
+  font-size: 1vw;
 }
 
 .byline-contain {

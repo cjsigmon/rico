@@ -111,3 +111,7 @@
   .hea1 {
     background-image: url('img/hea/20230405_Diehl_PR_Sequence-1.jpg');
   }
+
+  .drrk > img {
+    box-shadow: 0px 0px 550px 150px rgb(0, 0, 0);
+  }

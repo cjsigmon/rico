@@ -233,13 +233,15 @@ function BlogPostTemplate ({ data: { post } }) {
         switch(node.attribs.id) {
           case "health-vid":
             return <VideoComp color={color.color} link={"https://player.vimeo.com/video/291295858?h=fee30cc906"} />;
-            break;
           case "power-vid":
             return <VideoComp color={color.color} link={"https://player.vimeo.com/video/291295858?h=fee30cc906"} />;
-            break;
-
+          case "env-vid":
+            return <VideoComp color={color.color} link={"https://player.vimeo.com/video/291295858?h=fee30cc906"} />;
+          case "com-vid":
+            return <VideoComp color={color.color} link={"https://player.vimeo.com/video/291295858?h=fee30cc906"} />;
+          case "gov-vid":
+            return <VideoComp color={color.color} link={"https://player.vimeo.com/video/291295858?h=fee30cc906"} />;
             
-
         }
       }
       else if (node.attribs && node.attribs.class === "replace-gall") {
