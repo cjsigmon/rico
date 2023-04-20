@@ -57,10 +57,10 @@ const SectionWipes2 = () => {
     p1Ref.current.style.opacity = '1';
 };
 const killp2 = () => {
-  p3Ref.current.style.opacity = '0';
+  p2Ref.current.style.opacity = '0';
 };
 const resp2 = () => {
-p3Ref.current.style.opacity = '1';
+p2Ref.current.style.opacity = '1';
 };
 const killp3 = () => {
   p3Ref.current.style.opacity = '0';
@@ -185,7 +185,7 @@ p17Ref.current.style.opacity = '1';
             onComplete={killp1}
             onReverseComplete={resp1}
           >
-            <section className="panel"><img className="medium-land" src={gov2}/></section>
+            <section className="panel"><img className="medium-land l" src={gov2}/></section>
           </Tween>
 {/* 2.5 */}
           <Tween
@@ -202,7 +202,7 @@ p17Ref.current.style.opacity = '1';
             onComplete={killp2}
             onReverseComplete={resp2}
           >
-            <section className="panel"><img className="medium-land" src={gov3}/></section>
+            <section className="panel"><img className="medium-land r" src={gov3}/></section>
           </Tween>
 {/* 4 */}
           <Tween
@@ -234,7 +234,7 @@ p17Ref.current.style.opacity = '1';
             onComplete={killp4}
             onReverseComplete={resp4}
           >
-            <section className="panel gov7"><img className="medium-land" src={gov5}/></section>
+            <section className="panel gov7"><img className="medium-land l" src={gov5}/></section>
           </Tween>
 {/* 8 */}
           <Tween
@@ -250,7 +250,7 @@ p17Ref.current.style.opacity = '1';
             onComplete={killp5}
             onReverseComplete={resp5}
           >
-            <section className="panel gov9"><img className="medium-land" src={gov6}/></section>
+            <section className="panel gov9"><img className="medium-land r" src={gov6}/></section>
           </Tween>
 {/* 10 */}
           <Tween
@@ -282,7 +282,7 @@ p17Ref.current.style.opacity = '1';
             onComplete={killp7}
             onReverseComplete={resp7}
           >
-            <section className="panel gov13"><img className="medium-land" src={gov8}/></section>
+            <section className="panel gov13"><img className="medium-land l" src={gov8}/></section>
           </Tween>
 {/* 14 */}
 <Tween
@@ -298,7 +298,7 @@ p17Ref.current.style.opacity = '1';
             onComplete={killp8}
             onReverseComplete={resp8}
           >
-            <section className="panel gov15"><img src={gov9}/></section>
+            <section className="panel gov15"><img className="medium-land r" src={gov9}/></section>
           </Tween>
 {/* 16 */}
 <Tween
@@ -314,12 +314,12 @@ p17Ref.current.style.opacity = '1';
             onComplete={killp9}
             onReverseComplete={resp9}
           >
-            <section className="panel gov17"><img className="medium-land" src={gov10}/></section>
+            <section className="panel gov17"><img src={gov10}/></section>
           </Tween>
 
           <Tween
-            from={{ y: '-100%' }}
-            to={{ y: '0%' }}
+            from={{ x: '100%' }}
+            to={{ x: '0%' }}
           >
             <section className="panel bordeaux"><p ref={p10Ref}>In the center of Loíza sits Parroquia del Espíritu Santo y San Patricio, the town’s Catholic church. Constructed in 1645, it is one of Puerto Rico's oldest churches. The church represents an ethnically distinct community characterized by a rich Afro-Hispanic cultural and folk-craft tradition.</p></section>
           </Tween>
@@ -330,7 +330,7 @@ p17Ref.current.style.opacity = '1';
             onComplete={killp10}
             onReverseComplete={resp10}
           >
-            <section className="panel gov17"><img className="medium-land" src={gov11}/></section>
+            <section className="panel gov17"><img id="gov11" className="medium-land" src={gov11}/></section>
           </Tween>
 {/* END */}
           <Tween
@@ -345,7 +345,7 @@ p17Ref.current.style.opacity = '1';
             onComplete={killp11}
             onReverseComplete={resp11}
           >
-            <section className="panel gov17"><img className="medium-land" src={gov12}/></section>
+            <section className="panel gov17"><img className="medium-land r" src={gov12}/></section>
           </Tween>
 {/* END */}
           <Tween
@@ -360,7 +360,7 @@ p17Ref.current.style.opacity = '1';
             onComplete={killp12}
             onReverseComplete={resp12}
           >
-            <section className="panel gov17"><img className="medium-land" src={gov13}/></section>
+            <section className="panel gov17"><img src={gov13}/></section>
           </Tween>
 {/* END */}
           <Tween
@@ -375,7 +375,7 @@ p17Ref.current.style.opacity = '1';
             onComplete={killp13}
             onReverseComplete={resp13}
           >
-            <section className="panel gov17"><img className="medium-land" src={gov14}/></section>
+            <section className="panel gov17"><img className="medium-land l" src={gov14}/></section>
           </Tween>
 {/* END */}
           <Tween
@@ -424,8 +424,8 @@ p17Ref.current.style.opacity = '1';
           </Tween>
 {/* END */}
           <Tween
-            from={{ x: '100%' }}
-            to={{ x: '0%' }}
+            from={{ y: '100%' }}
+            to={{ y: '0%' }}
           >
             <section className="panel bordeaux"><p ref={p17Ref}>“We remain firm and resistant, because we have been forgotten all our lives by all the governments that have passed […] we are so strong and we are going to remain strong,” said Rodriguez. 
 Loíza’s community is an example of Puerto Rico’s resistance in the face of adversity, and of the fortitude of a tight-knit community.

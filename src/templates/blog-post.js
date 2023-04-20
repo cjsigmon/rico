@@ -209,6 +209,7 @@ function BlogPostTemplate ({ data: { post } }) {
       <div className="r-mar"></div>
     </div>
 
+    <iframe src="/govphoto" title="Other Page" />
     <ReadMore exclude={post.title} eng={myBoolean}/> 
     <Footer path={altSlug} />
     </main>
