@@ -156,7 +156,7 @@ p17Ref.current.style.opacity = '1';
 
   return (
   <div className="wipes">
-        <a className="goback" onclick="history.back(-1)" href="/governance/"><span id="ESC">{ESC}</span></a>
+        {/* <a className="goback" onclick="history.back(-1)" href="/governance/"><span id="ESC">{ESC}</span></a> */}
     <Controller>
       <Scene
         triggerHook="onLeave"
