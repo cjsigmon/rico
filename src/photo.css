@@ -99,6 +99,15 @@
   .gov1 {
     background-image: url('img/gov/1Lewis-03112023-SAT-225.jpg');
   }
-  .panel.pow1 {
+  .pow1 {
     background-image: url('img/pow/20230405_Thiessen_Sequence_-1.jpg');;
+  }
+  .env1 {
+    background-image: url('img/env/20230405_Thiessen_Sequence_-1.jpg');
+  }
+  .com1 {
+    background-image: url('img/com/Connors_abandoned-schools-1.jpg');
+  }
+  .hea1 {
+    background-image: url('img/hea/20230405_Diehl_PR_Sequence-1.jpg');
   }
