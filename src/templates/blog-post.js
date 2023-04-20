@@ -22,6 +22,7 @@ import Timeline from "../components/Timeline"
 function BlogPostTemplate ({ data: { post } }) {
   const htmlString = post.content;
   const [myBoolean, setMyBoolean] = useState(MyContext);
+  var altSlug = "";
 
 
 
@@ -37,6 +38,8 @@ function BlogPostTemplate ({ data: { post } }) {
       storyTeam.adpr = 'Florencia Loncán';
       storyTeam.upr = 'Karina Torres';
       storyTeam.theme = 'ENVIRONMENT';
+      storyTeam.slug = '/environment';
+      storyTeam.altSlug = '/ambiente';
       color =  {color: '#3EAAA7'};
       
       break;
@@ -48,6 +51,8 @@ function BlogPostTemplate ({ data: { post } }) {
       storyTeam.inter = 'Nina Scott';
       storyTeam.upr = 'Carlos Ramírez Brito';
       storyTeam.theme = 'COMMUNITY';
+      storyTeam.slug = '/community';
+      storyTeam.altSlug = '/comunidad';
       color = {color: '#FFAD00'};
       break;
     case 'GOVERNANCE':
@@ -58,6 +63,8 @@ function BlogPostTemplate ({ data: { post } }) {
       storyTeam.inter = 'Giuli Hoffmann';
       storyTeam.upr = 'Amanda Jiménez Berríos';
       storyTeam.theme = 'GOVERNANCE';
+      storyTeam.slug = '/governance';
+      storyTeam.altSlug = '/gobernancia';
       color = {color: '#FF6600'};
       break;
     case 'Paso a paso':
@@ -68,6 +75,8 @@ function BlogPostTemplate ({ data: { post } }) {
       storyTeam.inter2 = 'Jacob Turner';
       storyTeam.upr = 'Yondy Agosto García';
       storyTeam.theme = 'POWER';
+      storyTeam.slug = '/paso-a-paso';
+      storyTeam.altSlug = '/fuerza';
       color = {color: '#F3CB47'};
       break;
     case 'HEALTHCARE':
@@ -78,6 +87,9 @@ function BlogPostTemplate ({ data: { post } }) {
       storyTeam.inter = 'Caleb Sigmon';
       storyTeam.adpr = 'Bella Cankurtaran';
       storyTeam.theme = 'HEALTHCARE';
+      storyTeam.slug = '/healthcare';
+      storyTeam.altSlug = '/salud';
+      altSlug = "/salud";
       color = {color: '#004E65'};
       break;
 
@@ -90,6 +102,8 @@ function BlogPostTemplate ({ data: { post } }) {
       storyTeam.adpr = 'Florencia Loncán';
       storyTeam.upr = 'Karina Torres';
       storyTeam.theme = 'ENVIRONMENT';
+      storyTeam.slug = '/ambiente';
+      storyTeam.altSlug = '/environment';
       color =  {color: '#3EAAA7'};  
       break;
     case 'COMUNIDAD':
@@ -100,6 +114,8 @@ function BlogPostTemplate ({ data: { post } }) {
       storyTeam.inter = 'Nina Scott';
       storyTeam.upr = 'Carlos Ramírez Brito';
       storyTeam.theme = 'COMMUNITY';
+      storyTeam.slug = '/comunidad';
+      storyTeam.altSlug = '/community';
       color = {color: '#FFAD00'};
       break;
     case 'GOBERNANCIA':
@@ -110,6 +126,8 @@ function BlogPostTemplate ({ data: { post } }) {
       storyTeam.inter = 'Giuli Hoffmann';
       storyTeam.upr = 'Amanda Jiménez Berríos';
       storyTeam.theme = 'GOVERNANCE';
+      storyTeam.slug = '/gobernancia';
+      storyTeam.altSlug = '/governance';
       color = {color: '#FF6600'};
       break;
     case 'FUERZA':
@@ -120,6 +138,8 @@ function BlogPostTemplate ({ data: { post } }) {
       storyTeam.inter2 = 'Jacob Turner';
       storyTeam.upr = 'Yondy Agosto García';
       storyTeam.theme = 'POWER';
+      storyTeam.slug = '/fuerza';
+      storyTeam.altSlug = '/paso-a-paso';
       color = {color: '#F3CB47'};
       break;
     case 'SALUD':
@@ -130,6 +150,8 @@ function BlogPostTemplate ({ data: { post } }) {
       storyTeam.inter = 'Caleb Sigmon';
       storyTeam.adpr = 'Bella Cankurtaran';
       storyTeam.theme = 'HEALTHCARE';
+      storyTeam.slug = '/salud';
+      storyTeam.altSlug = '/healthcare';
       color = {color: '#004E65'};
       break;
   }
@@ -187,8 +209,8 @@ function BlogPostTemplate ({ data: { post } }) {
       <div className="r-mar"></div>
     </div>
 
-    <ReadMore exclude={post.title}/> 
-    <Footer />
+    <ReadMore exclude={post.title} eng={myBoolean}/> 
+    <Footer path={altSlug} />
     </main>
     </MyContext.Provider>
     

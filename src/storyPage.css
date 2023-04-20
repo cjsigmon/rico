@@ -370,6 +370,7 @@
 
 .readmore-hold:hover img {
  filter: grayscale(96%);
+ opacity: 0.3;
 }
 .readmore-hold:hover h4 {
   opacity: 1;

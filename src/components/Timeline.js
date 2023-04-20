@@ -32,6 +32,7 @@ import tbg from '../img/timeline/timeline_background1.jpg';
 
 const CRED = "Photo courtesy of The Office of Information for Puerto Rico Collection, 1944-1948"
 
+
 const myArray = [
   { yr: 'Before 1493', img: before_1493, cred: "", desc: 'Taíno natives settle on the island. They call the island Borinquén and refer to themselves as Boricuas. '},
   { yr: '1493', img: t1493, cred: "", desc: 'Explorer and colonizer Christopher Columbus “discovers” the island. He claims it for Spain and calls it San Juan Bautista.'},
@@ -77,6 +78,7 @@ const Chronos = () => {
   const fillRef = useRef(null);
   const [index, setIndex] = useState(0);
   const len = myArray.length;
+  const timeBgRef = useRef(null);
 
   
 
@@ -100,15 +102,12 @@ const Chronos = () => {
     if (index < len - 1) {
       setIndex(index + 1);
     }
-    console.log(index);
-    // console.log("WHA");
   }
 
   const handleLeft = () => {
     if (index > 0) {
       setIndex(index - 1);
     }
-    console.log(index);
     // console.log("WHA");
   }
 
@@ -121,9 +120,20 @@ const Chronos = () => {
     let scroll = overRef.current.scrollLeft;
     let tot = lineRef.current.clientWidth - (2 * window.innerWidth) + 8;
     let percentage = (scroll / tot) * 100;
-    console.log(percentage);
     fillRef.current.style.width = percentage + "%";
+    
+    if (percentage > 5) {
+      if (timeBgRef.current) {
+        setIsBlurred(true);
+      } 
+    } 
+    if (percentage < 5) {
+      setIsBlurred(false);
+    }
   };
+
+  const [isBlurred, setIsBlurred] = useState(false);
+
 
   return (
     <div className="time-anchor" >
@@ -134,7 +144,7 @@ const Chronos = () => {
 
         
         <div id="bigline" ref={lineRef}>
-          <div className="timeline-bg"><img src={before_1493}/></div>
+          <div className="timeline-bg"><img className={`blur-image ${isBlurred ? 'blurred' : ''}`} ref={timeBgRef} src={tbg}/></div>
 
           <div id="titlecard">
             <h4>A timeline of</h4>

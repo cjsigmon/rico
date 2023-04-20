@@ -18,6 +18,7 @@
   /* height: 100vh; */
 }
 
+
 #pinContainer {
     height: 100vh;
     width: 100vw;
@@ -35,6 +36,8 @@
     font-family: "futura-pt-bold", sans-serif;
     color: white;
     font-weight: bold;
+    position: relative;
+    display: none;
   }
 
   .panel {
@@ -43,8 +46,21 @@
     background-size: cover;
   }
 
+
+.medium-land {
+  width: 65%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 0;
+  top: 0;
+}
+
   .panel img {
     box-shadow: 0px 0px 20vh rgb(0, 0, 0);
+    max-width: 100vw;
+    max-height: 100vh;
   }
 
   .panel p {
@@ -58,14 +74,16 @@
     color: white;
     background-color: rgba(0, 0, 0, 0.514);
     box-shadow: 0px 0px 9px rgb(0, 0, 0);
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
   }
   
-  .panel.gov1 {
+.panel.gov1 {
     background-image: url('img/gov/1Lewis-03112023-SAT-225.jpg');
     background-repeat: no-repeat;
     background-size: cover;
   }
-
+ /* 
   .panel.gov2 {
     background-image: url('img/gov/2Lewis-03112023-SAT-163.jpg');
   }
@@ -131,4 +149,4 @@
   
   .panel.bordeaux {
     background-color: #953543;
-  }
+  } */

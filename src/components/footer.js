@@ -4,16 +4,21 @@ import '../styles.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import MyContext from "../MyContext";
+import { useHistory } from "react-router-dom";
 // help from https://www.rolandwrites.com/blog/sticky-navbar-hides-scroll
 
 
 
-const Footer = () => {
+const Footer = ({path}) => {
+    var route = "" + path;
 
     const { myBoolean, setMyBoolean } = useContext(MyContext);
+ 
 
     const handleButtonClick = () => {
         setMyBoolean(!myBoolean);
+        alert(route);
+        window.location.href = route;
       };
 
 
