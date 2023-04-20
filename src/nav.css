@@ -53,7 +53,26 @@
     color: #FFFFFF;
     font-weight: bold;
     min-width: max-content;
+    position: relative;
+    display: inline-block;
 }
+
+  
+  .nav-elem::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.2s ease-in-out;
+  }
+  
+  .nav-elem:hover::after {
+    width: 100%;
+  }
+
 
 #desk-logo-img {
     width: 9vw;

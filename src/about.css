@@ -17,7 +17,7 @@
 
 #cards-sect {
     width: 80vw;
-    height: 100vh;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,7 +38,7 @@
 
 #cards-holder {
     width: 90%;
-    background-color: gray;
+    /* background-color: rgba(128, 128, 128, 0.382); */
     display: flex;
     flex-wrap: wrap;
 
@@ -105,3 +105,23 @@
 .socials > a .svg-inline--fa {
  color: black;
 }
+
+.sort {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .sort::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: black;
+    transition: width 0.2s ease-in-out;
+  }
+  
+  .sort:hover::after {
+    width: 100%;
+  }
