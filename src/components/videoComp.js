@@ -133,7 +133,7 @@ export default function VideoComp({ left, link, color }) {
             <div className="video-container">
               
               <ReactPlayer
-                  id="vid-ht"
+                  id={left == 0 ? "explain-ht" : "vid-ht"}
                   ref={playerRef}
                   style={playing ? {} : { filter: 'blur(5px)',  filter: 'brightness(50%)', position: 'absolute', top:'0', left:'0', width: '100%', height:'100%'}}
                   url={link}
