@@ -17,7 +17,7 @@ export default function HeaderImg({ title, tagline, noline, theme }) {
         <div className="bg" id={ab ? "abg" : "rbg"} >
             <div className="box">
                 <div id="main-title-contain">
-                  {title == "ISLA DE FUERZA" ? <img id="home-title" src={logo} width={"100%"}/> : <h1 className="main-title">{str}</h1>}
+                  {title == "ISLA DE FUERZA" ? <img id="home-title" src={logo} width={"70%"}/> : <h1 className="main-title">{str}</h1>}
                   
                   {noline ? <></> : <hr class="line" id={theme + "-line"}></hr>}
                   {ab ? <></> : <h3 id="main-tagline">{tagline}</h3>}

@@ -45,7 +45,7 @@ function BlogPostTemplate ({ data: { post } }) {
   var storyTeam = {};
   var color = {};
   switch(post.title) {
-    case ('ENVIRONMENT'):
+    case ('AGAINST THE CURRENT'):
       storyTeam.reporter = 'Thomas Moody-Jones';
       storyTeam.photo = 'Dylan Thiessen';
       storyTeam.video1 = 'Ann Licharew';
@@ -54,7 +54,7 @@ function BlogPostTemplate ({ data: { post } }) {
       storyTeam.adpr = 'Florencia Loncán';
       storyTeam.upr = 'Karina Torres';
       storyTeam.theme = 'ENVIRONMENT';
-      storyTeam.slug = '/environment';
+      storyTeam.slug = '/against-the-current';
       storyTeam.altSlug = '/ambiente';
       color =  {color: '#3EAAA7'};
       
@@ -83,7 +83,7 @@ function BlogPostTemplate ({ data: { post } }) {
       storyTeam.altSlug = '/gobernancia';
       color = {color: '#FF6600'};
       break;
-    case 'Paso a paso':
+    case 'PASO A PASO':
       storyTeam.reporter = 'Preston Fore';
       storyTeam.video1 = 'Gerard Millman';
       storyTeam.video2 = 'Lauren Cmiel';
@@ -95,7 +95,7 @@ function BlogPostTemplate ({ data: { post } }) {
       storyTeam.altSlug = '/fuerza';
       color = {color: '#F3CB47'};
       break;
-    case 'HEALTHCARE':
+    case 'ROAD TO RECOVERY':
       storyTeam.reporter = 'Lucas Thomae';
       storyTeam.photo = 'Heather Diehl';
       storyTeam.video1 = 'Angelina Katsanis';
@@ -103,7 +103,7 @@ function BlogPostTemplate ({ data: { post } }) {
       storyTeam.inter = 'Caleb Sigmon';
       storyTeam.adpr = 'Bella Cankurtaran';
       storyTeam.theme = 'HEALTHCARE';
-      storyTeam.slug = '/healthcare';
+      storyTeam.slug = '/road-to-recovery';
       storyTeam.altSlug = '/salud';
       altSlug = "/salud";
       color = {color: '#004E65'};
@@ -119,7 +119,7 @@ function BlogPostTemplate ({ data: { post } }) {
       storyTeam.upr = 'Karina Torres';
       storyTeam.theme = 'ENVIRONMENT';
       storyTeam.slug = '/ambiente';
-      storyTeam.altSlug = '/environment';
+      storyTeam.altSlug = '/against-the-current';
       color =  {color: '#3EAAA7'};  
       break;
     case 'COMUNIDAD':
@@ -167,7 +167,7 @@ function BlogPostTemplate ({ data: { post } }) {
       storyTeam.adpr = 'Bella Cankurtaran';
       storyTeam.theme = 'HEALTHCARE';
       storyTeam.slug = '/salud';
-      storyTeam.altSlug = '/healthcare';
+      storyTeam.altSlug = '/road-to-recovery';
       color = {color: '#004E65'};
       break;
   }

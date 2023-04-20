@@ -175,7 +175,7 @@
     .navbar {
         transition: background-color 1s ease;
         display: grid;
-        padding-bottom: 1.5vh;    
+        padding-bottom: 0vh;    
         background-image: linear-gradient(#3e3e3e7f , #3e3e3e00);
         grid-template-areas: 
         'mar side gap body gap side mar';
@@ -203,7 +203,7 @@
     
     .nav-elem {
         margin: 0;
-        font-size: 1.7vh;
+        font-size: 2vh;
         max-width: 8vw;
     }
     

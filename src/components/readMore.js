@@ -11,11 +11,11 @@ import { useContext } from "react";
 
 export default function ReadMore({ exclude, eng }) {
     const { myBoolean, setMyBoolean } = useContext(MyContext);
-    const envLink = "/environment";
+    const envLink = "/against-the-current";
     const comLink = "/community";
     const govLink = "/governance";
     const powLink = "/paso-a-paso";
-    const healthLink = "/healthcare";
+    const healthLink = "/road-to-recovery";
 
     const ambLink = "/ambiente";
     const cmdLink = "/comunidad";
@@ -37,11 +37,11 @@ export default function ReadMore({ exclude, eng }) {
             <h2>MORE FROM ISLA DE FUERZA</h2>
 
             {myBoolean ? <div className="more-thumbs">
-                {exclude === 'Paso a paso' ? <></> :  <a href={powLink}><div className="readmore-hold"><img src={powImage}></img><h4 id="powread">Paso a paso</h4></div></a>}
+                {exclude === 'Paso a paso' ? <></> :  <a href={powLink}><div className="readmore-hold"><img src={powImage}></img><h4 id="powread">PASO A PASO</h4></div></a>}
                 {exclude === 'COMMUNITY' ? <></> :  <a href={comLink}><div className="readmore-hold"><img src={comImage}></img><h4 id="comread">COMMUNITY</h4></div></a>}
                 {exclude === 'GOVERNANCE' ? <></> :  <a href={govLink}><div className="readmore-hold"><img src={govImage}></img><h4 id="govread">GOVERNANCE</h4></div></a>}
-                {exclude === 'ENVIRONMENT' ? <></> :  <a href={envLink}><div className="readmore-hold"><img src={envImage}></img><h4 id="envread">ENVIRONMENT</h4></div></a>}
-                {exclude === 'HEALTHCARE' ? <></> :  <a href={healthLink}><div className="readmore-hold"><img src={healthImage}></img><h4 id="hearead">HEALTHCARE</h4></div></a>}
+                {exclude === 'AGAINST THE CURRENT' ? <></> :  <a href={envLink}><div className="readmore-hold"><img src={envImage}></img><h4 id="envread">AGAINST THE CURRENT</h4></div></a>}
+                {exclude === 'ROAD TO RECOVERY' ? <></> :  <a href={healthLink}><div className="readmore-hold"><img src={healthImage}></img><h4 id="hearead">ROAD TO RECOVERY</h4></div></a>}
             </div> : <div className="more-thumbs">
                 {exclude === 'FUERZA' ? <></> :  <a href={fueLink}><div className="readmore-hold"><img src={powImage}></img><h4 id="powread">Fuerza</h4></div></a>}
                 {exclude === 'COMUNIDAD' ? <></> :  <a href={cmdLink}><div className="readmore-hold"><img src={comImage}></img><h4 id="comread">COMUNIDAD</h4></div></a>}

@@ -109,8 +109,8 @@ function Navbar () {
                   <Link class="nav-elem-a" to={myBoolean ? "/paso-a-paso" : "/paso-a-paso-esp"}><h4 class="nav-elem">{myBoolean? "PASO A PASO" : "Paso a paso"}</h4></Link>
                   <Link class="nav-elem-a" to={myBoolean ? "/community" : "/comunidad"}><h4 class="nav-elem">{myBoolean? "COMMUNITY" : "COMUNIDAD"}</h4></Link>
                   <Link class="nav-elem-a" to={myBoolean ? "/governance" : "/gobernancia"}><h4 class="nav-elem">{myBoolean? "GOVERNANCE" : "GOBERNANCIA"}</h4></Link>
-                  <Link class="nav-elem-a" to={myBoolean ? "/environment" : "/ambiente"}><h4 class="nav-elem">{myBoolean? "ENVIRONMENT" : "AMBIENTE"}</h4></Link>
-                  <Link class="nav-elem-a" to={myBoolean ? "/healthcare" : "/salud"}><h4 class="nav-elem">{myBoolean? "HEALTHCARE" : "SALUD"}</h4></Link>
+                  <Link class="nav-elem-a" to={myBoolean ? "/against-the-current" : "/ambiente"}><h4 class="nav-elem">{myBoolean? "AGAINST THE CURRENT" : "AMBIENTE"}</h4></Link>
+                  <Link class="nav-elem-a" to={myBoolean ? "/road-to-recovery" : "/salud"}><h4 class="nav-elem">{myBoolean? "ROAD TO RECOVERY" : "SALUD"}</h4></Link>
             </div>
 
             <div class="gap"></div>

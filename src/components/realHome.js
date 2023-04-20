@@ -96,7 +96,7 @@ const HomePage = () =>  {
              </Link>
            </div>
            <div className={"right-title"}>
-             <Link to={ "/environment" }><h1 className="home-title" id={"ENVIRONMENT-home-title"}>ENVIRONMENT</h1></Link>
+             <Link to={ "/against-the-current" }><h1 className="home-title" id={"ENVIRONMENT-home-title"}>ENVIRONMENT</h1></Link>
              <p className={"home-subtitle rsub"} id={"ENVIRONMENT-subtitle"}>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eir mod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam volu</p>
            </div>
          </div>
@@ -108,7 +108,7 @@ const HomePage = () =>  {
              </Link>
            </div>
            <div className={"left-title"}>
-             <Link to={ "/healthcare" }><h1 className="home-title" id={"HEALTHCARE-home-title"}>HEALTHCARE</h1></Link>
+             <Link to={ "/road-to-recovery" }><h1 className="home-title" id={"HEALTHCARE-home-title"}>HEALTHCARE</h1></Link>
              <p className={"home-subtitle lsub"} id={"HEALTHCARE-subtitle"}>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eir mod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam volu</p>
            </div>
          </div>

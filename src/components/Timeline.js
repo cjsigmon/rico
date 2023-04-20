@@ -79,6 +79,8 @@ const Chronos = () => {
   const [index, setIndex] = useState(0);
   const len = myArray.length;
   const timeBgRef = useRef(null);
+  const [blurAmount, setBlurAmount] = useState(0);
+  const [darkAmount, setDarkAmount] = useState(0);
 
   
 
@@ -124,11 +126,13 @@ const Chronos = () => {
     
     if (percentage > 5) {
       if (timeBgRef.current) {
-        setIsBlurred(true);
+        setBlurAmount(5);
+        setDarkAmount(75);
       } 
     } 
     if (percentage < 5) {
-      setIsBlurred(false);
+      setBlurAmount(percentage);
+      setDarkAmount( 100 - 15 * percentage);
     }
   };
 
@@ -144,12 +148,12 @@ const Chronos = () => {
 
         
         <div id="bigline" ref={lineRef}>
-          <div className="timeline-bg"><img className={`blur-image ${isBlurred ? 'blurred' : ''}`} ref={timeBgRef} src={tbg}/></div>
+          <div className="timeline-bg"><img src={tbg} style={{ filter: `blur(${blurAmount}px) brightness(${darkAmount}%)`}}/></div>
 
           <div id="titlecard">
             <h4>A timeline of</h4>
-            <h1>[Insert Clever Title Here]</h1>
-            <h4>[Insert Clarifying Subtitle Here]</h4>
+            <h1>Loíza’s long history</h1>
+            <h4>The town has been subject to Spanish and American colonial governance since its settlement in the 1500s</h4>
           </div>
 
           <span id="progbar">
