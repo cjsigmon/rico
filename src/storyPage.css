@@ -46,6 +46,28 @@
 }
 
 
+.photo-frame-container {
+  position: sticky;
+  top: 0px;
+  margin-bottom: 125vh;
+}
+
+.photo-frame {
+  position: absolute;
+  
+  width: 100vw;
+  height: 100vh;
+}
+
+.cover-frame {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: green;
+  z-index: 3;
+}
+
+
 /* SECTION SUBHEAD */
 .circle-container {
   display: flex;

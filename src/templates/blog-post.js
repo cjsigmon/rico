@@ -13,7 +13,7 @@ import Footer from "../components/footer"
 import Section from "../components/section"
 import PullQuote from "../components/pullquote"
 import ReadMore from "../components/readMore"
-import { useContext } from 'react';
+import { useContext, useRef, useEffect, useCallback } from 'react';
 import MyContext from "../MyContext"
 import Interactive from "../components/Interactive"
 import Timeline from "../components/Timeline"
@@ -188,7 +188,44 @@ function BlogPostTemplate ({ data: { post } }) {
       }
     },
   };
-  
+
+  const [isScrolled, setIsScrolled] = useState(false);
+  const covRef = useRef(null);
+  const frameRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const div = covRef.current;
+
+      if (div) {
+   
+        const rect = div.getBoundingClientRect();
+        const visibleHeight = window.innerHeight - rect.top;
+        const visibleRatio = visibleHeight / div.offsetHeight;
+        // const curH = div.offsetHeight;
+        console.log(rect.top);
+
+        if (visibleRatio == 1) {
+          console.log('The div is at least 100% visible!');
+          div.style.display = 'none';
+          frameRef.current.style.position = 'relative';
+          setTimeout(() => {
+            frameRef.current.scrollIntoView({ behavior: 'smooth' });
+          }, 1000);
+          
+        } 
+
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+
 
   const componentTree = Parser(htmlString, options);
 
@@ -198,7 +235,7 @@ function BlogPostTemplate ({ data: { post } }) {
     {/* <Seo title={post.title} description={post.excerpt} /> */}
     <Navbar/>
     <HeaderImg title={post.title} tagline={parse(post.excerpt)} theme={storyTeam.theme} />
-   
+    
     <div className="post-grid" id="stry">
       <div className="l-mar"></div>
     <Tagline reporter={storyTeam.reporter} photo={storyTeam.photo} video1={storyTeam.video1} video2={storyTeam.video2} inter={storyTeam.inter} inter2={storyTeam.inter2} adpr={storyTeam.adpr} upr={storyTeam.upr} />
@@ -209,8 +246,16 @@ function BlogPostTemplate ({ data: { post } }) {
       <div className="r-mar"></div>
     </div>
 
-    <iframe src="/govphoto" title="Other Page" />
+    <div ref={frameRef} className="photo-frame-container">
+    <iframe className="photo-frame" src="/govphoto" title="Other Page" />
+    <div className="cover-frame" ref={covRef}>
+      <h2> {isScrolled ? 'Scrolled onto!' : 'Not scrolled onto yet'}</h2>
+   
+    </div>
+    </div>
+ 
     <ReadMore exclude={post.title} eng={myBoolean}/> 
+
     <Footer path={altSlug} />
     </main>
     </MyContext.Provider>
