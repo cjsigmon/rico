@@ -4,7 +4,8 @@ import backgroundImage from '../img/adjuntas-lago-garzas.png'; // import the ima
 
 export default function Section({ img, title }) {
 
-    const TITLE = title.toUpperCase().replace(/[-_]/g, ' ');
+    const TITLE = title.toUpperCase();
+    // .toUpperCase().replace(/[-_]/g, ' ');
     return (
         <>
             <div class="circle-container">

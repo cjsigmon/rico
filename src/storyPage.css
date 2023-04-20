@@ -45,11 +45,17 @@
   font-size: 17px;
 }
 
+.stickyP {
+  position: sticky;
+  top: 0px;
+}
+
 
 .photo-frame-container {
   position: sticky;
   top: 0px;
-  margin-bottom: 125vh;
+  margin-bottom: 120vh;
+  transform: translateX(calc(-56.25vw / 2.035));
 }
 
 .photo-frame {
@@ -63,7 +69,6 @@
   position: absolute;
   width: 100vw;
   height: 100vh;
-  background-color: green;
   z-index: 3;
 }
 
@@ -358,7 +363,6 @@
 .readmore-hold > h4 {
   color: rgb(255, 255, 255);
   position: absolute;
-  background-color: #000000;
   margin: 0;
   left: 0;
   right: 0;

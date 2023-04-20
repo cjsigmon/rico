@@ -5,6 +5,7 @@ import { faFacebookF, faInstagram, faLinkedinIn } from '@fortawesome/free-brands
 import { faBars } from "@fortawesome/free-solid-svg-icons"
 import '../styles.css';
 import MyContext from "../MyContext";
+import logo from '../img/logo/LOGO-white-nav.png'
 // help from https://www.rolandwrites.com/blog/sticky-navbar-hides-scroll
 
 
@@ -93,24 +94,12 @@ function Navbar () {
             <div className="mob-menu">
               <span onClick={handleHamClick}><FontAwesomeIcon icon={faBars} style={{color: "white", position: "fixed",}}/></span>
               
-              <Link id="mob-logo" to="/"><svg xmlns="http://www.w3.org/2000/svg" width="160" height="50.928" viewBox="0 0 160 67.928">
-              <g id="Group_5" data-name="Group 5" transform="translate(203.099 229.839)">
-                <text id="Isla" transform="translate(-203.099 -205.839)" fill="#fff" font-size="10" font-family="Montserrat-ExtraBold, Montserrat" font-weight="800"><tspan x="0" y="0">Isla</tspan></text>
-                <text id="de" transform="translate(-178.83 -205.44)" fill="#fff" font-size="10" font-family="Montserrat-ExtraBold, Montserrat" font-weight="800"><tspan x="0" y="0">de</tspan></text>
-                <text id="FUERZA" transform="translate(-205.099 -175.911)" fill="#fff" font-size="37" font-family="Montserrat-ExtraBold, Montserrat" font-weight="800"><tspan x="0" y="0">FUERZA</tspan></text>
-              </g>
-            </svg>
+              <Link id="mob-logo" to="/"><img src={logo} />
             </Link>
             </div>
             
 
-            <Link className="nav-logo" to="/"><svg xmlns="http://www.w3.org/2000/svg" width="160" height="67.928" viewBox="0 0 160 67.928">
-              <g id="Group_5" data-name="Group 5" transform="translate(203.099 229.839)">
-                <text id="Isla" transform="translate(-203.099 -205.839)" fill="#fff" font-size="25" font-family="Montserrat-ExtraBold, Montserrat" font-weight="800"><tspan x="0" y="0">Isla</tspan></text>
-                <text id="de" transform="translate(-145.83 -205.44)" fill="#fff" font-size="25" font-family="Montserrat-ExtraBold, Montserrat" font-weight="800"><tspan x="0" y="0">de</tspan></text>
-                <text id="FUERZA" transform="translate(-203.099 -170.911)" fill="#fff" font-size="37" font-family="Montserrat-ExtraBold, Montserrat" font-weight="800"><tspan x="0" y="0">FUERZA</tspan></text>
-              </g>
-            </svg>
+            <Link className="nav-logo" to="/"><img id="desk-logo-img" src={logo} />
             </Link>
 
             <div class="gap"></div>

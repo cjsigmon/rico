@@ -17,11 +17,27 @@ import { useContext, useRef, useEffect, useCallback } from 'react';
 import MyContext from "../MyContext"
 import Interactive from "../components/Interactive"
 import Timeline from "../components/Timeline"
+import About from "../components/about"
 
 
 function BlogPostTemplate ({ data: { post } }) {
   const htmlString = post.content;
   const [myBoolean, setMyBoolean] = useState(MyContext);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const covRef = useRef(null);
+  const frameRef = useRef(null);
+  const aboveRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(true);
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsVisible(false);
+  };
+
+  const handleMouseLeave = () => {
+    setIsVisible(true);
+  };
+
   var altSlug = "";
 
 
@@ -156,6 +172,53 @@ function BlogPostTemplate ({ data: { post } }) {
       break;
   }
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const div = covRef.current;
+
+      if (div) {
+   
+        const rect = div.getBoundingClientRect();
+        const visibleHeight = window.innerHeight - rect.top;
+        const visibleRatio = visibleHeight / div.offsetHeight;
+        // const curH = div.offsetHeight;
+        console.log(rect.top);
+
+        if (visibleRatio >= 1 && visibleRatio < 5) {
+          console.log('The div is at least 100% visible!');
+          div.style.display = 'none';
+          frameRef.current.style.position = 'relative';
+   
+          
+          setTimeout(() => {
+            frameRef.current.scrollIntoView({ behavior: 'smooth' });
+          }, 1000);
+        
+        } 
+
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+
+  const photoDiv =
+  <>
+  <p className="stickyP" ref={aboveRef}> </p>
+  <div ref={frameRef} className="photo-frame-container" onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}>
+      <iframe className="photo-frame" src="/govphoto" title="Other Page" />
+      <div className="cover-frame" ref={covRef}>
+      </div>
+    </div>
+  </>;
+    
+
   const options = {
     replace: (node) => {
       if (node.attribs && node.attribs.class === "replace-photo") {
@@ -174,6 +237,9 @@ function BlogPostTemplate ({ data: { post } }) {
 
         }
       }
+      else if (node.attribs && node.attribs.class === "replace-gall") {
+        return photoDiv;
+      }
       else if (node.attribs && node.attribs.class === "replace-interactive") {
         return <Interactive title={node.attribs.id}></Interactive>;
       }
@@ -181,7 +247,7 @@ function BlogPostTemplate ({ data: { post } }) {
         return <Timeline />;
       }
       else if (node.attribs && node.attribs.class === "replace-section") {
-        return <Section title={node.attribs.id}></Section>;
+        return <Section title={node.children[0].data}></Section>;
       }
       else if (node.attribs && node.attribs.class === "replace-quote") {
         return <PullQuote what={node.children[0].data} who={node.attribs.id} color={color.color} />
@@ -189,41 +255,8 @@ function BlogPostTemplate ({ data: { post } }) {
     },
   };
 
-  const [isScrolled, setIsScrolled] = useState(false);
-  const covRef = useRef(null);
-  const frameRef = useRef(null);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const div = covRef.current;
 
-      if (div) {
-   
-        const rect = div.getBoundingClientRect();
-        const visibleHeight = window.innerHeight - rect.top;
-        const visibleRatio = visibleHeight / div.offsetHeight;
-        // const curH = div.offsetHeight;
-        console.log(rect.top);
-
-        if (visibleRatio == 1) {
-          console.log('The div is at least 100% visible!');
-          div.style.display = 'none';
-          frameRef.current.style.position = 'relative';
-          setTimeout(() => {
-            frameRef.current.scrollIntoView({ behavior: 'smooth' });
-          }, 1000);
-          
-        } 
-
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
 
 
@@ -233,10 +266,10 @@ function BlogPostTemplate ({ data: { post } }) {
     <MyContext.Provider value={{ myBoolean, setMyBoolean }}>
     <main>
     {/* <Seo title={post.title} description={post.excerpt} /> */}
-    <Navbar/>
+    {isVisible && <Navbar/>}
     <HeaderImg title={post.title} tagline={parse(post.excerpt)} theme={storyTeam.theme} />
-    
-    <div className="post-grid" id="stry">
+
+    {storyTeam.theme ? <><div className="post-grid" id="stry">
       <div className="l-mar"></div>
     <Tagline reporter={storyTeam.reporter} photo={storyTeam.photo} video1={storyTeam.video1} video2={storyTeam.video2} inter={storyTeam.inter} inter2={storyTeam.inter2} adpr={storyTeam.adpr} upr={storyTeam.upr} />
       <div className="post-text">
@@ -245,17 +278,8 @@ function BlogPostTemplate ({ data: { post } }) {
       <div className="r-stry-mar"></div>
       <div className="r-mar"></div>
     </div>
-
-    <div ref={frameRef} className="photo-frame-container">
-    <iframe className="photo-frame" src="/govphoto" title="Other Page" />
-    <div className="cover-frame" ref={covRef}>
-      <h2> {isScrolled ? 'Scrolled onto!' : 'Not scrolled onto yet'}</h2>
-   
-    </div>
-    </div>
- 
-    <ReadMore exclude={post.title} eng={myBoolean}/> 
-
+    <ReadMore exclude={post.title} eng={myBoolean}/> </> : <About />}
+    
     <Footer path={altSlug} />
     </main>
     </MyContext.Provider>

@@ -4,6 +4,7 @@
 @import 'nav.css';
 @import 'header.css';
 @import 'interactive.css';
+@import 'about.css';
 
 :root {
     --power:  #F3CB47; 
@@ -16,6 +17,7 @@
 
 body, html {
     margin: 0;
+    background-color: #f7f8f1;
 }
 
 body {
@@ -40,6 +42,8 @@ p, h2, h3, h4, h5, .wp-element-caption {
   p {
     font-weight: 400;
   }
+
+.photo-frame:hover 
 
 #homepage-txt {
     margin: 0;

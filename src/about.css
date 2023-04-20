@@ -1,0 +1,107 @@
+.abt-wrapper {
+    width: 100vw;
+    margin: 7vh 0 7vh 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.abt-body-t {
+    width: 50%;
+}
+
+#meet-team {
+    color: #004e65;
+    font-size: 6vw;
+}
+
+#cards-sect {
+    width: 80vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#role-btns {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 15%;
+}
+#role-btns button {
+    font-size: 1.4vw;
+}
+#role-btns button:hover {
+    cursor: pointer;
+}
+
+#cards-holder {
+    width: 90%;
+    background-color: gray;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.hidden {
+    display: none!important;
+}
+
+.vis {
+    display: block;
+}
+
+.card {
+    /* display: block; */
+    width: 16vw;
+    height: 24vw;
+    margin: 1.2%;
+    background-color: #f3cb47;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2%;
+}
+
+.com {
+    background-color: #ffad00;
+}
+.gov {
+    background-color: #ff6600;
+}
+.env {
+    background-color: #6bc0cf;
+}
+.hea {
+    background-color: #004e65;
+}
+.coach {
+    background-color: black;
+}
+.hea > .name-here, .hea > .team-role, .hea > .socials > a .svg-inline--fa, 
+.coach > .name-here, .coach > .team-role, .coach > .socials > a .svg-inline--fa{
+    color: white;
+} 
+
+.pic-box {
+    width: 80%;
+    height: 55%;
+    background-color: gray;
+}
+
+.name-here, .team-role, .socials {
+    margin: 7% 0 0 0;
+}
+.team-role {
+    color: black
+}
+.socials {
+    width: 60%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.socials > a .svg-inline--fa {
+ color: black;
+}

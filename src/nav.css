@@ -1,6 +1,5 @@
 .navbar {
     width: 100vw;
-    padding-top: 2vh;
     padding-bottom: 2vh;    
     z-index: 3;
     position: fixed;
@@ -54,6 +53,12 @@
     color: #FFFFFF;
     font-weight: bold;
     min-width: max-content;
+}
+
+#desk-logo-img {
+    width: 9vw;
+    height: auto;
+
 }
 
 #translation-box {
@@ -179,7 +184,7 @@
     
     .nav-elem {
         margin: 0;
-        font-size: 1.2vw;
+        font-size: 1.7vh;
         max-width: 8vw;
     }
     

@@ -18,6 +18,17 @@
   animation-fill-mode: forwards; */
 }
 
+#abg {
+    min-height: 100%;
+    height: 60vh;
+    background-image: linear-gradient(to bottom, rgba(32, 32, 32, 0.093), rgba(0, 0, 0, 0.401)),
+    url("img/nomada.jpg");
+}
+
+#abg .box {
+    height: 60vh;
+}
+
 .box {
     display: flex;
     min-width: 100%;
