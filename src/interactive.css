@@ -6,7 +6,7 @@
 /* timeline */
 
 .time-anchor {
-  transform: translateX(-27.85vw);
+  transform: translateX(calc(-56.25vw / 1.977));
   position: relative;
   margin-top: 15%;
   margin-bottom: 170%;
@@ -264,10 +264,19 @@ position:absolute;
  width: auto;
  margin-left: 50%;
  transform: translateX(-50%);
+ max-width: 90%;
 }
+
+
 
 .modal-content h4 {
   margin-top: 0;
+}
+
+.credit-mod {
+  margin-top: 5px;
+  text-align: center;
+  font-size: 1.3vw!important;
 }
 
 

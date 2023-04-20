@@ -18,7 +18,7 @@
 
 .wp-element-caption {
   /* width: 700px; */
-  font-size: 1vw;
+  font-size: 3vw;
 }
 
 .byline-contain {
@@ -58,7 +58,7 @@
   position: sticky;
   top: 0px;
   margin-bottom: 120vh;
-  transform: translateX(calc(-56.25vw / 1.977));
+  transform: translateX(-15vw);
 }
 
 .photo-frame {
@@ -438,6 +438,15 @@
     'mar body mar';
   grid-template-columns: 200fr 310fr 900fr 295fr 215fr;
   grid-gap: 2vw;
+}
+
+.photo-frame-container {
+  margin-bottom: 120vh;
+  transform: translateX(calc(-56.25vw / 1.977));
+}
+
+.wp-element-caption {
+  font-size: 1vw;
 }
 
 #homepage-txt {

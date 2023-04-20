@@ -153,7 +153,7 @@ p13Ref.current.style.opacity = '1';
             onComplete={killp1}
             onReverseComplete={resp1}
           >
-            <section className="panel"><img className="medium-land l" src={gov2}/></section>
+            <section className="panel"><img src={gov2}/></section>
           </Tween>
 {/* 2.5 */}
           <Tween
@@ -170,7 +170,7 @@ p13Ref.current.style.opacity = '1';
             onComplete={killp2}
             onReverseComplete={resp2}
           >
-            <section className="panel"><img className="medium-land r" src={gov3}/></section>
+            <section className="panel"><img className="medium-land l" src={gov3}/></section>
           </Tween>
 {/* 4 */}
           <Tween
@@ -187,7 +187,7 @@ p13Ref.current.style.opacity = '1';
             onComplete={killp3}
             onReverseComplete={resp3}
           >
-            <section className="panel gov5"><img src={gov4}/></section>
+            <section className="panel gov5"><img className="medium-land l" src={gov4}/></section>
           </Tween>
 {/* 6 */}
           <Tween
@@ -204,7 +204,7 @@ p13Ref.current.style.opacity = '1';
             onComplete={killp4}
             onReverseComplete={resp4}
           >
-            <section className="panel gov7"><img className="medium-land l" src={gov5}/></section>
+            <section className="panel gov7"><img className="medium-land " src={gov5}/></section>
           </Tween>
 {/* 8 */}
           <Tween
@@ -221,7 +221,7 @@ p13Ref.current.style.opacity = '1';
             onComplete={killp5}
             onReverseComplete={resp5}
           >
-            <section className="panel gov9"><img className="medium-land r" src={gov6}/></section>
+            <section className="panel gov9"><img src={gov6}/></section>
           </Tween>
 {/* 10 */}
           <Tween
@@ -238,7 +238,7 @@ p13Ref.current.style.opacity = '1';
             onComplete={killp6}
             onReverseComplete={resp6}
           >
-            <section className="panel gov11"><img src={gov7}/></section>
+            <section className="panel gov11"><img className="medium-land l" src={gov7}/></section>
           </Tween>
 {/* 12 */}
 <Tween
@@ -254,7 +254,7 @@ p13Ref.current.style.opacity = '1';
             onComplete={killp7}
             onReverseComplete={resp7}
           >
-            <section className="panel gov13"><img className="medium-land l" src={gov8}/></section>
+            <section className="panel gov13"><img className="medium-land r" src={gov8}/></section>
           </Tween>
 {/* 14 */}
 <Tween
@@ -271,7 +271,7 @@ p13Ref.current.style.opacity = '1';
             onComplete={killp8}
             onReverseComplete={resp8}
           >
-            <section className="panel gov15"><img className="medium-land r" src={gov9}/></section>
+            <section className="panel gov15"><img className="medium-land " src={gov9}/></section>
           </Tween>
 {/* 16 */}
 <Tween
@@ -305,7 +305,7 @@ p13Ref.current.style.opacity = '1';
             onComplete={killp10}
             onReverseComplete={resp10}
           >
-            <section className="panel gov17"><img id="gov11" className="medium-land" src={gov11}/></section>
+            <section className="panel gov17"><img id="gov11" className="medium-land l" src={gov11}/></section>
           </Tween>
 {/* END */}
           <Tween
@@ -337,7 +337,7 @@ p13Ref.current.style.opacity = '1';
             onComplete={killp12}
             onReverseComplete={resp12}
           >
-            <section className="panel gov17"><img src={gov13}/></section>
+            <section className="panel gov17"><img className="medium-land" src={gov13}/></section>
           </Tween>
 {/* END */}
           <Tween
