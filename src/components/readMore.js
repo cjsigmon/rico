@@ -37,7 +37,7 @@ export default function ReadMore({ exclude, eng }) {
             <h2>MORE FROM ISLA DE FUERZA</h2>
 
             {myBoolean ? <div className="more-thumbs">
-                {exclude === 'Paso a paso' ? <></> :  <a href={powLink}><div className="readmore-hold"><img src={powImage}></img><h4 id="powread">PASO A PASO</h4></div></a>}
+                {exclude === 'PASO A PASO' ? <></> :  <a href={powLink}><div className="readmore-hold"><img src={powImage}></img><h4 id="powread">PASO A PASO</h4></div></a>}
                 {exclude === 'COMMUNITY' ? <></> :  <a href={comLink}><div className="readmore-hold"><img src={comImage}></img><h4 id="comread">COMMUNITY</h4></div></a>}
                 {exclude === 'GOVERNANCE' ? <></> :  <a href={govLink}><div className="readmore-hold"><img src={govImage}></img><h4 id="govread">GOVERNANCE</h4></div></a>}
                 {exclude === 'AGAINST THE CURRENT' ? <></> :  <a href={envLink}><div className="readmore-hold"><img src={envImage}></img><h4 id="envread">AGAINST THE CURRENT</h4></div></a>}

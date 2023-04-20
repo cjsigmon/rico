@@ -92,75 +92,13 @@
     transition: opacity 0.5s ease-in-out;
   }
   
-.panel.gov1 {
-    background-image: url('img/gov/1Lewis-03112023-SAT-225.jpg');
+.panel {
     background-repeat: no-repeat;
     background-size: cover;
   }
- /* 
-  .panel.gov2 {
-    background-image: url('img/gov/2Lewis-03112023-SAT-163.jpg');
+  .gov1 {
+    background-image: url('img/gov/1Lewis-03112023-SAT-225.jpg');
   }
-  .panel.gov3 {
-    background-image: url('img/gov/3Lewis-03112023-SAT-255.jpg');
+  .panel.pow1 {
+    background-image: url('img/pow/20230405_Thiessen_Sequence_-1.jpg');;
   }
-  .panel.gov4 {
-    background-image: url('img/gov/4Lewis-03112023-SAT2-115.jpg');
-  }
-  .panel.gov5 {
-    background-image: url('img/gov/5Lewis-03112023-SAT-59.jpg');
-  }
-  .panel.gov6 {
-    background-image: url('img/gov/6Lewis-03112023-SAT2-13.jpg');
-  }
-  .panel.gov7 {
-    background-image: url('img/gov/7LEWIS-03152023-WED-5.jpg');
-  }
-  .panel.gov8 {
-    background-image: url('img/gov/8LEWIS-03152023-WED-125.jpg');
-  }
-  .panel.gov9 {
-    background-image: url('img/gov/9LEWIS-03152023-WED-67.jpg');
-  }
-  .panel.gov10 {
-    background-image: url('img/gov/10LEWIS-03122023-SUN-182.jpg');
-  }
-  .panel.gov11 {
-    background-image: url('img/gov/11LEWIS-03152023-WED-292.jpg');
-  }
-  .panel.gov12 {
-    background-image: url('img/gov/12LEWIS-03152023-WED-307.jpg');
-  }
-  .panel.gov13 {
-    background-image: url('img/gov/13LEWIS-03152023-WED-197.jpg');
-  }
-  .panel.gov14 {
-    background-image: url('img/gov/14LEWIS-03152023-WED-230.jpg');
-  }
-  .panel.gov15 {
-    background-image: url('img/gov/15Lewis-03102023-FRI-32.jpg');
-  }
-  .panel.gov16 {
-    background-image: url('img/gov/16Lewis-03132023-MON-125.jpg');
-  }
-  .panel.gov17 {
-    background-image: url('img/gov/17Lewis-03132023-MON-222.jpg');
-  }
-  
-  .panel.turqoise {
-    background-color: #38ced7;
-  }
-
-  .panel.black {
-    background-color: black;
-  }
-
-
-  
-  .panel.green {
-    background-color: #22d659;
-  }
-  
-  .panel.bordeaux {
-    background-color: #953543;
-  } */

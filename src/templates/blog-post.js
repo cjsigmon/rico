@@ -56,6 +56,7 @@ function BlogPostTemplate ({ data: { post } }) {
       storyTeam.theme = 'ENVIRONMENT';
       storyTeam.slug = '/against-the-current';
       storyTeam.altSlug = '/ambiente';
+      storyTeam.phoSlug = '/envphoto';
       color =  {color: '#3EAAA7'};
       
       break;
@@ -69,6 +70,7 @@ function BlogPostTemplate ({ data: { post } }) {
       storyTeam.theme = 'COMMUNITY';
       storyTeam.slug = '/community';
       storyTeam.altSlug = '/comunidad';
+      storyTeam.phoSlug = '/comphoto';
       color = {color: '#FFAD00'};
       break;
     case 'GOVERNANCE':
@@ -81,6 +83,7 @@ function BlogPostTemplate ({ data: { post } }) {
       storyTeam.theme = 'GOVERNANCE';
       storyTeam.slug = '/governance';
       storyTeam.altSlug = '/gobernancia';
+      storyTeam.phoSlug = '/govphoto';
       color = {color: '#FF6600'};
       break;
     case 'PASO A PASO':
@@ -93,6 +96,7 @@ function BlogPostTemplate ({ data: { post } }) {
       storyTeam.theme = 'POWER';
       storyTeam.slug = '/paso-a-paso';
       storyTeam.altSlug = '/fuerza';
+      storyTeam.phoSlug = '/powphoto';
       color = {color: '#F3CB47'};
       break;
     case 'ROAD TO RECOVERY':
@@ -105,6 +109,7 @@ function BlogPostTemplate ({ data: { post } }) {
       storyTeam.theme = 'HEALTHCARE';
       storyTeam.slug = '/road-to-recovery';
       storyTeam.altSlug = '/salud';
+      storyTeam.phoSlug = '/heaphoto';
       altSlug = "/salud";
       color = {color: '#004E65'};
       break;
@@ -212,7 +217,7 @@ function BlogPostTemplate ({ data: { post } }) {
   <p className="stickyP" ref={aboveRef}> </p>
   <div ref={frameRef} className="photo-frame-container" onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}>
-      <iframe className="photo-frame" src="/govphoto" title="Other Page" />
+      <iframe className="photo-frame" src={storyTeam.phoSlug} title="Other Page" />
       <div className="cover-frame" ref={covRef}>
       </div>
     </div>
