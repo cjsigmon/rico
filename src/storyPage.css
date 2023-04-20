@@ -58,7 +58,7 @@
   position: sticky;
   top: 0px;
   margin-bottom: 120vh;
-  transform: translateX(calc(-56.25vw / 2.035));
+  transform: translateX(calc(-56.25vw / 1.977));
 }
 
 .photo-frame {
@@ -213,6 +213,12 @@
   margin: auto;
   width: 70vw!important;
   height: 39.375vw!important;
+}
+
+#explain-all {
+  height: 70%;
+  width: 70%; 
+  margin: auto;
 }
 
 .all {
@@ -434,6 +440,10 @@
   grid-gap: 2vw;
 }
 
+#homepage-txt {
+  margin-top: 0;
+}
+
 
 .quote-svg {
   margin-right: 0;
@@ -442,13 +452,13 @@
 }
 
 .video-container-anchor {
-  transform: translateX(calc(-56.25vw / 2.035));
+  transform: translateX(calc(-56.25vw / 1.977));
   margin-top: 15vh;
   margin-bottom: 135vh;
 }
 
 .section-wrapper {
-  transform: translateX(calc(-56.25vw / 2.035));
+  transform: translateX(calc(-56.25vw / 1.977));
 }
 
 #explain-anchor {

@@ -94,7 +94,7 @@ function Navbar () {
             <div className="mob-menu">
               <span onClick={handleHamClick}><FontAwesomeIcon icon={faBars} style={{color: "white", position: "fixed",}}/></span>
               
-              <Link id="mob-logo" to="/"><img src={logo} />
+              <Link id="mob-logo" to="/"><img id="mob-logo-img" src={logo} />
             </Link>
             </div>
             

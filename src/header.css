@@ -64,6 +64,10 @@
     font-style: normal;
 }
 
+.main-title {
+    margin: auto;
+}
+
 .main-title, #main-tagline {
     max-width: 80vw;
     letter-spacing: 0.9vw;
